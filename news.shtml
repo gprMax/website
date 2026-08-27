@@ -333,8 +333,7 @@ leaflet: true
 				Germany. Markus was the GPR2016 Young Scientist winner, and is using the <a
 					href="http://docs.gprmax.com/en/latest/features.html#dispersive-materials">new dispersive material
 					modelling capabilities</a> to create multi-pole Debye models to accurately simulate the
-				frequency-dependent dielectric properties of different soils. <a href="index.shtml#liag-soils">Read more</a>
-				about it in the projects section.</p>
+				frequency-dependent dielectric properties of different soils.</p>
 
 			<h2>Screencasts &amp; videos<span class="subtitle">13-Jul-2016</span></h2>
 			<figure class="left" style="margin-top: 0;"><iframe class="video" width="333" height="250"
