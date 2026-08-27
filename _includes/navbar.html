@@ -1,0 +1,16 @@
+<input id="menu-toggler" type="checkbox" class="menu-toggler">
+<label for="menu-toggler" class="show-menu">
+	<span></span>
+	<span class="visually-hidden">Toggle navigation menu</span>
+</label>
+<nav>
+<ul>
+	<li id="news-nav"><a href="{{ '/' | relative_url }}">Home</a></li>
+	<li id="about-nav"><a href="{{ '/about.shtml' | relative_url }}">About</a></li>
+	<li id="download-nav"><a href="{{ site.repo_url }}" target="_blank">Download</a></li>
+	<li id="docs-nav"><a href="{{ site.docs_url }}" target="_blank">Docs</a></li>
+	<li id="publications-nav"><a href="{{ '/publications.shtml' | relative_url }}">Publications</a></li>
+	<li id="forum-nav"><a href="{{ site.discussions_url }}" target="_blank" rel="noopener">Discussions</a></li>
+	<li id="contact-nav"><a href="{{ '/contact.shtml' | relative_url }}">Contacts</a></li>
+</ul>
+</nav>

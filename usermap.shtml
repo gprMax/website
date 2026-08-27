@@ -1,0 +1,102 @@
+---
+title: "gprMax: Community map"
+body_id: news
+sidebar: false
+gtm: false
+leaflet: true
+markercluster: true
+---
+
+
+			<h1 class="map-title">Where gprMax is used</h1>
+			<p class="map-intro">
+				Every pin is one person who told us where they use gprMax. If you are not on the map yet,
+				add yourself &mdash; it takes a few seconds and needs no account.
+			</p>
+
+			<div id="usermap-wrap">
+				<div id="usermap"></div>
+
+				<div class="ump" id="ump-info">
+					<div class="ump-counts">
+						<div class="ump-count"><span class="n" id="n-pins">&mdash;</span><span class="l">pins</span></div>
+						<div class="ump-count"><span class="n" id="n-places">&mdash;</span><span class="l">places</span></div>
+						<div class="ump-count"><span class="n" id="n-since">&mdash;</span><span class="l">since</span></div>
+					</div>
+					<div class="ump-controls">
+						<div class="ump-seg" role="group" aria-label="How pins are shown">
+							<button type="button" id="v-all" aria-pressed="true">Every pin</button>
+							<button type="button" id="v-grouped" aria-pressed="false">Grouped</button>
+						</div>
+						<button type="button" class="ump-btn" id="open-add">Add your pin</button>
+						<button type="button" class="ump-btn ump-link" id="go-clean"
+							title="Hide the panels (Escape brings them back)">Just the map</button>
+					</div>
+				</div>
+
+				<div class="ump" id="ump-picking">
+					<span class="ump-dot" aria-hidden="true"></span>
+					<span>Zoom in and click your location. You can drag the pin to adjust it.</span>
+					<button type="button" class="ump-btn ump-ghost" id="pick-cancel">Cancel</button>
+				</div>
+
+				<button type="button" class="ump ump-btn ump-ghost" id="ump-restore">Show panels</button>
+
+				<form class="ump" id="ump-add" autocomplete="off">
+					<h2>Add your pin</h2>
+					<p class="ump-hint">Give the town or city you use gprMax from. Please don't enter a home address.</p>
+
+					<div class="ump-trap" aria-hidden="true">
+						<label for="website">Leave this field empty</label>
+						<input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+					</div>
+
+					<div id="step-choose">
+						<div class="ump-field">
+							<label for="q">Town / city and country</label>
+							<input type="text" id="q" name="q" placeholder="Edinburgh, UK" maxlength="120" />
+						</div>
+						<div class="ump-row">
+							<button type="submit" class="ump-btn" id="find">Find this place</button>
+							<button type="button" class="ump-btn ump-link" id="cancel">Cancel</button>
+						</div>
+
+						<div class="ump-or">or</div>
+
+						<button type="button" class="ump-btn ump-ghost" id="pick">Place it on the map yourself</button>
+						<p class="ump-hint" style="margin: 8px 0 0;">Best for villages and remote sites that a search
+							won't find.</p>
+					</div>
+
+					<div id="step-confirm" hidden>
+						<div class="ump-resolved">Your pin will go here:<span class="where" id="where"></span></div>
+
+						<div class="ump-field">
+							<label for="note">Note &mdash; optional, shown on your pin</label>
+							<input type="text" id="note" name="note"
+								placeholder="University of Edinburgh &mdash; GPR for bridges" maxlength="200" />
+						</div>
+
+						<div class="ump-consent">
+							<input type="checkbox" id="consent" />
+							<label for="consent">I'm happy for this location and note to be shown publicly on this
+								map.</label>
+						</div>
+
+						<div class="ump-row">
+							<button type="button" class="ump-btn" id="confirm">Add my pin</button>
+							<button type="button" class="ump-btn ump-link" id="back">Change place</button>
+						</div>
+					</div>
+
+					<p class="ump-msg" id="msg" role="status" aria-live="polite"></p>
+				</form>
+			</div>
+
+			<p class="map-foot">
+				Pins show a town or city, never a street address. We keep only what you see here:
+				the location, your optional note, and the date it was added.
+			</p>
+
+			<div class="clear-left">&nbsp;</div>
+		</div>

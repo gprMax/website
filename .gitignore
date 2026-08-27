@@ -1,0 +1,26 @@
+# Local build
+_site/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+.bundle/
+
+# Not part of the deployed site (kept in local backup)
+offline/
+extras/
+
+# Retired Apache/PHP era — kept locally for reference during migration
+scripts/
+users/submit_pin.php
+
+# Superseded by _includes/ — kept locally until the migration is signed off
+ssi/
+
+# UNDECIDED (BUILD-SPEC §5): 551 user-submitted entries. A public repo makes
+# every submission permanently versioned, so an erasure request would mean
+# rewriting history. Held back until that call is made; the map renders empty
+# without it.
+users/
+
+# OS noise
+.DS_Store

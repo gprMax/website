@@ -1,0 +1,89 @@
+{%- comment -%}
+  Shared sidebar. Announcements come from _data/announcements.yml and are
+  filtered to the last 12 months here, so the editorial rule is enforced
+  rather than relying on someone remembering it.
+
+  Leaflet's stylesheet is NOT loaded here — it lives in <head> via the
+  layout's `leaflet` flag, so it no longer blocks the parser mid-document.
+{%- endcomment -%}
+{%- assign cutoff = 'now' | date: "%s" | plus: 0 | minus: 31536000 -%}
+
+<aside id="floating-panel">
+
+	<div class="stats-container">
+		<details open>
+			<summary>
+				<h2>Get gprMax</h2>
+			</summary>
+			<p class="get-lede">Open-source electromagnetic simulation, built for GPR. Free under GPLv3;
+				runs on CPUs and GPUs.</p>
+			<p class="get-actions">
+				<a class="btn-sm" href="{{ site.releases_url }}">Download</a>
+				<a href="{{ site.install_url }}">Install guide</a>
+				<a href="{{ site.docs_url }}">Docs</a>
+			</p>
+		</details>
+	</div>
+
+	<div class="stats-container">
+		<details open>
+			<summary>
+				<h2>Announcements</h2>
+			</summary>
+			{%- assign recent = site.data.announcements | sort: "date" | reverse -%}
+			{%- for a in recent -%}
+			{%- assign stamp = a.date | date: "%s" | plus: 0 -%}
+			{%- if stamp > cutoff -%}
+			<div class="announce-feature">
+				<p class="announce-feature-title">
+					{%- if a.tag %}<span class="hero-tag">{{ a.tag }}</span>{% endif -%}
+					<a href="{{ a.href | relative_url }}">{{ a.title }}</a></p>
+				{%- if a.summary %}
+				<p class="announce-feature-sub">{{ a.summary }}
+					{%- for l in a.links %} <a href="{{ l.href | relative_url }}">{{ l.text }}</a>{% unless forloop.last %} &middot;{% endunless %}{% endfor -%}
+				</p>
+				{%- endif %}
+			</div>
+			{%- endif -%}
+			{%- endfor %}
+			<p class="announce-all"><a href="{{ '/news.shtml' | relative_url }}">All news &rarr;</a></p>
+		</details>
+	</div>
+
+	<div class="stats-container">
+		<details open>
+			<summary>
+				<h2>Usage</h2>
+			</summary>
+			<div id="gprmax-usermap">
+				<div id="gprmax-usermap-canvas"></div>
+				<a id="gprmax-usermap-veil" href="{{ '/usermap.shtml' | relative_url }}">
+					<span class="gm-line">
+						<span class="gm-text" id="gprmax-usermap-text">Users around the world</span>
+						<span class="gm-cta">Add your pin &rarr;</span>
+					</span>
+				</a>
+			</div>
+			<div class="spark-tile">
+				<p class="stat-value" id="gh-clones-num">...</p>
+				<p class="stat-label">GitHub unique clones &middot; 365 days</p>
+				<svg class="sparkline" id="gh-clones-spark" viewBox="0 0 100 30" preserveAspectRatio="none"
+					aria-hidden="true"></svg>
+				<p class="spark-sub" id="gh-clones-sub"></p>
+			</div>
+			<div class="spark-tile">
+				<p class="stat-value" id="gh-visitors-num">...</p>
+				<p class="stat-label">GitHub unique visitors &middot; 365 days</p>
+				<svg class="sparkline" id="gh-visitors-spark" viewBox="0 0 100 30" preserveAspectRatio="none"
+					aria-hidden="true"></svg>
+				<p class="spark-sub" id="gh-visitors-sub"></p>
+			</div>
+		</details>
+	</div>
+
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+		integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+	<script src="{{ '/js/usage-map.js' | relative_url }}"></script>
+	<script src="{{ '/js/gh-stats.js' | relative_url }}"></script>
+
+</aside>

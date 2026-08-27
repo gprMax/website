@@ -1,0 +1,354 @@
+---
+title: "gprMax: News archive"
+description: "News archive for gprMax, the open source electromagnetic simulation software for modelling Ground Penetrating Radar."
+body_id: news
+sidebar: true
+gtm: true
+leaflet: true
+---
+
+
+			<h1>News archive</h1>
+
+{% include sidebar.html %}
+
+			<h2 id="v4-release">gprMax v4.0.0 &ldquo;Caol Ila&rdquo; released<span class="subtitle">31-Aug-2026</span></h2>
+
+			<div class="release-note">
+				<p><strong>gprMax v4.0.0</strong> is our biggest release since the software was rewritten in
+					Python &mdash; a decade of development on the v3 line, consolidated and modernised.
+					<a href="https://github.com/gprMax/gprMax/releases">Get it from GitHub</a> or follow the
+					<a href="https://docs.gprmax.com/en/latest/include_readme.html#installation">installation
+					guide</a>.</p>
+			</div>
+
+			<p>Version 4 adds OpenCL and Apple Metal solvers alongside CUDA and OpenMP, MPI for
+				multi-node simulations, eigenmode ports with S-parameter outputs, near-to-far-field
+				transformations, and a full Python API &mdash; the complete rundown is on the
+				<a href="{{ '/about.shtml' | relative_url }}">About page</a>. Questions about upgrading? Ask in
+				<a href="https://github.com/gprMax/gprMax/discussions">GitHub Discussions</a>.</p>
+
+			<h2 id="gpr2026">GPR2026 conference<span class="subtitle">12-Feb-2026</span></h2>
+			<figure class="left" style="margin: -15px 0 -15px -5px;">
+				<picture>
+					<source srcset="images/GPR2026-logo-dark.png" media="(prefers-color-scheme:dark)">
+					<img src="{{ '/images/GPR2026-logo.png' | relative_url }}" alt="GPR2026 logo" width="500" height="178" />
+				</picture>
+			</figure>
+			<p><br />The <a href="https://www.gpr2026.org">21st International Conference on Ground Penetrating Radar (GPR2026)</a> was hosted by Northumbria University in Newcastle upon Tyne, United Kingdom from 23-26 June 2026.
+
+				The 4-day event explored advancements in Ground Penetrating Radar (GPR) techniques and applications. A wide range of high-quality scientific and technical information was presented, relevant for scientists, engineers, and end-users of GPR technologies from academia and industry.</p>
+			<div class="clear-left"></div>
+
+			<h2 id="iwagpr2025">IWAGPR2025 conference<span class="subtitle">17-Apr-2025</span></h2>
+			<figure class="left" style="margin-top: 0;"><img src="{{ '/images/IWAGPR2025_logo.png' | relative_url }}" alt="IWAGPR2025 logo" width="490"
+					height="152" /></figure>
+			<p>The <a href="https://iwagpr2025.gr/">13th International Workshop on Advanced
+					Ground Penetrating Radar (IWAGPR2025)</a> took place between 2-4 July 2025, hosted by Aristotle University of Thessaloniki, Thessaloniki, Greece. 
+					This biennial workshop brings together scientists, engineers, industrial delegates, and end-users to share the latest developments in GPR, from fundamental advances in methods and technologies to compelling case studies.</p>
+			<p>We gave a pre-conference workshop on gprMax on the 1st July 2025, with sessions on the underpinning theory and
+				finite-difference time-domain (FDTD) method, as well as hands-on demonstration and examples using
+				gprMax.</p>
+			<div class="clear-left"></div>			
+			
+			<h2 id="gsoc2025">Google Summer of Code 2025<span class="subtitle">02-Mar-2025</span></h2>
+			<figure class="left" style="margin-top: 0;"><img src="{{ '/images/GSoC-Vertical.png' | relative_url }}" alt="GSoC logo" width="200"
+					height="200" /></figure>
+			<p>We are once again delighted that gprMax has been selected to partipate in the <a
+					href="https://summerofcode.withgoogle.com/">Google Summer of Code (GSoC) programme</a> for 2025,
+				having successfully particated in 2019, 2021, 2023, and 2024. We are 1 of 54 orgs worldwide in the
+				science and
+				medicine category.</p>
+			<p>We hosted an <strong>online project briefing session via Zoom on Friday 21st March 0930-1030 GMT</strong>. In the session we talked about gprMax and the codebase, as well as gave a more detailed
+				description of each of the projects. We
+				think this will be helpful to applicants both in selecting a project and shaping their application.</p>
+
+			<p>Please read our list of projects and project proposal template (which will help you in
+				developing and structuring your project proposal):<br />
+
+				<a
+					href="https://github.com/gprMax/GSoC/blob/main/project-ideas-2025.md">https://github.com/gprMax/GSoC/blob/main/project-ideas-2025.md</a><br />
+				<a
+					href="https://github.com/gprMax/GSoC/blob/main/project-template.md">https://github.com/gprMax/GSoC/blob/main/project-template.md</a>
+			</p>
+
+			<p>You should install gprMax and try some of our example models - as this will help understand the basics
+				of what gprMax does. Any GSoC2025 project should use our 'devel' code branch on GitHub. You may also
+				like to take a look at our <a href="{{ '/publications.shtml' | relative_url }}">publications list</a>, and in
+				particular our 2016 paper 'gprMax:
+				Open source software to simulate electromagnetic wave propagation for Ground Penetrating Radar', which
+				describes gprMax and some of its key features and applications.</p>
+			<div class="clear-left"></div>
+
+			<h2>Google Summer of Code 2024<span class="subtitle">27-Feb-2024</span></h2>
+			<figure class="left" style="margin-top: 0;"><img src="{{ '/images/GSoC-Vertical.png' | relative_url }}" alt="GSoC logo" width="200"
+					height="200" /></figure>
+			<p>We are delighted that gprMax has been selected to partipate in the <a
+					href="https://summerofcode.withgoogle.com/">Google Summer of Code (GSoC) programme</a> for 2024,
+				having successfully particated in 2019, 2021, and 2023. We are 1 of 56 orgs worldwide in the science and
+				medicine category.</p>
+			<p>We hosted an online project briefing session on Friday 1st March, 0930-1030 GMT. In the session we talked
+				about gprMax and the codebase, as well as gave a more detailed description of each of the projects. We
+				think this will be helpful to applicants both in selecting a project and shaping their application. You
+				can <a href="https://youtu.be/0VhICoYJEPs?si=eT-gW0QIkgBulMkQ">watch a recording of the session on our
+					YouTube channel.</a></p>
+			<div class="clear-left"></div>
+
+			<h2>GPR2024 conference<span class="subtitle">24-Jan-2024</span></h2>
+			<p>The <a href="https://gpr2024.jlu.edu.cn/webinfo/viewenglish?id=346">20th International Conference on
+					Ground Penetrating Radar (GPR2024)</a> took place between 23-27 June 2024, hosted by Jilin
+				University, Changchun, China. The conference showcased the latest GPR research and technology as
+				well as its wide range of applications.</p>
+			<p>We gave a pre-conference workshop on 23 June 2024, with sessions on the underpinning theory and
+				finite-difference time-domain (FDTD) method, as well as hands-on demonstration and examples using
+				gprMax.</p>
+			<div class="clear-left"></div>
+
+			<h2>Google Summer of Code 2023<span class="subtitle">08-Mar-2023</span></h2>
+			<figure class="left" style="margin-top: 0;"><img src="{{ '/images/GSoC-Vertical.png' | relative_url }}" alt="GSoC logo" width="200"
+					height="200" /></figure>
+			<p>We are delighted that gprMax has been selected to partipate in the <a
+					href="https://summerofcode.withgoogle.com/">Google Summer of Code (GSoC) programme</a> for 2023,
+				having successfully particated in 2019 and 2021. We are 1 of 42 orgs worldwide in the science and
+				medicine category.</p>
+
+			<p>We hosted an online project briefing session on Friday 17th March, 0930-1030 GMT. In the session we
+				talked about gprMax and the codebase, as well as gave a more detailed description of each of the
+				projects. We think this will be helpful to applicants both in selecting a project and shaping their
+				application. You can <a href="https://youtu.be/ovd-ulBbUDI">watch a recording of the session on our
+					YouTube channel.</a></p>
+			<div class="clear-left"></div>
+
+			<h2>gprMax prize winners at IWAGPR2021<span class="subtitle">21-Feb-2022</span></h2>
+			<figure class="left" style="margin-top: 0;"><img src="{{ '/images/IWAGPR2021.jpg' | relative_url }}" alt="IWAGPR2021 team"
+					width="400" height="300" />
+				<figcaption>Rania Patsia (<em>far right</em>) &amp; Sylwia Majchrowska (<em>2nd from left</em>) won
+					prizes at IWAGPR2021.</figcaption>
+			</figure>
+			<p>Two members of the gprMax team won prizes at the <span>11th International
+					Workshop on Advanced Ground Penetrating Radar</span>:</p>
+			<ul>
+				<li><strong>Rania Patsia</strong> - PhD student at the University of Edinburgh (UK) - won the best oral
+					presentation / young scientist award for her work <em>A Deep Learning framework for Ground
+						Penetrating Radar.</em></li>
+				<li><strong>Sylwia Majchrowska</strong> - PhD student at Wroclaw University of Science and Technology
+					(Poland) - jointly won best poster for her work <em>Modelling Arbitrary Complex Dielectric
+						Properties -- an automated implementation for gprMax.</em> Sylwia's work was carried out during
+					her participation in <a href="https://summerofcode.withgoogle.com/">Google Summer of Code</a> (GSoC)
+					2021.</li>
+			</ul>
+			<div class="clear-left"></div>
+
+			<h2>Paper Highlight - gprMax used for modelling RIMFAX GPR on NASA Mars Rover<span
+					class="subtitle">13-Dec-2020</span></h2>
+			<figure class="left" style="margin-top: 0;"><img src="{{ '/images/mars-perseverance.jpg' | relative_url }}"
+					alt="Mars2020 Perseverance Rover" width="550" height="309" />
+				<figcaption>Mars2020 Perseverance Rover (Copyright: NASA)</figcaption>
+			</figure>
+			<p>A very exciting and interesting paper entitled <strong>Radar Imager for Mars’ Subsurface
+					Experiment—RIMFAX</strong> has recently been published by Hamran <em>et al</em> in Springer's <a
+					href="https://www.springer.com/journal/11214">Space Science Reviews</a> journal. The paper describes
+				RIMFAX, part of the payload for NASA’s Mars 2020 Perseverance Rover, which has been designed to image
+				the subsurface structure of Mars, and to provide information regarding subsurface composition.</p>
+			<p>&ldquo;Data provided by RIMFAX will aid Perseverance’s mission to explore the ancient habitability of its
+				field area and to select a set of promising geologic samples for analysis, caching, and eventual return
+				to Earth.&rdquo;</p>
+			<p>The research team describe the use of gprMax to carry out numerical modelling to assess GPR imaging
+				potential at the landing site. Some of the recent advanced features in gprMax, such as fractal-based
+				roughness for realistic topographic modelling, have been utilised.</p>
+			<p>The paper is available, open access, at: <a
+					href="https://doi.org/10.1007/s11214-020-00740-4">https://doi.org/10.1007/s11214-020-00740-4</a></p>
+			<div class="clear-left"></div>
+
+			<h2>Videos released from online workshop<span class="subtitle">10-Aug-2020</span></h2>
+			<figure class="left" style="margin-top: 0; margin-bottom: 0;"><img src="{{ '/images/workshop_videos.png' | relative_url }}"
+					alt="workshop_videos.png" width="294" height="168" /></figure>
+			<p>We have released video recordings of sessions from our recent online workshop on 'GPR modelling using
+				gprMax' on our YouTube channel, where you can <strong><a
+						href="https://www.youtube.com/playlist?list=PLf_lDHRs1yH6h5T-s-RvPbkdXFMqLrhy4">access a
+						playlist of the event.</a></strong></p>
+			<p>The first of its kind on GPR modelling, the workshop proved to be a great success, and we received a lot
+				of positive feedback from the attendees. Here are a few statistics from the event:</p>
+			<div class="clear-left"></div>
+			<ul>
+				<li>~330 delegates registered for the event.</li>
+				<li>There were <strong>~170 unique viewers per day</strong> from <strong>~44 different countries
+						worldwide.</strong>
+				<li>Most attendees use (or plan to use) gprMax for solving GPR related problems.</li>
+				<li>Level of familiarity with gprMax was mixed but with most attendees either only having discovered it
+					for the first time, or having run some basic models.</li>
+				<li><strong>97%</strong> of attendees (that voted in the poll) would like to see this <strong>workshop
+						become an annual event.</strong></li>
+				<li><strong>99%</strong> of attendees (that voted in the poll) would like to see <strong>further
+						dedicated workshop/training events on specific aspects</strong> or applications of GPR
+					modelling.</li>
+				<li><strong>84%</strong> of attendees (that voted in the poll) said they would be <strong>willing to pay
+						a small registration fee</strong> to attend such events.</li>
+			</ul>
+
+			<h2 id="workshop2020">3-day online workshop on GPR modelling with gprMax<span class="subtitle">24-Jun-2020</span></h2>
+			<figure class="left" style="margin-top: 0;"><img src="{{ '/images/gprMax_workshop_flyer_opt.jpg' | relative_url }}"
+					alt="gprMax_workshop_flyer_opt.jpg" width="400" height="283" /></figure>
+			<p>A free <strong>3-day online workshop</strong> will take place on <strong>29-31 July 2020</strong>.</p>
+			<p>This workshop replaces the planned face-to-face event that was due to take place 6-7 April 2020 at <a
+					href="https://www.northumbria.ac.uk">Northumbria University</a>, Newcastle, UK, and had to be
+				postponed due to the coronavirus pandemic.</p>
+			<p>The workshop is being organised by <a
+					href="https://www.northumbria.ac.uk/about-us/our-staff/w/craig-warren/">Dr Craig Warren</a>
+				(Northumbria University, UK), <a href="https://www.research.ed.ac.uk/en/persons/antonis-giannopoulos">Dr
+					Antonis Giannopoulos</a> (University of Edinburgh, UK), and <a
+					href="https://www.linkedin.com/in/dr-iraklis-giannakis">Dr Iraklis Giannakis</a>
+				(University of Aberdeen)</p>
+			<details>
+				<summary>
+					<h3 style="padding: 5px 20px 5px 0;">What the workshop covered</h3>
+				</summary>
+				<p>A series of presentations, case studies, hands-on sessions, and invited talks covering the
+					development of GPR models from simple 2D simulations to realistic 3D scenarios; the
+					Finite-Difference Time-Domain (FDTD) method underlying gprMax; advanced tools such as antenna
+					models, sub-grids, Perfectly Matched Layers, and frequency-dispersive materials; heterogeneous
+					and dispersive models for realistic soils and sediments; and how AI and machine learning are
+					being used for automatic interpretation and inversion of GPR data.</p>
+				<p><strong>Day 1</strong> was an introduction for people who had never used gprMax: the theory and
+					numerical method behind it, an overview of the software and a first simple model, closing with
+					industry perspectives on GPR numerical modelling.</p>
+				<p><strong>Day 2</strong> opened with features then in development &mdash; sub-gridding and a full
+					API &mdash; followed by presentations on complex material modelling, simulating GPR antennas,
+					and an industry-developed GUI for 2D models.</p>
+				<p><strong>Day 3</strong> mixed machine learning with GPR simulations, landmine modelling, the
+					importance of absorbing boundaries, and gprMax within full waveform inversion, concluding with
+					an open discussion on future features and directions.</p>
+				<p>Recordings of the sessions are on our
+					<a href="https://www.youtube.com/playlist?list=PLf_lDHRs1yH6h5T-s-RvPbkdXFMqLrhy4">YouTube
+					channel</a>.</p>
+			</details>
+			<div class="clear-left"></div>
+
+			<h2>Paper Highlight - Our paper on GPU version published in Computer Physics Communications<span
+					class="subtitle">23-Nov-2018</span></h2>
+			<figure class="left" style="margin-top: 0;"><img src="{{ '/images/cpu_gpu_perf.png' | relative_url }}" alt="CPU and GPU performance"
+					width="400" height="397" />
+				<figcaption>CPU vs. GPU performance (single precision, float32)</figcaption>
+			</figure>
+			<p>We are pleased to announce our <a href="https://doi.org/10.1016/j.cpc.2018.11.007">paper describing the
+					new GPU performance enhancements to gprMax</a> has been published in the journal of <a
+					href="http://www.journals.elsevier.com/computer-physics-communications/">Computer Physics
+					Communications</a>.</p>
+			<p>We designed optimal kernels for GPU execution using <a
+					href="http://www.nvidia.co.uk/object/cuda-parallel-computing-uk.html">NVIDIA's Compute-Unified
+					Device Architecture (CUDA)</a>. We tested our GPU-based solver on a range of Kepler and Pascal
+				NVIDIA GPUs. It achieved performance benefits up to 30 times faster than the parallelised (OpenMP) CPU
+				solver can achieve on a commonly-used desktop CPU (Intel Core i7-4790K), and significantly faster than a
+				server CPU (Intel Xeon E5-2640).</p>
+			<p>We expect these performance benefits to rapidly advance GPR research in areas such as full-waveform
+				inversion and machine learning</p>
+			<p>We carried out this work as part of a project with <a href="https://fiber.google.com/about/">Google
+					Fiber</a> (USA), and had support from <a href="https://www.nvidia.com/en-gb/">NVIDIA</a> (UK).</p>
+			<p>The paper is open-access and we would appreciate that if you use gprMax and publish your work, <a
+					href="http://www.gprmax.com/publications.shtml">you would cite this new paper</a>.</p>
+			<div class="clear-left"></div>
+
+			<h2>GPR2018 Young Scientist winner uses gprMax<span class="subtitle">23-Jun-2018</span></h2>
+			<figure class="left" style="margin-bottom: 0; margin-right: 25px"><img src="{{ '/images/sam.jpg' | relative_url }}"
+					alt="GPR2018 Young Scientist winner" width="300" height="225" />
+				<figcaption>Sam wins GPR2018 prize</figcaption>
+			</figure>
+			<p>The Young Scientist Best Paper Award at the <span>17th International Conference on
+					Ground Penetrating Radar (GPR2018)</span> was won by <a
+					href="https://www.researchgate.net/profile/Sam_Stadler">Sam Stadler</a> from the <a
+					href="https://www.leibniz-liag.de/en/home.html">Leibniz Institute for Applied Geophysics</a>,
+				Hannover, Germany. This is the second time in a row that this prize has been won by a researcher using
+				gprMax, after Markus Loewer won the award at GPR2016.</p>
+			<p>Sam developed a detailed and realistic antenna model similar to the <a
+					href="https://www.geophysical.com">Geophysical Survey Systems, Inc (GSSI)</a> 400MHz antenna. He has
+				used the model as a key component in simulations to investigate using guided GPR waves along metallic
+				cylinders in boreholes for permittivity sounding. You will be able to read Sam's paper when the
+				conference proceedings are published by the IEEE. Well done Sam!</p>
+			<div class="clear-left"></div>
+
+			<h2>Version 3.1 - with GPU acceleration - released!<span class="subtitle">19-Jun-2017</span></h2>
+			<p style="padding-top: 15px;">We are excited to announce the release of version 3.1. Code-named <em>Big
+					Smoke</em>, it continues our whisky-based naming, and is also a reference to the cities of <a
+					href="https://goo.gl/maps/5qMnreHRPYp">Edinburgh (Scotland)</a> and <a
+					href="https://goo.gl/maps/syMa2RFkmFU2">San Francisco (USA)</a>. Why? Because the development of
+				v.3.1 was funded, through a research project, by <a href="http://www.google.com">Google</a>.</p>
+			<p>We made this release available to coincide with the <a href="http://www.iwagpr2017.org">9th
+					International Workshop on Advanced Ground Penetrating Radar (IWAGPR2017)</a> which we hosted
+				on 28-30 June. We discussed the release with participants at our pre-conference
+				workshop, and delegates at the conference.</p>
+			<p>The most significant feature of this release is the ability for simulations to utilise general-purpose
+				computing using graphics processing units (GPGPU). We have used <a
+					href="http://www.nvidia.co.uk/object/cuda-parallel-computing-uk.html">NVIDIA's Compute-Unified
+					Device Architecture (CUDA)</a>. Our testing on both consumer and data centre NVIDIA GPU cards has
+				shown dramatic performance increases over our parallelised CPU (OpenMP) implementation.</p>
+			<p>For example, in the figure shown, a model with 400x400x400 = 64 Mcells could run up to 20 times faster on
+				a NVIDIA TITAN X GPU than on 4 cores of
+				a Intel&reg; Core&trade; i7-4790K CPU. These types of speed improvement open up a lot of new
+				opportunities and possibilites for FDTD simulations, not just for GPR!</p>
+			<p>You can read about how to use the GPU functionality and find full documentation in our <a
+					href="http://docs.gprmax.com">User Guide</a>. Please report any bugs with the code via the Issues
+				feature on <a href="https://github.com/gprmax/gprMax">our GitHub page</a>. For help and general advice
+				on using the software visit our <a href="https://github.com/gprMax/gprMax/discussions">GitHub Discussions</a>.</p>
+			<div class="clear-left"></div>
+
+			<h2>GPR Imaging Challenge<span class="subtitle">24-May-2017</span></h2>
+			<figure class="right" style="margin-top: 0;"><img src="{{ '/images/imaging_challenge_surface_roughness.png' | relative_url }}"
+					alt="Imaging Challenge Model Outline" width="434" height="200" />
+				<figcaption>Imaging challenge model outline</figcaption>
+			</figure>
+			<p>The <a href="http://www.iwagpr2017.org">9th International Workshop on Advanced Ground Penetrating Radar
+					(IWAGPR 2017)</a> is being hosted by the <a href="http://www.eng.ed.ac.uk">School of Engineering</a>
+				at <a href="http://www.ed.ac.uk">the University of Edinburgh</a>. We have therefore decided to design
+				what we believe to be a realistic 3D GPR model which we think offers a challenge for testing GPR
+				processing, imaging, and inversion algorithms. Before releasing information on the detailed construction
+				and composition of this model (to be used by the GPR research community) we would like to offer the
+				modelled data as an imaging and interpretation challenge to GPR researchers. We have scheduled a session
+				in the <a href="http://www.iwagpr2017.org/programme.shtml">IWAGPR2017 conference programme</a>, in which
+				we hope some results can be presented. The dataset and a full set of instructions can be found at our <a
+					href="https://github.com/gprMax/iwagpr2017-model">GitHub repository</a>.</p>
+
+			<h2>Highlight - Paper published in Computer Physics Communications<span class="subtitle">27-Sep-2016</span>
+			</h2>
+			<figure class="left" style="margin-bottom: 0; margin-right: 25px"><iframe class="video" width="258"
+					height="231"
+					src="http://audioslides.elsevier.com//ViewerSmall.aspx?source=1&doi=10.1016/j.cpc.2016.08.020"></iframe>
+			</figure>
+			<p>We are pleased to announce that our <a href="http://dx.doi.org/10.1016/j.cpc.2016.08.020">paper
+					describing the new version of gprMax</a> has been published in the journal of <a
+					href="http://www.journals.elsevier.com/computer-physics-communications/">Computer Physics
+					Communications</a>. Some of the new advanced features of the software explained in the paper are:
+				<strong>dispersive material simulation</strong> using multi-pole Debye, Drude or Lorenz expressions;
+				<strong>realistic soil modelling</strong>; <strong>rough surface generation</strong>; and the ability to
+				embed <strong>complex transducers and targets</strong>.
+			</p>
+			<p>The paper is open-access and we would appreciate that if you use gprMax and publish your work, <a
+					href="http://www.gprmax.com/publications.shtml">you would cite this new paper</a>.</p>
+			<p>Have a look/listen to the <a
+					href="http://audioslides.elsevier.com//ViewerSmall.aspx?source=1&doi=10.1016/j.cpc.2016.08.020">audioslides</a>
+				(~5mins) which briefly explain GPR and gprMax and describe the key features of the paper.</p>
+			<div class="clear-left"></div>
+
+			<h2>Featured project on spectral soil properties<span class="subtitle">02-Aug-2016</span></h2>
+			<p>The latest in our series of <a href="{{ '/' | relative_url }}">showcased projects</a> is by <a
+					href="https://www.liag-hannover.de/en/s/s2/staff.html">Markus Loewer</a> from the <a
+					href="https://www.liag-hannover.de/en/home.html">Leibniz Institute for Applied Geophysics</a> in
+				Germany. Markus was the GPR2016 Young Scientist winner, and is using the <a
+					href="http://docs.gprmax.com/en/latest/features.html#dispersive-materials">new dispersive material
+					modelling capabilities</a> to create multi-pole Debye models to accurately simulate the
+				frequency-dependent dielectric properties of different soils. <a href="index.shtml#liag-soils">Read more</a>
+				about it in the projects section.</p>
+
+			<h2>Screencasts &amp; videos<span class="subtitle">13-Jul-2016</span></h2>
+			<figure class="left" style="margin-top: 0;"><iframe class="video" width="333" height="250"
+					src="https://www.youtube.com/embed/g744O_wb14I" allowfullscreen></iframe>
+				<figcaption>PEC cylinder in heterogeneous (left) &amp; homogeneous (right) half-spaces (2D)</figcaption>
+			</figure>
+			<p>We have added some screencasts and videos to <a
+					href="https://www.youtube.com/channel/UCT8Id_3FUIZ4Vnk8y8BxNuQ">our YouTube channel</a>. There are
+				screencasts to help new users with installing and updating gprMax. We have also created videos, like the
+				one shown here, that demonstrate how electromagnetic fields propagate in different environments. These
+				are fairly simple 2D models but, nevertheless, are educational and provide some useful insight. We will
+				be adding videos of more complex simulations as well as screencasts of guided example models. You can
+				find a list of all the screencasts &amp; videos in the <a
+					href="http://docs.gprmax.com/en/latest/screencasts.html">User Guide</a>.</p>
+			<div class="clear-left"></div>

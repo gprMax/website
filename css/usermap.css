@@ -1,0 +1,420 @@
+/* ============================================================
+   gprMax community map — page styles.
+   Save as css/usermap.css.
+
+   Everything here is namespaced under #usermap-wrap or the .ump-
+   prefix so it cannot collide with main.css or navbar.css.
+   Colours and fonts are taken from main.css: the pins and the
+   headings share the site purple, rgba(85, 3, 127, 1).
+   ============================================================ */
+
+/* Scoped to :where(body), not :root — the site tokens these derive from
+   are declared on body and are not visible above it. Literal lines are
+   fallbacks for browsers without color-mix; both modes flow from the
+   site palette automatically. */
+:where(body) {
+	--ump-purple: var(--heading);
+	--ump-purple-soft: rgba(85, 3, 127, 0.09);
+	--ump-purple-soft: color-mix(in srgb, var(--heading) 9%, transparent);
+	--ump-purple-edge: rgba(85, 3, 127, 0.22);
+	--ump-purple-edge: color-mix(in srgb, var(--heading) 22%, transparent);
+	--ump-hair: var(--border);
+	--ump-grey: var(--text-secondary);
+	--ump-paper: var(--page);
+	--ump-err: rgba(175, 35, 25, 1);
+	--ump-ok: rgba(20, 110, 75, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+	:where(html:not([data-theme='light']) body) {
+		--ump-err: #f2796b;
+		--ump-ok: #57c99b;
+	}
+}
+
+html[data-theme='dark'] body {
+	--ump-err: #f2796b;
+	--ump-ok: #57c99b;
+}
+
+/* ------------------------------------------------------------ page --- */
+
+#main-content h1.map-title {
+	font-family: var(--font-display);
+	font-size: 1.8em;
+	color: var(--ump-purple);
+	margin: 0 0 6px 0;
+	padding: 0;
+}
+
+#main-content p.map-intro {
+	font-family: var(--font-sans);
+	font-size: 1em;
+	max-width: 60em;
+	margin: 0 0 18px 0;
+}
+
+#main-content p.map-foot {
+	font-family: var(--font-sans);
+	font-size: 0.75em;
+	color: var(--ump-grey);
+	margin: 12px 0 0 0;
+}
+
+/* ------------------------------------------------------------- map --- */
+
+#usermap-wrap {
+	position: relative;
+	width: 100%;
+	height: 640px;
+	border: 1px solid var(--ump-hair);
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+#usermap {
+	position: absolute;
+	inset: 0;
+	background: var(--surface);
+}
+
+#usermap-wrap .leaflet-container {
+	background: var(--surface);
+	font-family: var(--font-sans);
+}
+
+/* while choosing a spot, the whole map is a target */
+#usermap-wrap.picking .leaflet-container { cursor: crosshair; }
+
+/* ---------------------------------------------------------- panels --- */
+
+.ump {
+	position: absolute;
+	z-index: 500;
+	background: var(--ump-paper);
+	border: 1px solid var(--ump-hair);
+	border-radius: 6px;
+	box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+	font-family: var(--font-sans);
+	color: var(--ump-purple);
+}
+
+/* "just the map" — every panel goes; the restore button wins it back
+   below on ID specificity */
+#usermap-wrap.clean .ump { display: none; }
+
+#ump-info {
+	top: 14px;
+	left: 14px;
+	padding: 14px 18px 13px;
+	max-width: 360px;
+}
+
+.ump-counts {
+	display: flex;
+	gap: 20px;
+}
+
+.ump-count .n {
+	display: block;
+	font-family: var(--font-display);
+	font-size: 22px;
+	line-height: 1;
+	color: var(--ump-purple);
+	font-variant-numeric: tabular-nums;
+}
+
+.ump-count .l {
+	display: block;
+	margin-top: 5px;
+	font-size: 10px;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+	color: var(--ump-grey);
+}
+
+.ump-controls {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 13px;
+	padding-top: 12px;
+	border-top: 1px solid var(--ump-hair);
+}
+
+/* ---------------------------------------------------------- widgets --- */
+
+.ump-seg {
+	display: inline-flex;
+	border: 1px solid var(--ump-hair);
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.ump-seg button {
+	font: inherit;
+	font-size: 12px;
+	padding: 6px 11px;
+	background: var(--ump-paper);
+	color: var(--ump-grey);
+	border: 0;
+	cursor: pointer;
+}
+
+.ump-seg button + button { border-left: 1px solid var(--ump-hair); }
+.ump-seg button:hover { color: var(--ump-purple); }
+
+.ump-seg button[aria-pressed="true"] {
+	background: var(--ump-purple-soft);
+	color: var(--ump-purple);
+	font-weight: 700;
+}
+
+.ump-btn {
+	font: inherit;
+	font-size: 12.5px;
+	font-weight: 700;
+	padding: 7px 14px;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	background: var(--ump-purple);
+	color: var(--ump-paper);
+	cursor: pointer;
+}
+
+.ump-btn:hover { opacity: 0.85; }
+.ump-btn[disabled] { opacity: 0.45; cursor: default; }
+
+.ump-btn.ump-ghost {
+	background: var(--ump-paper);
+	border-color: var(--ump-hair);
+	color: var(--ump-purple);
+}
+.ump-btn.ump-ghost:hover { background: var(--surface); opacity: 1; }
+
+.ump-btn.ump-link {
+	background: none;
+	border: 0;
+	font-weight: 400;
+	color: var(--ump-grey);
+	padding: 6px 3px;
+	text-decoration: underline;
+}
+.ump-btn.ump-link:hover { color: var(--ump-purple); opacity: 1; }
+
+#usermap-wrap button:focus-visible,
+#usermap-wrap input:focus-visible {
+	outline: 2px solid var(--ump-purple);
+	outline-offset: 2px;
+}
+
+/* --------------------------------------------------------- add form --- */
+
+#ump-add {
+	bottom: 14px;
+	left: 14px;
+	width: 330px;
+	padding: 16px 18px;
+	display: none;
+}
+#ump-add.open { display: block; }
+
+#ump-add h2 {
+	font-family: var(--font-display);
+	font-size: 15px;
+	margin: 0 0 4px 0;
+	padding: 0;
+	color: var(--ump-purple);
+}
+
+.ump-hint {
+	font-size: 12px;
+	color: var(--ump-grey);
+	line-height: 1.5;
+	margin: 0 0 13px 0;
+}
+
+.ump-field { margin-bottom: 11px; }
+
+.ump-field label,
+.ump-consent label {
+	display: block;
+	font-size: 10px;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+	color: var(--ump-grey);
+	margin-bottom: 5px;
+}
+
+.ump-field input[type="text"] {
+	width: 100%;
+	font: inherit;
+	font-size: 13px;
+	padding: 8px 10px;
+	border: 1px solid var(--ump-hair);
+	border-radius: 5px;
+	color: var(--ump-purple);
+	background: var(--ump-paper);
+}
+.ump-field input[type="text"]:focus { border-color: var(--ump-purple); }
+.ump-field input::placeholder { color: var(--ump-grey); }
+
+.ump-or {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 11px;
+	color: var(--ump-grey);
+	margin: 12px 0;
+}
+.ump-or::before, .ump-or::after {
+	content: "";
+	flex: 1;
+	height: 1px;
+	background: var(--ump-hair);
+}
+
+/* bots fill this in; people never see it */
+.ump-trap {
+	position: absolute;
+	left: -9999px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.ump-consent {
+	display: flex;
+	gap: 8px;
+	align-items: flex-start;
+	margin-bottom: 13px;
+}
+.ump-consent input { margin-top: 2px; flex: none; }
+.ump-consent label {
+	font-size: 12px;
+	letter-spacing: 0;
+	text-transform: none;
+	color: var(--ump-grey);
+	line-height: 1.45;
+	margin: 0;
+}
+
+.ump-resolved {
+	background: var(--ump-purple-soft);
+	border: 1px solid var(--ump-purple-edge);
+	border-radius: 5px;
+	padding: 10px 12px;
+	margin-bottom: 12px;
+	font-size: 12.5px;
+	line-height: 1.5;
+	color: var(--ump-grey);
+}
+.ump-resolved .where {
+	display: block;
+	margin-top: 2px;
+	color: var(--ump-purple);
+	font-weight: 700;
+}
+
+.ump-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+
+.ump-msg { font-size: 12px; line-height: 1.5; margin: 10px 0 0 0; }
+.ump-msg.err { color: var(--ump-err); }
+.ump-msg.ok { color: var(--ump-ok); }
+
+/* ------------------------------------------------------- picking bar --- */
+
+#ump-picking {
+	top: 14px;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 10px 15px;
+	display: none;
+	align-items: center;
+	gap: 13px;
+	font-size: 13px;
+	max-width: calc(100% - 28px);
+}
+#usermap-wrap.picking #ump-picking { display: flex; }
+#usermap-wrap.picking #ump-info,
+#usermap-wrap.picking #ump-add { display: none; }
+
+.ump-dot {
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	background: var(--ump-purple);
+	flex: none;
+	animation: ump-throb 1.4s ease-in-out infinite;
+}
+@keyframes ump-throb { 50% { opacity: 0.25; } }
+
+/* -------------------------------------------------------- clean view --- */
+
+#ump-restore {
+	bottom: 14px;
+	left: 14px;
+	display: none;
+}
+#usermap-wrap.clean #ump-restore { display: block; }
+
+/* ------------------------------------------------------------ popups --- */
+
+#usermap-wrap .leaflet-popup-content-wrapper {
+	border-radius: 6px;
+	border: 1px solid var(--ump-hair);
+	color: var(--ump-purple);
+}
+#usermap-wrap .leaflet-popup-content {
+	margin: 11px 14px;
+	font-size: 13px;
+	line-height: 1.5;
+}
+.ump-pop-where { display: block; font-weight: 700; margin-bottom: 3px; }
+.ump-pop-note { display: block; color: var(--ump-grey); }
+.ump-pop-when {
+	display: block;
+	margin-top: 6px;
+	font-size: 10px;
+	letter-spacing: 0.06em;
+	color: var(--ump-grey);
+}
+
+/* clustered view */
+.ump-cluster {
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	color: var(--ump-paper);
+	font-family: var(--font-sans);
+	font-weight: 700;
+	font-variant-numeric: tabular-nums;
+	box-shadow: 0 0 0 5px rgba(85, 3, 127, 0.14);
+	box-shadow: 0 0 0 5px color-mix(in srgb, var(--heading) 14%, transparent);
+}
+
+/* the pin being previewed before it is saved */
+.ump-fresh {
+	border-radius: 50%;
+	background: var(--ump-purple);
+	border: 2px solid var(--ump-paper);
+	box-shadow: 0 0 0 0 rgba(85, 3, 127, 0.55);
+	box-shadow: 0 0 0 0 color-mix(in srgb, var(--heading) 55%, transparent);
+	animation: ump-ping 1.9s ease-out infinite;
+}
+@keyframes ump-ping { to { box-shadow: 0 0 0 24px transparent; } }
+
+@media (prefers-reduced-motion: reduce) {
+	.ump-fresh, .ump-dot { animation: none; }
+}
+
+/* --------------------------------------------------------- narrow --- */
+/* main.css sets #container to min-width 1220px, so the site does not go
+   below that on desktop; this only helps if that ever changes. */
+
+@media (max-width: 700px) {
+	#usermap-wrap { height: 520px; }
+	#ump-add { left: 12px; right: 12px; width: auto; bottom: 12px; }
+	#ump-info { max-width: calc(100% - 28px); }
+}

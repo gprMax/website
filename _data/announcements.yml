@@ -1,0 +1,39 @@
+# Announcements shown in the sidebar panel.
+#
+# The sidebar include filters on `date`: only items from the last 12 months
+# are rendered, newest first. Older entries stay here harmlessly and remain
+# in the news archive — the rule is enforced by the include, not remembered
+# by whoever edits this file.
+#
+# `tag: New` renders the accent pill. `href` is the archive anchor.
+
+- title: 'gprMax v4.0.0 &ldquo;Caol Ila&rdquo; released'
+  date: 2026-08-31
+  tag: New
+  href: /news.shtml#v4-release
+  summary: >-
+    OpenCL &amp; Apple Metal solvers, MPI, eigenmode ports, and a full Python API.
+  links:
+    - text: Get it
+      href: https://github.com/gprMax/gprMax/releases
+    - text: Install
+      href: https://docs.gprmax.com/en/latest/include_readme.html#installation
+    - text: Rundown
+      href: /about.shtml
+
+- title: GPR2026 conference
+  date: 2026-02-12
+  href: /news.shtml#gpr2026
+  summary: >-
+    Hosted by Northumbria University, Newcastle upon Tyne, 23&ndash;26 June 2026.
+  links:
+    - text: Read more
+      href: /news.shtml#gpr2026
+
+- title: IWAGPR2025 conference
+  date: 2025-04-17
+  href: /news.shtml#iwagpr2025
+
+- title: Google Summer of Code 2025
+  date: 2025-03-02
+  href: /news.shtml#gsoc2025

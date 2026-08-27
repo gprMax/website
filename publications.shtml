@@ -1,0 +1,60 @@
+---
+title: "gprMax: Electromagnetic simulation software"
+body_id: publications
+sidebar: true
+gtm: false
+mathjax: 3
+leaflet: true
+bib: true
+---
+
+
+	<h1>Publications</h1>
+
+{% include sidebar.html %}
+	<h2>Cite gprMax</h2>
+	<p>If you use gprMax in published work, please cite the principal reference [1], which describes the
+		software and its main features:</p>
+	<ol>
+		<li><strong>Warren, C., Giannopoulos, A., & Giannakis, I. (2016). gprMax: Open source software to simulate electromagnetic wave propagation for Ground Penetrating Radar, <em>Computer Physics Communications</em>, <em>209</em>, 163-170,</strong> <a href="http://dx.doi.org/10.1016/j.cpc.2016.08.020">10.1016/j.cpc.2016.08.020</a>.</li>
+	</ol>
+	<details>
+		<summary>
+			<h3 style="padding: 5px 20px 5px 0;">References for specific features</h3>
+		</summary>
+		<p>If you have used specific elements of the software you might also like to cite: [2] - GPU accelerated solver, [3] - soil modelling, rough surfaces; [4] - dispersive materials; [5] - advanced features of the RIPML; [6, 7] - GPR antenna models. If you wish to reference the development history of gprMax you can also cite [8].</p>
+		<ol start="2">
+			<li>Warren, C., Giannopoulos, A., Gray, A., Giannakis, I., Patterson, A., Wetter, L., & Hamrah, A. (2018). A CUDA-based GPU engine for gprMax: Open source FDTD electromagnetic simulation software, <em>Computer Physics Communications</em>, <em>237</em>, 208-218, <a href="http://doi.org/10.1016/j.cpc.2018.11.007">10.1016/j.cpc.2018.11.007</a>.</li>
+			<li>Giannakis, I., Giannopoulos, A., Warren, C. (2016). A Realistic FDTD Numerical Modeling Framework of Ground Penetrating Radar for Landmine Detection. <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, <em>9</em>(1), 37-51, <a href="http://dx.doi.org/10.1109/JSTARS.2015.2468597">10.1109/JSTARS.2015.2468597</a>.</li>
+			<li>Giannakis, I., Giannopoulos, A. (2014). A Novel Piecewise Linear Recursive Convolution Approach for Dispersive Media Using the Finite-Difference Time-Domain Method. <em>IEEE Transactions on Antennas and Propagation</em>, <em>62</em>(5), 2669-2678, <a href="http://dx.doi.org/10.1109/TAP.2014.2308549">10.1109/TAP.2014.2308549</a>.</li>
+			<li>Giannopoulos, A. (2012). Unsplit Implementation of Higher Order PMLs. <em>IEEE Transactions on Antennas and Propagation</em>, <em>60</em>(3), 1479-1485, <a href="http://dx.doi.org/10.1109/TAP.2011.2180344">10.1109/TAP.2011.2180344</a>.</li>
+			<li>Warren, C., Giannopoulos, A. (2011). Creating finite-difference time-domain models of commercial ground-penetrating radar antennas using Taguchi's optimization method. <em>Geophysics</em>, <em>76</em>(2), G37-G47, <a href="http://dx.doi.org/10.1190/1.3548506">10.1190/1.3548506</a>.</li>
+			<li>Giannakis, I., Giannopoulos, A., Warren, C. (2018). Realistic FDTD GPR antenna models optimised using a novel linear/non-linear Full Waveform Inversion. <em>IEEE Transactions on Geoscience & Remote Sensing</em>, <em>207</em>(3), 1768-1778, <a href="http://dx.doi.org/10.1109/TGRS.2018.2869027">10.1109/TGRS.2018.2869027</a>.</li>
+			<li>Giannopoulos, A. (2005). Modelling ground penetrating radar by GprMax, <em>Construction and Building Materials</em>, <em>19</em>(10), 755-762, <a href="http://dx.doi.org/10.1016/j.conbuildmat.2005.06.007">10.1016/j.conbuildmat.2005.06.007</a>.</li>
+		</ol>
+	</details>
+	<p style="padding-top: 14px;">Also available: <a href="{{ '/contact.shtml' | relative_url }}">PhD theses of the development
+		team</a>.</p>
+
+	<h2>Research using gprMax</h2>
+	<p>Publications citing references [1], [2] and [8], excluding author self-citations &mdash; extracted from
+		<a href="http://www.elsevier.com/online-tools/scopus">Scopus</a> on
+		{{ site.data.bib.updated }}. Applications span
+		<strong>engineering</strong>, <strong>geophysics</strong>, <strong>archaeology</strong>, and
+		<strong>medicine</strong>.</p>
+    
+    <div class="chart-main">
+        <canvas id="pubChart"></canvas>
+    </div>
+
+    <div class="chart-row">
+        <div class="chart-half">
+            <canvas id="subjectChart"></canvas>
+            <p class="chart-note">Subjects are approximate, inferred from paper titles and journals.</p>
+        </div>
+        <div class="chart-half">
+            <canvas id="journalChart"></canvas>
+        </div>
+    </div>
+
+    <table id="pubTable" class="display" style="width:100%"></table>

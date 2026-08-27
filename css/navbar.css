@@ -1,0 +1,250 @@
+/* ==========================================================================
+   gprMax — NAVIGATION BAR STYLE SHEET  (2026 refresh)
+   Drop-in replacement for css/navbar.css. All colours come from the token
+   block in main.css; there are no literal colours in this file.
+
+   Desktop keeps the established tab look: display-face labels on rounded-top
+   tabs, with the current page's tab keyed off the body id (body#news lights
+   li#news-nav, and so on — same mechanism as before).
+
+   Below 1100px the tab row is replaced by the CSS-only slide-in menu ported
+   from GPR2026: a hidden checkbox (#menu-toggler) toggled by the hamburger
+   label (.show-menu), with the nav sliding in via transform: translateX().
+   ========================================================================== */
+
+.menu-toggler {
+    display: none;
+}
+
+.show-menu {
+    display: none;
+}
+
+/* Text alternative for the hamburger (aria-label is not valid on a label
+   element that labels a control) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   DESKTOP TAB ROW
+   The nav is the last flex item in #header and takes a full row beneath the
+   logo and strapline.
+   -------------------------------------------------------------------------- */
+nav {
+    flex: 1 0 100%;
+    align-self: flex-end;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 4px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+}
+
+nav li a {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--heading);
+    text-align: center;
+    padding: 10px 18px 8px 18px;
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+nav li a:link,
+nav li a:visited {
+    color: var(--heading);
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+nav li a:hover {
+    color: var(--heading);
+    text-decoration: underline;
+    opacity: 1;
+}
+
+nav li a:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: -2px;
+    opacity: 1;
+}
+
+nav li a:active {
+    color: var(--heading);
+    text-decoration: none;
+    opacity: 1;
+}
+
+/* Active tab: keyed off the body id. Keep all eight pairs — #forum-nav is
+   still referenced here even though the page is retired (see UPGRADE.md). */
+body#news li#news-nav,
+body#about li#about-nav,
+body#download li#download-nav,
+body#publications li#publications-nav,
+body#docs li#docs-nav,
+body#contact li#contact-nav,
+body#forum li#forum-nav {
+    background: var(--page);
+    border-color: var(--border-strong);
+    border-top: 3px solid var(--accent);
+}
+
+body#news nav li#news-nav a:link, body#news nav li#news-nav a:visited, body#news nav li#news-nav a:active,
+body#about nav li#about-nav a:link, body#about nav li#about-nav a:visited, body#about nav li#about-nav a:active,
+body#download nav li#download-nav a:link, body#download nav li#download-nav a:visited, body#download nav li#download-nav a:active,
+body#publications nav li#publications-nav a:link, body#publications nav li#publications-nav a:visited, body#publications nav li#publications-nav a:active,
+body#docs nav li#docs-nav a:link, body#docs nav li#docs-nav a:visited, body#docs nav li#docs-nav a:active,
+body#contact nav li#contact-nav a:link, body#contact nav li#contact-nav a:visited, body#contact nav li#contact-nav a:active,
+body#forum nav li#forum-nav a:link, body#forum nav li#forum-nav a:visited, body#forum nav li#forum-nav a:active {
+    opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE SLIDE-IN MENU  (<= 1100px, matching main.css's first breakpoint)
+   -------------------------------------------------------------------------- */
+@media only screen and (max-width: 1100px) {
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 5.5rem 2rem 2rem 2rem;
+        background-color: var(--surface);
+        transition: transform 0.3s ease;
+        transform: translateX(100%);
+        overflow-y: auto;
+        z-index: 100;
+    }
+
+    nav ul {
+        display: block;
+    }
+
+    nav li {
+        background: none;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    nav li a {
+        font-size: 1.2rem;
+        text-align: left;
+        padding: 0.9rem 0.25rem;
+        opacity: 1;
+    }
+
+    /* Active page in the menu list */
+    body#news li#news-nav,
+    body#about li#about-nav,
+    body#download li#download-nav,
+    body#publications li#publications-nav,
+    body#docs li#docs-nav,
+    body#contact li#contact-nav,
+    body#forum li#forum-nav {
+        background: none;
+        border-top: none;
+        border-left: 4px solid var(--accent);
+        border-bottom: 1px solid var(--border);
+    }
+
+    body#news li#news-nav a,
+    body#about li#about-nav a,
+    body#download li#download-nav a,
+    body#publications li#publications-nav a,
+    body#docs li#docs-nav a,
+    body#contact li#contact-nav a,
+    body#forum li#forum-nav a {
+        padding-left: 0.75rem;
+    }
+
+    /* Hamburger */
+    .show-menu {
+        width: 32px;
+        height: 20px;
+        position: absolute;
+        top: 1.9rem;
+        right: 1.25rem;
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        z-index: 101;
+    }
+
+    .show-menu span,
+    .show-menu::before,
+    .show-menu::after {
+        width: 100%;
+        height: 3px;
+        border-radius: 2px;
+        background: var(--heading);
+    }
+
+    .show-menu::before,
+    .show-menu::after {
+        content: "";
+        left: 0;
+        position: absolute;
+        transition: all 0.3s ease;
+    }
+
+    .show-menu::before {
+        top: 0;
+    }
+
+    .show-menu::after {
+        top: 17px;
+    }
+
+    /* Open state: label pins to the viewport so the close control is always
+       reachable, the bars form an X, and the nav slides in. */
+    .menu-toggler:checked + .show-menu {
+        position: fixed;
+    }
+
+    .menu-toggler:checked + .show-menu span {
+        background: transparent;
+    }
+
+    .menu-toggler:checked + .show-menu::before {
+        top: 8.5px;
+        transform: rotate(-45deg);
+    }
+
+    .menu-toggler:checked + .show-menu::after {
+        top: 8.5px;
+        transform: rotate(45deg);
+    }
+
+    .menu-toggler:checked ~ nav {
+        transform: translateX(0);
+    }
+
+    .menu-toggler:focus-visible + .show-menu {
+        outline: 2px solid var(--link);
+        outline-offset: 4px;
+    }
+}

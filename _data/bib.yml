@@ -1,0 +1,4 @@
+# Written by the deploy workflow from:
+#   git log -1 --format=%cd --date=format:'%d-%m-%Y' -- scopus.bib
+# Seeded here so a local `jekyll serve` renders something sensible.
+updated: "25-08-2026"

@@ -1,0 +1,387 @@
+---
+title: "gprMax: Electromagnetic simulation software"
+permalink: /
+redirect_from:
+  - /index.shtml
+body_id: news
+sidebar: true
+gtm: true
+mathjax: 2
+leaflet: true
+---
+
+
+			<h1>What people are doing with gprMax</h1>
+
+{% include sidebar.html %}
+
+			<p class="page-lede">Peer-reviewed studies spanning planetary radar, glaciology, antennas, civil
+				infrastructure, and biomedical imaging &mdash; a selection from more than 1,600
+				<a href="{{ '/publications.shtml' | relative_url }}">publications</a> citing gprMax.</p>
+
+			<div class="showcase-grid-wrap">
+				<div class="showcase-roster">
+
+				<details class="showcase-item" id="rimfax">
+						<summary>
+							<img class="showcase-thumb" src="{{ '/images/showcase/rimfax-thumb.jpg' | relative_url }}" alt="" width="400" height="236" loading="lazy" />
+							<span class="showcase-card-body">
+								<span class="showcase-meta"><span class="showcase-tag">Planetary</span></span>
+							<span class="showcase-byline">Hamran <em>et al.</em> &middot; <em>Space Science Reviews</em></span>
+								<span class="showcase-card-title">Planning a radar sounder for Mars</span>
+							<span class="showcase-card-sum">gprMax simulated Perseverance&rsquo;s radar over Jezero Crater geology before launch.</span>
+							</span>
+						</summary>
+						<div class="showcase-detail">
+							<p class="showcase-meta">University of Oslo, NASA JPL, British Geological Survey &middot; 2020</p>
+							<h3>Planning a radar sounder for Mars, before it launched</h3>
+							<!-- FIGURE PENDING: images/showcase/rimfax-transect.jpg (open access; confirm the
+							     specific figure licence before sourcing, see SHOWCASE_BRIEF) -->
+							<p>RIMFAX &mdash; the Radar Imager for Mars&rsquo; Subsurface Experiment &mdash; is the
+								ground-penetrating radar carried by NASA&rsquo;s Perseverance rover. Unlike a terrestrial survey,
+								there was no opportunity to trial the instrument over the target ground first: the team had one
+								landing site, one instrument, and a need to know in advance what the returns would look like.</p>
+							<p>So they built the ground instead. Geological interpretations from orbital imagery were turned into
+								subsurface models, and gprMax was used to simulate radar propagation through them in three
+								dimensions. Applying that framework to a sample of Jezero Crater geology, the team constructed and
+								modelled a 400&nbsp;metre transect &mdash; establishing what RIMFAX should be able to resolve, and
+								how to read the returns once they started arriving.</p>
+							<p>The paper notes that some of gprMax&rsquo;s more advanced capabilities were used to make the models
+								realistic, including fractal-based surface roughness rather than idealised flat interfaces.</p>
+							<p class="showcase-cite">Hamran, S.-E. <em>et al.</em> (2020). Radar Imager for Mars&rsquo; Subsurface
+								Experiment &mdash; RIMFAX. <em>Space Science Reviews</em> <strong>216</strong>, 128.
+								<a href="https://doi.org/10.1007/s11214-020-00740-4">10.1007/s11214-020-00740-4</a>.
+							Thumbnail: NASA/JPL-Caltech.</p>
+						</div>
+					</details>
+
+				<details class="showcase-item" id="yutu2">
+						<summary>
+							<img class="showcase-thumb" src="{{ '/images/showcase/yutu2-thumb.jpg' | relative_url }}" alt="" width="400" height="236" loading="lazy" />
+							<span class="showcase-card-body">
+								<span class="showcase-meta"><span class="showcase-tag">Planetary</span></span>
+							<span class="showcase-byline">Li <em>et al.</em> &middot; <em>Nature Communications</em></span>
+								<span class="showcase-card-title">Reading 300&nbsp;m into the far side of the Moon</span>
+							<span class="showcase-card-sum">A forward-modelled stratigraphy validated the first radargram from the lunar farside.</span>
+							</span>
+						</summary>
+						<div class="showcase-detail">
+							<p class="showcase-meta">Chinese Academy of Sciences and collaborators &middot; 2020</p>
+							<h3>Reading 300 metres into the far side of the Moon</h3>
+							<figure class="showcase-item-figure">
+								<img src="{{ '/images/showcase/yutu2-stratigraphy.jpg' | relative_url }}"
+									alt="Simulation model of the interpreted lunar stratigraphy with its synthetic radargram responses"
+									width="800" height="1261" loading="lazy" />
+								<figcaption>The simulation model of the interpreted stratigraphy and its synthetic LPR
+									responses at different loss tangents. Reproduced from Li et&nbsp;al. (2020) under
+									<a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a>.</figcaption>
+							</figure>
+							<p>China&rsquo;s Chang&rsquo;e-4 mission put the Yutu-2 rover down inside Von K&aacute;rm&aacute;n
+								crater, on the floor of the South Pole-Aitken basin &mdash; the first landing on the lunar farside.
+								Over its first nine months the rover&rsquo;s Lunar Penetrating Radar returned a profile of the
+								subsurface beneath its traverse, revealing buried ejecta overlaid by at least four distinct lava
+								flows, with thicknesses ranging from 12&nbsp;m to around 100&nbsp;m.</p>
+							<p>The difficulty with a radargram from somewhere nobody has ever been is that there is nothing to
+								check the interpretation against. The team addressed this by working forwards: they built their
+								proposed stratigraphic model as a gprMax simulation in 2D transverse-electric mode, added Gaussian
+								noise matched to the instrument&rsquo;s own noise floor, and compared the synthetic radargram with
+								the one the rover actually produced.</p>
+							<p>Agreement between the two is what turns a plausible reading of the data into a supported one. It is
+								the same logic as the B-scan example in our documentation, applied 380,000&nbsp;km away.</p>
+							<p class="showcase-cite">Li, C. <em>et al.</em> (2020). First look by the Yutu-2 rover at the deep
+								subsurface structure at the lunar farside. <em>Nature Communications</em> <strong>11</strong>, 3426.
+								<a href="https://doi.org/10.1038/s41467-020-17262-w">10.1038/s41467-020-17262-w</a></p>
+						</div>
+					</details>
+
+				<details class="showcase-item" id="potsdam">
+						<summary>
+							<img class="showcase-thumb" src="{{ '/images/showcase/potsdam-thumb.jpg' | relative_url }}" alt="" width="400" height="236" loading="lazy" />
+							<span class="showcase-card-body">
+								<span class="showcase-meta"><span class="showcase-tag">Geophysics</span></span>
+							<span class="showcase-byline">Koyan &amp; Tronicke &middot; <em>Computers &amp; Geosciences</em></span>
+								<span class="showcase-card-title">Benchmark GPR datasets, built in simulation</span>
+							<span class="showcase-card-sum">Open benchmark datasets for testing GPR processing and inversion algorithms.</span>
+							</span>
+						</summary>
+						<div class="showcase-detail">
+							<p class="showcase-meta">University of Potsdam, Germany &amp; University of Trieste, Italy &middot; 2020&ndash;2025</p>
+							<h3>Benchmark GPR datasets, built in simulation</h3>
+							<p>Developing a new processing or inversion algorithm needs data where the right answer is known
+								&mdash; which field data never provides. This group builds that ground truth in simulation, and
+								publishes it for the whole community.</p>
+							<p>The first release established a realistic, multi-scale heterogeneous 3D subsurface model from
+								outcrop observations, then used <a href="http://doi.org/10.1016/j.cpc.2018.11.007">gprMax&rsquo;s
+								GPU engine</a> to produce 3D GPR data volumes at 50, 100, and 200&nbsp;MHz densely sampling the
+								entire model area. The <a href="https://doi.org/10.1038/s41597-024-04300-1">follow-up</a> extends the approach to a 2D multi-offset, multi-frequency
+								benchmark replicating realistic subsurface conditions across four sections, with carefully defined
+								acquisition geometries.</p>
+							<p>Both datasets are <a href="https://data.mendeley.com/datasets/by3yh79hx4/2">publicly available on
+								Mendeley Data</a> with documented Python and MATLAB scripts, in HDF5, VTK, and SEG-Y formats
+								&mdash; a robust framework for evaluating and improving GPR processing and interpretation
+								techniques.</p>
+						<p class="showcase-cite">Koyan, P. &amp; Tronicke, J. (2020). 3D modeling of ground-penetrating
+							radar data across a realistic sedimentary model. <em>Computers &amp; Geosciences</em>
+							<strong>137</strong>, 104422.
+							<a href="https://doi.org/10.1016/j.cageo.2020.104422">10.1016/j.cageo.2020.104422</a></p>
+						</div>
+					</details>
+
+				<details class="showcase-item" id="root-diameter">
+						<summary>
+							<img class="showcase-thumb" src="{{ '/images/showcase/root-diameter-thumb.jpg' | relative_url }}" alt="" width="400" height="236" loading="lazy" />
+							<span class="showcase-card-body">
+								<span class="showcase-meta"><span class="showcase-tag">Vegetation</span></span>
+							<span class="showcase-byline">Liang <em>et al.</em> &middot; <em>Forests</em></span>
+								<span class="showcase-card-title">Measuring tree roots without digging them up</span>
+							<span class="showcase-card-sum">Synthetic responses trained a neural network to turn reflections into root diameters.</span>
+							</span>
+						</summary>
+						<div class="showcase-detail">
+							<p class="showcase-meta">Beijing Forestry University &middot; 2021</p>
+							<h3>Measuring tree roots without digging them up</h3>
+							<figure class="showcase-item-figure">
+								<img src="{{ '/images/showcase/root-diameter.jpg' | relative_url }}"
+									alt="Forward-modelled relationships between root diameter and reflected time interval across soil permittivities"
+									width="800" height="663" loading="lazy" />
+								<figcaption>Forward-modelled relationships between root diameter and reflected time
+									interval, across soil permittivities. Reproduced from Liang et&nbsp;al. (2021) under
+									<a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a>.</figcaption>
+							</figure>
+							<p>Root systems are among the hardest things in ecology to measure. The traditional method is
+								excavation, which is laborious, and destroys the thing being studied along with the soil
+								environment around it. GPR offers a non-destructive alternative, but converting a reflection into
+								a root diameter is not straightforward: the returned signal depends on the root&rsquo;s water
+								content and the surrounding soil as much as on its size.</p>
+							<p>This study built the calibration in simulation. Root responses were forward-modelled in gprMax
+								across a range of soil dielectric constants and root diameters at 1.5&nbsp;GHz, and the resulting
+								synthetic responses used to train a neural network to invert the relationship.</p>
+							<p>The paper is unusual in naming the software in its title &mdash; <em>Theoretical Development of
+								Plant Root Diameter Estimation Based on GprMax Data and Neural Network Modelling</em> &mdash;
+								which is a fair reflection of how much of the work the simulation is doing. Vegetation is one of
+								the larger constituencies in our publications list, with 58 papers and over 900 onward citations.</p>
+							<p class="showcase-cite">Liang, H. <em>et al.</em> (2021). Theoretical development of plant root
+								diameter estimation based on GprMax data and neural network modelling. <em>Forests</em>
+								<strong>12</strong>(5), 615. <a href="https://doi.org/10.3390/f12050615">10.3390/f12050615</a></p>
+						</div>
+					</details>
+
+				<details class="showcase-item" id="antenna">
+					<summary>
+						<img class="showcase-thumb" src="{{ '/images/showcase/antenna-thumb.jpg' | relative_url }}" alt="" width="400" height="236" loading="lazy" />
+						<span class="showcase-card-body">
+							<span class="showcase-meta"><span class="showcase-tag">Antennas</span></span>
+							<span class="showcase-byline">Fedeli, Montecucco &amp; Gragnani &middot; <em>Electronics</em></span>
+							<span class="showcase-card-title">Open-source antenna design, benchmarked</span>
+							<span class="showcase-card-sum">gprMax matched commercial solvers across loop, box-plate and patch antenna benchmarks.</span>
+						</span>
+					</summary>
+					<div class="showcase-detail">
+						<p class="showcase-meta">University of Genoa &amp; Atel Antennas, Italy &middot; 2019</p>
+						<h3>Open-source antenna design, benchmarked by an antenna maker</h3>
+						<figure class="showcase-item-figure">
+							<img src="{{ '/images/showcase/antenna-loop.jpg' | relative_url }}"
+								alt="Circular loop antenna benchmark model inside its simulation domain"
+								width="700" height="623" loading="lazy" />
+							<figcaption>The circular loop antenna benchmark structure. Reproduced from Fedeli
+								et&nbsp;al. (2019) under
+								<a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a>.</figcaption>
+						</figure>
+						<p>Commercial electromagnetic solvers carry licence fees that put them out of reach of many
+							small companies and research groups. This study &mdash; a collaboration between the
+							University of Genoa and the antenna manufacturer Atel Antennas &mdash; asked whether
+							open-source packages are ready to carry professional antenna design work.</p>
+						<p>Three open-source solvers, gprMax among them, were benchmarked against commercial and
+							academic method-of-moments codes on canonical structures: a circular loop, a box-plate
+							antenna, and a rectangular patch. The verdict on the hardest case: &ldquo;a very good
+							agreement between the various electromagnetic solvers is observed, despite the complexity
+							of the structure.&rdquo;</p>
+						<p>The paper&rsquo;s assessment of gprMax is one we are happy to frame: born for GPR but
+							&ldquo;nowadays properly considered a general-purpose simulator&rdquo;, with GPU
+							acceleration singled out, and &ldquo;great attention paid to the theoretical correctness
+							of the employed algorithms.&rdquo;</p>
+						<p class="showcase-cite">Fedeli, A., Montecucco, C. and Gragnani, G.L. (2019). Open-source
+							software for electromagnetic scattering simulation: the case of antenna design.
+							<em>Electronics</em> <strong>8</strong>(12), 1506.
+							<a href="https://doi.org/10.3390/electronics8121506">10.3390/electronics8121506</a></p>
+					</div>
+				</details>
+
+				<details class="showcase-item" id="englacial">
+					<summary>
+						<img class="showcase-thumb" src="{{ '/images/showcase/englacial-thumb.jpg' | relative_url }}" alt="" width="400" height="236" loading="lazy" />
+						<span class="showcase-card-body">
+							<span class="showcase-meta"><span class="showcase-tag">Cryosphere</span></span>
+							<span class="showcase-byline">Church <em>et al.</em> &middot; <em>The Cryosphere</em></span>
+							<span class="showcase-card-title">Watching a glacier&rsquo;s plumbing change</span>
+							<span class="showcase-card-sum">Synthetic radargrams calibrated thickness recovery for a glacier&rsquo;s internal drainage.</span>
+						</span>
+					</summary>
+					<div class="showcase-detail">
+						<p class="showcase-meta">ETH Z&uuml;rich &middot; 2020</p>
+						<h3>Watching a glacier&rsquo;s plumbing change through the melt season</h3>
+						<figure class="showcase-item-figure">
+							<img src="{{ '/images/showcase/englacial-conduit.jpg' | relative_url }}"
+								alt="Geometry model of a water-filled englacial conduit beside the synthetic radargram it produces"
+								width="1000" height="453" loading="lazy" />
+							<figcaption>The forward model &mdash; a water-filled conduit in temperate ice, with absorbing
+								boundaries &mdash; and the synthetic radargram it produces. Reproduced from Church et&nbsp;al.
+								(2020) under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a>.</figcaption>
+						</figure>
+						<p>Meltwater on a glacier surface does not stay there. It finds its way down through the ice to the
+							bed, and how much arrives and when has a direct effect on how fast the glacier moves. The conduits
+							that carry it are hard to observe: they are inside the ice, they change through the season, and
+							digging is not an option.</p>
+						<p>Between 2012 and 2019 a team ran repeated 25&nbsp;MHz GPR surveys over an active englacial conduit
+							network in the ablation area of the Rhonegletscher in Switzerland &mdash; annually at first, then
+							more frequently through 2018 and 2019 to catch seasonal variation.</p>
+						<p>The difficulty is that a radar reflection tells you a conduit is there, not how wide it is. A
+							water-filled void thinner than the vertical resolution still reflects, so thickness has to be
+							recovered from the amplitude, and that inversion needs calibrating against something with a known
+							answer. The team built that reference in gprMax: a model containing a single water-filled conduit
+							of known thickness in temperate ice, with absorbing boundaries on all sides, then pushed the
+							synthetic radargram through the identical processing workflow they had applied to the field data.
+							Comparing recovered thickness against true thickness is what makes the field numbers defensible.</p>
+						<p class="showcase-cite">Church, G., Grab, M., Schmelzbach, C., Bauder, A. and Maurer, H. (2020).
+							Monitoring the seasonal changes of an englacial conduit network using repeated ground-penetrating
+							radar measurements. <em>The Cryosphere</em> <strong>14</strong>, 3269&ndash;3286.
+							<a href="https://doi.org/10.5194/tc-14-3269-2020">10.5194/tc-14-3269-2020</a></p>
+					</div>
+				</details>
+
+				<details class="showcase-item" id="stroke">
+					<summary>
+						<img class="showcase-thumb" src="{{ '/images/showcase/stroke-thumb.jpg' | relative_url }}" alt="" width="400" height="236" loading="lazy" />
+						<span class="showcase-card-body">
+							<span class="showcase-meta"><span class="showcase-tag">Bio-EM</span></span>
+							<span class="showcase-byline">Fedeli <em>et al.</em> &middot; <em>Electronics</em></span>
+							<span class="showcase-card-title">Detecting strokes with microwaves</span>
+							<span class="showcase-card-sum">gprMax simulated a full voxel head model to test a portable stroke-imaging method.</span>
+						</span>
+					</summary>
+					<div class="showcase-detail">
+						<p class="showcase-meta">University of Genoa, Italy &middot; 2025</p>
+						<h3>Detecting strokes with microwaves</h3>
+						<figure class="showcase-item-figure">
+							<img src="{{ '/images/showcase/stroke-detect.jpg' | relative_url }}"
+								alt="Voxel head model encircled by the source and measurement antenna positions"
+								width="789" height="595" loading="lazy" />
+							<figcaption>The simulated measurement set-up: a ring of antennas around the voxel head
+								model, with the imaging slice highlighted. Reproduced from Fedeli et&nbsp;al. (2025)
+								under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a>.</figcaption>
+						</figure>
+						<p>When a stroke is suspected, the first question is whether it is ischemic or haemorrhagic
+							&mdash; the treatments are opposite, and the clock is running. Microwave imaging offers a
+							portable, low-power alternative to CT for that triage: each antenna radiates milliwatts,
+							less than a mobile phone.</p>
+						<p>Testing an imaging algorithm needs head data where the answer is known, so the team
+							generated it in simulation: gprMax solved the full three-dimensional forward problem over
+							the AustinWoman voxel head model &mdash; the same anatomical phantom that ships as a gprMax
+							toolbox &mdash; with tissue properties described by multi-pole Debye models, and synthetic
+							strokes introduced at known positions.</p>
+						<p>Against that ground truth, their multifrequency inversion method reconstructed the
+							dielectric contrast of the stroke region, before being tested on laboratory measurements
+							of simplified head models.</p>
+						<p class="showcase-cite">Fedeli, A., Schenone, V., Estatico, C. and Randazzo, A. (2025).
+							Stroke detection and monitoring by means of a multifrequency microwave inversion approach.
+							<em>Electronics</em> <strong>14</strong>(3), 543.
+							<a href="https://doi.org/10.3390/electronics14030543">10.3390/electronics14030543</a></p>
+					</div>
+				</details>
+
+				<details class="showcase-item" id="rcegan">
+					<summary>
+						<img class="showcase-thumb" src="{{ '/images/showcase/rcegan-thumb.jpg' | relative_url }}" alt="" width="400" height="236" loading="lazy" />
+						<span class="showcase-card-body">
+							<span class="showcase-meta"><span class="showcase-tag">Engineering</span></span>
+							<span class="showcase-byline">Wang <em>et al.</em> &middot; <em>Remote Sensing</em></span>
+							<span class="showcase-card-title">Finding voids hidden behind tunnel rebar</span>
+							<span class="showcase-card-sum">gprMax scenes helped train and validate a network that strips rebar clutter from GPR images.</span>
+						</span>
+					</summary>
+					<div class="showcase-detail">
+						<p class="showcase-meta">Dalian University of Technology, China &middot; 2022</p>
+						<h3>Finding voids hidden behind tunnel rebar</h3>
+						<figure class="showcase-item-figure">
+							<img src="{{ '/images/showcase/rcegan-void.jpg' | relative_url }}"
+								alt="GPR image of a tunnel lining with two voids detected and boxed after rebar clutter removal"
+								width="900" height="576" loading="lazy" />
+							<figcaption>Voids detected in a tunnel-lining GPR image after rebar clutter elimination.
+								Reproduced from Wang et&nbsp;al. (2022) under
+								<a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a>.</figcaption>
+						</figure>
+						<p>Voids behind a tunnel lining are exactly what a maintenance survey needs to find &mdash; and
+							exactly what the lining&rsquo;s own reinforcement hides. A row of rebar a few centimetres
+							below the surface fills a GPR image with bright hyperbolas that mask the subtler
+							reflections from defects behind them.</p>
+						<p>RCE-GAN is a generative adversarial network trained to remove that clutter, with an
+							attention module and dilation centre to preserve the void signatures underneath. To prove
+							the idea works, the team built series of numerical tunnel-lining models in gprMax &mdash;
+							air, lining, rebar rows 5&ndash;10&nbsp;cm deep, and voids of different sizes &mdash; where
+							the true defect is known, before applying the network to laboratory and field data.</p>
+						<p>With the rebar clutter stripped, downstream void-detection networks found defects they
+							had previously missed.</p>
+						<p class="showcase-cite">Wang, Y., Qin, H., Tang, Y., Zhang, D., Yang, D., Qu, C. and
+							Geng, T. (2022). RCE-GAN: a rebar clutter elimination network to improve tunnel lining
+							void detection from GPR images. <em>Remote Sensing</em> <strong>14</strong>(2), 251.
+							<a href="https://doi.org/10.3390/rs14020251">10.3390/rs14020251</a></p>
+					</div>
+				</details>
+
+				<details class="showcase-item" id="asphalt">
+					<summary>
+						<img class="showcase-thumb" src="{{ '/images/showcase/asphalt-thumb.jpg' | relative_url }}" alt="" width="400" height="236" loading="lazy" />
+						<span class="showcase-card-body">
+							<span class="showcase-meta"><span class="showcase-tag">Engineering</span></span>
+							<span class="showcase-byline">Shangguan &amp; Al-Qadi &middot; <em>IEEE Transactions on Geoscience and Remote Sensing</em></span>
+							<span class="showcase-card-title">Checking asphalt compaction in real time</span>
+							<span class="showcase-card-sum">Calibrated gprMax models turn GPR returns into pavement density during rolling.</span>
+						</span>
+					</summary>
+					<div class="showcase-detail">
+						<p class="showcase-meta">University of Illinois at Urbana-Champaign, USA &middot; 2015</p>
+						<h3>Checking asphalt compaction in real time</h3>
+						<!-- The paper is IEEE-copyrighted, so its figures cannot be reproduced;
+						     the thumbnail is a Wikimedia Commons photo instead (credit in cite line) -->
+						<p>How long a road lasts is set largely in the hours it is built: under-compacted asphalt
+							fails early, and the traditional checks &mdash; coring the fresh mat, or nuclear density
+							gauges &mdash; are destructive, slow, or heavily regulated.</p>
+						<p>This work builds the case that GPR can monitor compaction continuously while the roller
+							works. The centre of the argument is simulation: a gprMax model of the antenna over a
+							two-layer pavement, calibrated until the simulated signal reproduces the measured one,
+							so that the relationship between the radar return and the mixture&rsquo;s density can be
+							established with the ground truth known.</p>
+						<p>The acknowledgments thank gprMax&rsquo;s original author for providing the code &mdash;
+							a nice trace of open software finding its way into highway engineering.</p>
+						<p class="showcase-cite">Shangguan, P. and Al-Qadi, I.L. (2015). Calibration of FDTD
+							simulation of GPR signal for asphalt pavement compaction monitoring.
+							<em>IEEE Transactions on Geoscience and Remote Sensing</em> <strong>53</strong>(3),
+							1538&ndash;1548.
+							<a href="https://doi.org/10.1109/TGRS.2014.2344858">10.1109/TGRS.2014.2344858</a>.
+							Thumbnail: Marc-Lautenbacher via
+							<a href="https://commons.wikimedia.org/wiki/File:Heavy_machines_for_asphalt_pavement_in_Canada.jpg">Wikimedia
+							Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC&nbsp;BY-SA&nbsp;4.0</a>.</p>
+					</div>
+				</details>
+
+				</div>
+
+				<script>
+					// Rotate the roster on every visit so a different application leads.
+					// Progressive enhancement: without JS the cards keep source order,
+					// which is already a sensible arrangement.
+					(function () {
+						var roster = document.querySelector('.showcase-roster');
+						if (!roster) { return; }
+						var cards = Array.prototype.slice.call(roster.children);
+						for (var i = cards.length - 1; i > 0; i--) {   // Fisher-Yates
+							var j = Math.floor(Math.random() * (i + 1));
+							var tmp = cards[i]; cards[i] = cards[j]; cards[j] = tmp;
+						}
+						// appendChild moves nodes, so this reorders in one pass
+						var frag = document.createDocumentFragment();
+						cards.forEach(function (c) { frag.appendChild(c); });
+						roster.appendChild(frag);
+					})();
+				</script>
+			</div>

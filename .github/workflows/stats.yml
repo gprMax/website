@@ -1,0 +1,40 @@
+name: Collect GitHub traffic stats
+
+on:
+  schedule:
+    - cron: '17 4 * * *'      # daily, well inside GitHub's 14-day window
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stats
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch and append traffic data
+        env:
+          # Fine-grained PAT with "Repository metrics: read".
+          # The traffic endpoints require push access and are NOT available
+          # to the default GITHUB_TOKEN.
+          GH_TRAFFIC_TOKEN: ${{ secrets.GH_TRAFFIC_TOKEN }}
+          TRAFFIC_REPO: gprMax/gprMax
+        run: python3 .github/scripts/collect_traffic.py
+
+      - name: Commit if changed
+        run: |
+          if [ -n "$(git status --porcelain data/)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/
+            git commit -m "chore: update GitHub traffic data"
+            git push
+          else
+            echo "No new traffic rows; nothing to commit."
+          fi

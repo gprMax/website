@@ -1,0 +1,150 @@
+---
+title: "gprMax: Electromagnetic simulation software"
+body_id: contact
+sidebar: true
+gtm: false
+mathjax: 2
+leaflet: true
+---
+
+
+			<h1>Contacts</h1>
+
+{% include sidebar.html %}
+			<h2>Questions, comments, discussion &amp; chat</h2>
+
+			<figure class="left" style="margin: 10px 0 0 40px; min-width: 90px; text-align: center;"><a href="https://github.com/gprMax/gprMax/discussions"><img
+						class="invert-dark" src="{{ '/images/logo_GitHub.png' | relative_url }}" alt="GitHub logo" width="45" height="45" /></a>
+				<figcaption><a href="https://github.com/gprMax/gprMax/discussions">Discussions</a></figcaption>
+			</figure>
+
+			<figure class="left" style="margin: 10px 0 0 40px;"><a href="https://github.com/gprMax/gprMax/issues"><img
+						class="invert-dark" src="{{ '/images/logo_GitHub.png' | relative_url }}" alt="GitHub logo" width="45" height="45" /></a>
+				<figcaption><a href="https://github.com/gprMax/gprMax/issues">Issues</a></figcaption>
+			</figure>
+
+			<figure class="left" style="margin: 10px 0 0 40px;"><a href="https://gprmax.zulipchat.com/"><img
+						src="{{ '/images/logo_zulip.svg' | relative_url }}" alt="Zulip logo" width="45" height="45" /></a>
+				<figcaption><a href="https://gprmax.zulipchat.com/">Zulip</a></figcaption>
+			</figure>
+			<div class="clear-left">&nbsp;</div>
+
+			<p style="padding-top: 10px;">For questions, ideas, and general discussion on gprMax, GPR, and
+				FDTD modelling, use <a href="https://github.com/gprMax/gprMax/discussions">GitHub
+				Discussions</a> &mdash; it is where the developers and community answer.</p>
+
+			<p>Found a bug? Report it through the
+				<a href="https://github.com/gprMax/gprMax/issues">issue tracker</a>, ideally with the input
+				file and the version you are running.</p>
+
+			<p>For informal chat with the developers and other users, join our
+				<a href="https://gprmax.zulipchat.com/">Zulip</a>. We are grateful to
+				<a href="https://zulip.com/">Zulip</a> &mdash; an organized team chat app designed for
+				efficient communication &mdash; for sponsoring us.</p>
+
+			<p>Our former <a href="https://groups.google.com/g/gprmax">Google Group</a> is closed to new
+				posts, but a decade of answered questions remains readable there.</p>
+
+			<h2>Authors/developers</h2>
+			<p>gprMax is developed and maintained by <a
+					href="https://www.research.ed.ac.uk/en/persons/antonis-giannopoulos">Professor Antonis
+					Giannopoulos</a>, who created the original version in 1996, and <a
+					href="https://www.northumbria.ac.uk/about-us/our-staff/w/craig-warren/">Dr Craig Warren</a>, who
+				re-developed the software from scratch in 2015 to give gprMax its current form. They are joined by
+				<a href="https://www.linkedin.com/in/dr-iraklis-giannakis">Dr Iraklis Giannakis</a>, a core developer
+				of gprMax.</p>
+
+			<figure class="left circular"><img src="{{ '/images/profiles/Giannopoulos.png' | relative_url }}" alt="Giannopoulos.png" width="150"
+					height="150" />
+				<figcaption><a href="https://www.research.ed.ac.uk/en/persons/antonis-giannopoulos">Prof Antonis
+						Giannopoulos<br />University of Edinburgh, UK</a></figcaption>
+			</figure>
+			<figure class="left circular"><img src="{{ '/images/profiles/Warren.png' | relative_url }}" alt="Warren.png" width="150"
+					height="150" />
+				<figcaption><a href="https://www.northumbria.ac.uk/about-us/our-staff/w/craig-warren/">Dr Craig
+						Warren<br />Northumbria University, UK</a></figcaption>
+			</figure>
+			<figure class="left circular"><img src="{{ '/images/profiles/Giannakis.png' | relative_url }}" alt="Giannakis.png" width="150"
+					height="150" />
+				<figcaption><a href="https://www.linkedin.com/in/dr-iraklis-giannakis">Dr Iraklis
+						Giannakis<br />Macau University of Science and Technology, China</a></figcaption>
+			</figure>
+
+			<div class="clear-left">&nbsp;</div>
+
+			<p>Many others have contributed code, research, and ideas over the years, including
+				Dr John Hartley (University of Edinburgh), Dr Rania Patsia (University of Edinburgh), and
+				<a href="http://geophysics.geo.auth.gr/new_web_site_2007/EN/edip/ria_en.html">Dr Nectaria Diamanti</a>
+				(University of Thessaloniki) &mdash; along with the wider community of
+				<a href="https://github.com/gprMax/gprMax/graphs/contributors">contributors on GitHub</a>.</p>
+
+			<details>
+				<summary>
+					<h3 style="padding: 5px 20px 5px 0;">PhD theses of the team</h3>
+				</summary>
+				<ul>
+					<li>Patsia, O. (2022). <a href="https://hdl.handle.net/1842/40467">Deep learning processing and
+							interpretation of ground penetrating radar data using a numerical equivalent of a real GPR
+							transducer</a>. The University of Edinburgh.</li>
+					<li>Hartley, J. M. (2020). <a href="https://hdl.handle.net/1842/37552">On finite-difference time-domain
+							sub-gridding algorithms for efficient modelling of ground-penetrating radar</a>. The University
+						of Edinburgh.</li>
+					<li>Giannakis, I. (2016). <a href="http://hdl.handle.net/1842/20449">Realistic numerical modelling of
+							Ground Penetrating Radar for landmine detection</a>. The University of Edinburgh.</li>
+					<li>Warren, C. (2009). <a href="http://hdl.handle.net/1842/4074">Numerical modelling of high-frequency
+							ground-penetrating radar antennas</a>. The University of Edinburgh.</li>
+					<li>Diamanti, N. (2008). <a href="http://hdl.handle.net/1842/3491">An efficient ground penetrating radar
+							finite-difference time-domain subgridding scheme and its application to the non-descructive
+							testing of masonry arch bridges</a>. The University of Edinburgh.</li>
+					<li>Giannopoulos, A. (1997). <a href="http://etheses.whiterose.ac.uk/id/eprint/2443">The investigation
+							of transmission-line matrix and finite-difference time-domain methods for the forward problem of
+							ground probing radar</a>. The University of York.</li>
+				</ul>
+			</details>
+
+			<h2>Consultancy &amp; training services</h2>
+			<p>We are able to offer consultancy services and expert advice on GPR, and in particular the numerical
+				modelling of GPR, for a wide range of different applications.</p>
+			<p>We also offer training workshops on the numerical modelling of GPR using gprMax. Our workshops are
+				interactive and will typically include sessions on:</p>
+			<ul>
+				<li>background and theory of the Finite-Difference Time-Domain (FDTD) method;</li>
+				<li>an overview of gprMax, covering basic and more advanced features;</li>
+				<li>installing gprMax and running your first simulation;</li>
+				<li>detailed examples of different GPR simulations including: antenna modelling, soil mixing models, and
+					dispersive materials;</li>
+				<li>how gprMax can be used for modelling other EM applications.</li>
+			</ul>
+			<p>We can also tailor our workshops towards your specific modelling requirements.</p>
+			<p>If you are interested please get in touch by contacting either <a
+					href="https://www.research.ed.ac.uk/en/persons/antonis-giannopoulos">Professor Antonis
+					Giannopoulos</a> or <a href="https://www.northumbria.ac.uk/about-us/our-staff/w/craig-warren/">Dr
+					Craig Warren</a> to discuss your requirements.</p>
+
+			<!-- <h2>GPR manufacturers</h2>
+	<p>These are the main GPR companies from all over the world that manufacture GPR systems for a wide range of geophysical and engineering applications.</p>
+	<a href="http://www.3d-radar.com"><figure class="left" style="margin: 30px 50px 0 30px; border-radius: 0;"><img src="{{ '/images/manufacturers/3d-Radar_logo.png' | relative_url }}" alt="3d-Radar" width="263" height="60" /></figure></a>
+
+	<a href="http://www.geophysical.com"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/GSSI_logo.png' | relative_url }}" alt="GSSI" width="191" height="70" /></figure></a>
+
+	<a href="http://www.geotechru.com"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/Geotech_logo.png' | relative_url }}" alt="Geotech" width="260" height="50" /></figure></a>
+
+	<a href="https://www.idscorporation.com/georadar"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/IDS_logo.png' | relative_url }}" alt="IDS" width="138" height="75" /></figure></a>
+
+	<a href="http://www.impulseradar.se"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/impulse_logo.png' | relative_url }}" alt="Impulse" width="170" height="75" /></figure></a>
+
+	<a href="http://www.malags.com"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/MALA_logo.png' | relative_url }}" alt="MALA" width="95" height="125" /></figure></a>
+
+	<a href="http://www.radsys.lv"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/RadSys_logo.png' | relative_url }}" alt="RadSys" width="228" height="75" /></figure></a>
+
+	<a href="http://www.radarteam.se"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/Radarteam_logo.png' | relative_url }}" alt="Radarteam" width="314" height="75" /></figure></a>
+
+	<a href="http://www.sensoft.ca"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/Sensors_logo.png' | relative_url }}" alt="Sensors" width="226" height="70" /></figure></a>
+
+	<a href="http://viy.ua"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/Transient_logo.png' | relative_url }}" alt="Transient" width="227" height="75" /></figure></a>
+
+	<a href="http://www.usradar.com"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/USRadar_logo.png' | relative_url }}" alt="USRadar" width="200" height="200" /></figure></a>
+
+	<a href="http://www.utsielectronics.co.uk"><figure class="left" style="margin: 30px 0 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/Utsi_logo.jpg' | relative_url }}" alt="Utsi" width="120" height="120" /></figure></a> -->
+
+			<div class="clear-left">&nbsp;</div>

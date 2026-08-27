@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{% include head.html %}
+	<title>{{ page.title }}</title>
+	<link rel="canonical" href="{{ page.url | replace: '/index.html', '/' | absolute_url }}" />
+	<meta name="description" content="{{ page.description | default: site.description }}" />
+	<meta name="keywords" content="{{ site.keywords }}" />
+	{%- if page.leaflet %}
+	<!-- Leaflet CSS belongs in <head>: loaded from the sidebar include it sat
+	     in <body>, blocking the parser mid-document and flashing an unstyled map. -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+	{%- endif %}
+	{%- if page.mathjax == 2 %}
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
+	{%- elsif page.mathjax == 3 %}
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+	{%- endif %}
+	{%- if page.bib %}
+	<link rel="stylesheet" href="{{ '/css/bib-publication-list.css' | relative_url }}" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css">
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script type="text/javascript" src="{{ '/js/gprMaxBib.js' | relative_url }}"></script>
+	{%- endif %}
+	{%- if page.markercluster %}
+	<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+		integrity="sha256-/HkTaAM6E7bhkgxA3Bt0MoTa30LhkPeVup1jphAYzFU=" crossorigin="" />
+	<link rel="stylesheet" href="{{ '/css/usermap.css' | relative_url }}" />
+	{%- endif %}
+</head>
+
+<body id="{{ page.body_id }}">
+	{%- if page.gtm %}
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id={{ site.gtm_id }}" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', '{{ site.gtm_id }}');</script>
+	<!-- End Google Tag Manager -->
+	{%- endif %}
+
+	<div id="container">
+		<div id="header"><a href="{{ '/' | relative_url }}"><img src="{{ '/images/logo_gprMax_v4.png' | relative_url }}" alt="gprMax logo" width="512" height="143" /></a>
+			<p class="strap">Open source | Finite-Difference Time-Domain<br />Electromagnetic simulation software</p>
+			{% include navbar.html %}
+		</div>
+
+		<div id="main-content">
+
+			{{ content }}
+
+			{% include footer.html %}
+			<div class="clear-both">&nbsp;</div>
+		</div>
+
+	</div>
+{%- if page.markercluster %}
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+		integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+	<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"
+		integrity="sha256-Hk4dIpcqOSb0hZjgyvFOP+cEmDXUKKNE/tT542ZbNQg=" crossorigin=""></script>
+	<script src="{{ '/js/usermap.js' | relative_url }}"></script>
+	{%- endif %}
+</body>
+
+</html>

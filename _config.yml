@@ -1,0 +1,64 @@
+# ==========================================================================
+# gprMax website — Jekyll configuration
+#
+# Values here exist so the same string is not repeated across six pages.
+# When the .org cutover happens, `url` is the single edit (plus a CNAME).
+# ==========================================================================
+
+title: "gprMax"
+author: "Craig Warren"
+description: >-
+  gprMax is open source software that simulates electromagnetic wave propagation.
+  It solves Maxwell's equations in 3D using the Finite-Difference Time-Domain
+  (FDTD) method. gprMax was designed for modelling Ground Penetrating Radar (GPR)
+  but can also be used to model electromagnetic wave propagation for many other
+  applications
+
+# Canonical tags are built from this. Change once at the .org cutover.
+url: "https://www.gprmax.com"
+baseurl: ""
+
+# Referenced ~25 times across pages and includes; Read the Docs moves separately.
+docs_url: "https://docs.gprmax.com"
+repo_url: "https://github.com/gprMax/gprMax"
+discussions_url: "https://github.com/gprMax/gprMax/discussions"
+releases_url: "https://github.com/gprMax/gprMax/releases"
+install_url: "https://docs.gprmax.com/en/latest/include_readme.html#installation"
+gtm_id: "GTM-WML3C9"
+
+# Byte-identical in six pages before the migration.
+keywords: "gprmax, gprmax3d, gprmax2d, ground penetrating radar, gpr, fdtd, electromagnetic, finite difference, time domain, solver, modelling, simulation, antennas, landmines, detection, engineering, civil, concrete, open source, NVIDIA, CUDA, parallel, OpenMP, MPI, machine learning, full waveform inversion, neural networks"
+
+plugins:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+
+exclude:
+  - offline/
+  - scripts/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - README.md
+  - .htaccess
+  - users/.htaccess
+  - users/submit_pin.php
+  - worker/
+  # scopus.bib IS published — js/gprMaxBib.js fetches it at runtime.
+  # Only the dated snapshots and test fixtures are excluded.
+  - scopus-1.bib
+  - scopus-old.bib
+  - scopus_test.bib
+  - scopus_previous.bib
+
+# .shtml is not in Jekyll's default keep_files/HTML set; make sure it is
+# treated as a page type that gets Liquid-processed (front matter does this)
+# and served with the right type by the host.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      sidebar: true
+      gtm: false
+      mathjax: false

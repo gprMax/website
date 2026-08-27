@@ -1,0 +1,35 @@
+# ==========================================================================
+# gprMax — root .htaccess
+#
+# The first block is the LIVE server configuration as it has stood since
+# Feb 2020; it is what makes the site work at all. AddHandler/Options
+# Includes enable mod_include, so removing them stops every SSI include
+# (navbar, head, footer, sidebar) from being processed. DirectoryIndex is
+# why "/" serves the homepage.
+#
+# Everything below the rule is added by the 2026 overhaul and is NOT yet
+# deployed.
+# ==========================================================================
+
+AddType text/html shtml
+AddHandler server-parsed shtml
+Options Indexes FollowSymLinks Includes
+
+DirectoryIndex index.shtml
+
+Options -Indexes
+
+# --------------------------------------------------------------------------
+# 2026 overhaul additions
+# --------------------------------------------------------------------------
+
+# Serve the web app manifest with the correct content type. (Browsers are
+# more tolerant than once thought — only text/html actually fails — but the
+# correct type costs nothing.)
+AddType application/manifest+json .webmanifest
+
+# Projects page folded into the homepage showcase
+Redirect 301 /projects.shtml https://www.gprmax.com/
+
+# 2020 workshop page folded into the news archive
+Redirect 301 /workshop2020.shtml https://www.gprmax.com/news.shtml#workshop2020

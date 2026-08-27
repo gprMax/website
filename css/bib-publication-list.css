@@ -1,0 +1,222 @@
+span.undefined {
+display: none;
+}
+
+#pubTable_filter, #pubTable_info {
+margin-left: 30px;
+}
+
+input {
+background-color: var(--page);
+color: var(--text);
+border: 1px solid var(--border-strong);
+border-radius: 4px;
+}
+
+.bibtable {
+width: 98%;
+color: var(--heading);
+font-family: var(--font-sans);
+font-size: 1em;
+font-weight: normal;
+margin: 1%;
+padding: 0;
+border-spacing: 0;
+clear: both;
+}
+
+.bibchart {
+height: 600px;
+margin: 0 40px 20px 40px;
+}
+
+.clear {
+clear: both;
+}
+
+.year {
+position: relative;
+height: 100%;
+display: inline-block;
+}
+
+.yearlabel {
+position: absolute;
+bottom: -20px;
+text-align: center;
+width: 100%;
+font-size: smaller;
+}
+
+.pub {
+border: 1px solid var(--page);
+}
+
+.conference {
+background-color: rgba(3,212,4,1);
+}
+
+.article {
+background-color: rgba(85,170,255,1);
+}
+
+.book {
+background-color: rgba(255,85,255,1);
+}
+
+.phdthesis {
+background-color: rgba(85,3,127,1);
+}
+
+/*
+.inproceedings {
+background-color: #ccf;
+}
+
+.unpublished {
+background-color: #eae;
+}
+
+.mastersthesis {
+background-color: #eea;
+}
+
+.techreport {
+background-color: #b77;
+}
+*/
+
+.legend .pub {
+width: 10px;
+height: 10px;
+display: inline-block;
+margin: 0 5px 0 15px;
+}
+
+.legend {
+margin-bottom: 20px;
+text-align: center;
+width: 100%;
+}
+
+table.display thead th {
+padding: 6px 10px;
+font-weight: 700;
+cursor: pointer;
+cursor: hand;
+background-color: var(--surface);
+}
+
+table.display tfoot th {
+padding: 3px 10px;
+}
+
+table.display td {
+padding: 8px 10px;
+border-bottom: 1px solid var(--border);
+}
+
+table.display td.center {
+text-align: center;
+}
+
+.sorting_asc {
+background: url('../images/bib/sort_asc.png') no-repeat center right;
+}
+
+.sorting_desc {
+background: url('../images/bib/sort_desc.png') no-repeat center right;
+}
+
+.sorting {
+background: url('../images/bib/sort_both.png') no-repeat center right;
+}
+
+.sorting_asc_disabled {
+background: url('../images/bib/sort_asc_disabled.png') no-repeat center right;
+}
+
+.sorting_desc_disabled {
+background: url('../images/bib/sort_desc_disabled.png') no-repeat center right;
+}
+
+tr.odd {
+background-color: none;
+}
+
+tr.even {
+background-color: none;
+}
+
+div.hidden {
+display: none;
+}
+
+div.bibinfo {
+width: 80%;
+position: fixed;
+top: 100px;
+left: 10%;
+background-color: #bbb;
+border: 3px solid #fff;
+padding: 10px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+-o-border-radius: 10px;
+border-radius: 10px;
+z-index: 50;
+}
+
+#shutter {
+background-color: #555;
+opacity: 0.7;
+width: 100%;
+height: 100%;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 20;
+}
+
+a.bibclose {
+background-color: #BBBBBB;
+border: 3px solid #FFFFFF;
+color: black;
+float: left;
+font-size: 20px;
+height: 20px;
+left: -25px;
+line-height: 20px;
+padding: 3px;
+position: relative;
+text-align: center;
+text-decoration: none;
+top: -25px;
+width: 20px;
+-moz-border-radius: 15px;
+-webkit-border-radius: 15px;
+-o-border-radius: 15px;
+border-radius: 15px;
+}
+
+div.bibinfo pre {
+clear: both; }
+
+/* DataTables 2.x reads its stripe/hover tints from these variables and only
+   flips them for a html.dark class the site does not use — mirror the site's
+   dark-mode guards instead so the tints lighten on the dark surface. */
+@media (prefers-color-scheme: dark) {
+    html:not([data-theme='light']) {
+        --dt-row-hover: 255, 255, 255;
+        --dt-row-stripe: 255, 255, 255;
+        --dt-column-ordering: 255, 255, 255;
+        --dt-html-background: transparent;
+    }
+}
+
+html[data-theme='dark'] {
+    --dt-row-hover: 255, 255, 255;
+    --dt-row-stripe: 255, 255, 255;
+    --dt-column-ordering: 255, 255, 255;
+    --dt-html-background: transparent;
+}
