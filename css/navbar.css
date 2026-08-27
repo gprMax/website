@@ -95,6 +95,17 @@ nav li a:active {
     opacity: 1;
 }
 
+/* Theme switch: last item on the tab row, pushed to the right. It is not
+   a tab, so none of the tab chrome applies. */
+.nav-theme {
+    margin-left: auto;
+    align-self: center;
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 0 6px 0;
+}
+
 /* Active tab: keyed off the body id. Keep all eight pairs — #forum-nav is
    still referenced here even though the page is retired (see UPGRADE.md). */
 body#news li#news-nav,

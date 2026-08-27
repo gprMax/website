@@ -902,15 +902,7 @@ table.executables td {
     border-top: 1px solid var(--border);
 }
 
-/* Light/dark switch, sat quietly on the copyright line */
-.footer-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px 16px;
-}
-
+/* Light/dark switch — sits at the right end of the navbar row */
 .theme-toggle {
     display: inline-flex;
     align-items: center;
