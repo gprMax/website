@@ -39,6 +39,11 @@ jobs:
 
       - uses: actions/configure-pages@v5
         id: pages
+        with:
+          # Turns Pages on (Source = GitHub Actions) if it is not already.
+          # Without this the first run 404s: the API has no Pages site to
+          # describe until one exists.
+          enablement: true
 
       - name: Build
         env:
