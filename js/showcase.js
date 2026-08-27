@@ -29,10 +29,12 @@
 		'<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">' +
 		'<path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.8" ' +
 		'stroke-linecap="round" fill="none"/></svg></button>' +
+		'<img class="showcase-modal-banner" alt="" aria-hidden="true">' +
 		'<div class="showcase-modal-body"></div>';
 	document.body.appendChild(dialog);
 
 	var body = dialog.querySelector('.showcase-modal-body');
+	var banner = dialog.querySelector('.showcase-modal-banner');
 	var openCard = null;
 
 	function close() {
@@ -70,6 +72,19 @@
 				dialog.setAttribute('aria-labelledby', h.id);
 			} else {
 				dialog.removeAttribute('aria-labelledby');
+			}
+
+			// A dedicated banner file, not the 400px card thumbnail: the dialog is
+			// ~920px wide, so reusing the thumbnail upscaled it 2x and it went
+			// soft. Fetched only now, when a card is actually opened.
+			var thumb = card.querySelector('.showcase-thumb');
+			var src = thumb && thumb.getAttribute('src');
+			if (src) {
+				banner.src = src.replace(/-thumb\.jpg$/, '-banner.jpg');
+				banner.hidden = false;
+			} else {
+				banner.removeAttribute('src');
+				banner.hidden = true;
 			}
 
 			document.body.style.overflow = 'hidden';   // showModal does not lock scroll
