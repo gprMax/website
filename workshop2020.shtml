@@ -1,0 +1,20 @@
+---
+sitemap: false
+layout: null
+permalink: /workshop2020.shtml
+---
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<title>Redirecting&hellip;</title>
+	<link rel="canonical" href="{{ '/news.shtml' | absolute_url }}#workshop2020">
+	<meta http-equiv="refresh" content="0; url={{ '/news.shtml' | relative_url }}#workshop2020">
+	<meta name="robots" content="noindex">
+	<script>location.replace("{{ '/news.shtml' | relative_url }}#workshop2020");</script>
+</head>
+<body>
+	<p>The 2020 workshop page is now part of the
+		<a href="{{ '/news.shtml' | relative_url }}#workshop2020">news archive</a>.</p>
+</body>
+</html>
