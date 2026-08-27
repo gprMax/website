@@ -33,7 +33,7 @@
 		center: [26, 12],
 		zoom: 2,
 		minZoom: 1,
-		maxZoom: 17,
+		maxZoom: 16,
 		zoomSnap: 0.25,
 		/* One world, not a repeating strip: a second copy carrying no pins
 		   looks like a loading fault rather than a design choice. */
@@ -53,11 +53,10 @@
 	/* CARTO Positron / Dark Matter: near-monochrome, so neither carries any
 	   colour that competes with the pins, and each sits quietly inside its
 	   page — light tiles on the light page, dark tiles on the dark one. */
-	L.tileLayer('https://{s}.basemaps.cartocdn.com/' + (DARK_MODE ? 'dark_all' : 'light_all') + '/{z}/{x}/{y}{r}.png', {
-		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors '
-			+ '&copy; <a href="https://carto.com/attributions">CARTO</a>',
-		subdomains: 'abcd',
-		maxZoom: 19,
+	L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_'
+		+ (DARK_MODE ? 'Dark' : 'Light') + '_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+		attribution: 'Tiles &copy; <a href="https://www.esri.com">Esri</a> &mdash; Esri, DeLorme, NAVTEQ',
+		maxZoom: 16,
 		noWrap: true
 	}).addTo(map);
 

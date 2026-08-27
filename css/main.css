@@ -1311,8 +1311,13 @@ iframe.padlet {
     margin-top: 11px;
 }
 
+/* Closed, the thumbnail is a 400px card image. Open, the card spans the
+   whole row, so stretching that same file to ~800px upscaled it 2x (4x on
+   a retina screen) and it went soft. The detail below carries a larger,
+   captioned, properly credited figure, so the thumbnail simply steps
+   aside rather than being served at banner resolution. */
 .showcase-item[open] .showcase-thumb {
-    height: 200px;
+    display: none;
 }
 
 .showcase-detail h3 {
