@@ -30,10 +30,8 @@ leaflet: true
 
 			<h2 id="gpr2026">GPR2026 conference<span class="subtitle">12-Feb-2026</span></h2>
 			<figure class="left" style="margin: -15px 0 -15px -5px;">
-				<picture>
-					<source srcset="images/GPR2026-logo-dark.png" media="(prefers-color-scheme:dark)">
-					<img src="{{ '/images/GPR2026-logo.png' | relative_url }}" alt="GPR2026 logo" width="500" height="178" />
-				</picture>
+				<img class="only-light" src="{{ '/images/GPR2026-logo.png' | relative_url }}" alt="GPR2026 logo" width="500" height="178" />
+				<img class="only-dark" src="{{ '/images/GPR2026-logo-dark.png' | relative_url }}" alt="" aria-hidden="true" width="500" height="178" />
 			</figure>
 			<p><br />The <a href="https://www.gpr2026.org">21st International Conference on Ground Penetrating Radar (GPR2026)</a> was hosted by Northumbria University in Newcastle upon Tyne, United Kingdom from 23-26 June 2026.
 

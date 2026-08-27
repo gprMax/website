@@ -2,10 +2,8 @@
 	<div class="footer-logos">
 		<a href="https://www.ed.ac.uk"><img class="invert-dark" src="{{ '/images/logo_UoE.png' | relative_url }}" alt="The University of Edinburgh logo" height="36" /></a>
 		<a href="https://www.northumbria.ac.uk">
-			<picture>
-				<source srcset="{{ '/images/logo_NU_v2-dark.png' | relative_url }}" media="(prefers-color-scheme:dark)">
-				<img class="nu-logo" src="{{ '/images/logo_NU_v2.png' | relative_url }}" alt="Northumbria University logo" height="38" />
-			</picture>
+			<img class="nu-logo only-light" src="{{ '/images/logo_NU_v2.png' | relative_url }}" alt="Northumbria University logo" height="38" />
+			<img class="nu-logo only-dark" src="{{ '/images/logo_NU_v2-dark.png' | relative_url }}" alt="" aria-hidden="true" height="38" />
 		</a>
 		<a href="http://www.google.com"><img src="{{ '/images/logo_google.png' | relative_url }}" alt="Google logo" height="30" /></a>
 		<a href="http://www.cost.eu"><img src="{{ '/images/logo_cost.png' | relative_url }}" alt="COST logo" height="30" /></a>

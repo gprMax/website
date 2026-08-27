@@ -1372,3 +1372,43 @@ iframe.padlet {
         grid-template-columns: minmax(0, 1fr);
     }
 }
+
+/* --------------------------------------------------------------------------
+   16. PAIRED LIGHT/DARK ARTWORK
+   A <picture> with media="(prefers-color-scheme:dark)" cannot see the manual
+   theme switch, so paired images are swapped here instead, using the same
+   guards as the colour tokens.
+
+   !important because these are visibility utilities: they must beat whatever
+   display value the element's own rules set (.footer-logos img is
+   display:block, which outranks a bare class selector).
+   -------------------------------------------------------------------------- */
+.only-dark {
+    display: none !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    html:not([data-theme='light']) .only-light {
+        display: none !important;
+    }
+
+    html:not([data-theme='light']) .only-dark {
+        display: block !important;
+    }
+}
+
+html[data-theme='dark'] .only-light {
+    display: none !important;
+}
+
+html[data-theme='dark'] .only-dark {
+    display: block !important;
+}
+
+html[data-theme='light'] .only-light {
+    display: block !important;
+}
+
+html[data-theme='light'] .only-dark {
+    display: none !important;
+}
