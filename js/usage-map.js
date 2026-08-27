@@ -31,7 +31,7 @@
 		&& document.documentElement.dataset.theme !== 'light')
 		|| document.documentElement.dataset.theme === 'dark';
 	var gmPin = (getComputedStyle(document.body).getPropertyValue('--heading') || '#55037F').trim() || '#55037F';
-	L.tileLayer('https://{s}.basemaps.cartocdn.com/' + (gmDark ? 'dark_all' : 'light_all') + '/{z}/{x}/{y}{r}.png', {
+	var tiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/' + (gmDark ? 'dark_all' : 'light_all') + '/{z}/{x}/{y}{r}.png', {
 		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> '
 			+ 'contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 		subdomains: 'abcd',
@@ -77,6 +77,23 @@
 	// sides go grey as it widens. Fires after Leaflet's own rAF-debounced
 	// invalidateSize, so it costs one fitBounds per settled resize.
 	map.on('resize', showAllPins);
+
+	// The basemap and pin colour are chosen in JS, so the CSS-only theme
+	// switch cannot restyle them; swap them when the theme changes.
+	function themeUrl(dark) {
+		return 'https://{s}.basemaps.cartocdn.com/' + (dark ? 'dark_all' : 'light_all') + '/{z}/{x}/{y}{r}.png';
+	}
+	document.addEventListener('gprmax:themechange', function (e) {
+		if (tiles) { tiles.setUrl(themeUrl(e.detail.dark)); }
+		var colour = (getComputedStyle(document.body).getPropertyValue('--heading') || '').trim();
+		if (colour) {
+			map.eachLayer(function (l) {
+				if (l.setStyle && l.options && l.options.fillColor) {
+					l.setStyle({ fillColor: colour });
+				}
+			});
+		}
+	});
 
 	fetch('users/pins.geojson', { cache: 'no-cache' })
 		.then(function (r) {

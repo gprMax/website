@@ -2,6 +2,18 @@
 <html lang="en">
 
 <head>
+	<script>
+		// Applies the saved theme before first paint. Inline and first in
+		// <head> on purpose: loading it as a file would let the page paint
+		// in the wrong theme and flash. No stored choice means no attribute,
+		// which leaves prefers-color-scheme in charge.
+		(function () {
+			try {
+				var t = localStorage.getItem('gprmax-theme');
+				if (t === 'light' || t === 'dark') { document.documentElement.dataset.theme = t; }
+			} catch (e) { /* private mode: fall back to the system preference */ }
+		})();
+	</script>
 	{% include head.html %}
 	<title>{{ page.title }}</title>
 	<link rel="canonical" href="{{ page.url | replace: '/index.html', '/' | absolute_url }}" />
@@ -27,7 +39,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script type="text/javascript" src="{{ '/js/gprMaxBib.js' | relative_url }}"></script>
 	{%- endif %}
-	{%- if page.markercluster %}
+		<script defer src="{{ '/js/theme.js' | relative_url }}"></script>
+{%- if page.markercluster %}
 	<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
 		integrity="sha256-/HkTaAM6E7bhkgxA3Bt0MoTa30LhkPeVup1jphAYzFU=" crossorigin="" />
 	<link rel="stylesheet" href="{{ '/css/usermap.css' | relative_url }}" />

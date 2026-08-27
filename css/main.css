@@ -902,6 +902,44 @@ table.executables td {
     border-top: 1px solid var(--border);
 }
 
+/* Light/dark switch, sat quietly on the copyright line */
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 4px 11px;
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    color: var(--heading);
+    border-color: var(--border-strong);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 2px;
+}
+
+.theme-toggle-icon {
+    display: inline-flex;
+    line-height: 0;
+}
+
 .footer-logos {
     display: flex;
     align-items: center;
