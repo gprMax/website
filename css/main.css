@@ -1417,3 +1417,90 @@ html[data-theme='light'] .only-light {
 html[data-theme='light'] .only-dark {
     display: none !important;
 }
+
+/* --------------------------------------------------------------------------
+   17. SHOWCASE MODAL
+   Opening a card moves its write-up into a shared <dialog> (js/showcase.js).
+   Without JavaScript the <details> still expands inline, so these rules only
+   describe the dialog; the inline styles above remain the fallback.
+   -------------------------------------------------------------------------- */
+.showcase-modal {
+    width: min(920px, calc(100vw - 3rem));
+    max-height: min(86vh, 900px);
+    padding: 0;
+    border: 1px solid var(--border-strong);
+    border-radius: 14px;
+    background: var(--page);
+    color: var(--text);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    overflow: hidden;
+}
+
+/* Literal colours: ::backdrop sits outside the page's cascade in some
+   engines, so custom properties are not reliably visible to it. */
+.showcase-modal::backdrop {
+    background: rgba(12, 10, 20, 0.55);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.showcase-modal-body {
+    max-height: min(86vh, 900px);
+    overflow-y: auto;
+    padding: 6px 30px 26px 30px;
+}
+
+/* The write-up keeps its own styling; only the outer chrome changes. */
+.showcase-modal .showcase-detail {
+    border-top: none;
+    margin-top: 0;
+    padding: 0;
+}
+
+.showcase-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--page);
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.showcase-modal-close:hover {
+    color: var(--heading);
+    border-color: var(--border-strong);
+    background: var(--surface);
+}
+
+.showcase-modal-close:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 2px;
+}
+
+/* The figure floats right at 46% in the card; in a wider dialog give it a
+   touch more room and keep it clear of the close button. */
+.showcase-modal .showcase-item-figure {
+    width: 44%;
+    margin-top: 30px;
+}
+
+@media (max-width: 700px) {
+    .showcase-modal-body {
+        padding: 6px 18px 20px 18px;
+    }
+
+    .showcase-modal .showcase-item-figure {
+        float: none;
+        width: 100%;
+        margin: 6px 0 16px 0;
+    }
+}
