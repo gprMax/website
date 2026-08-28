@@ -49,6 +49,11 @@ exclude:
   - .htaccess
   - users/.htaccess
   - users/submit_pin.php
+  # The full pins archive: names, Padlet permalinks, emails in note text.
+  # Gitignored, so it cannot reach the Pages runner — this is the second
+  # lock, for anyone building locally. users/pins.geojson, the minimised
+  # file, IS published; that is what the map fetches.
+  - users/pins.source.geojson
   - worker/
   # scopus.bib IS published — js/gprMaxBib.js fetches it at runtime.
   # Only the dated snapshots and test fixtures are excluded.
