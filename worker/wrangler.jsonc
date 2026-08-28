@@ -8,11 +8,11 @@
 	// that results be cached rather than re-queried, and caching also keeps
 	// us far inside the 1 req/sec ceiling.
 	//
-	// SETUP: `wrangler kv namespace create MAP_STATE` prints the real id;
-	// paste it over the placeholder below before the first deploy. Local
-	// `wrangler dev` simulates KV and ignores this value.
+	// The id is not a credential -- reaching the namespace still needs
+	// account auth -- so it lives in version control like any other
+	// binding. Local `wrangler dev` simulates KV and ignores it.
 	"kv_namespaces": [
-		{ "binding": "MAP_STATE", "id": "PLACEHOLDER_REPLACE_AFTER_KV_CREATE" }
+		{ "binding": "MAP_STATE", "id": "8f5076ecc4c34dd0879ddceb59f5d25d" }
 	],
 
 	"observability": { "enabled": true }
