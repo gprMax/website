@@ -46,7 +46,13 @@ const MAX_LOCATION_CHARS = 120;
 const MAX_NOTE_CHARS = 200;
 const GEOCODE_CACHE_TTL = 60 * 60 * 24 * 30;   // Nominatim asks that we cache
 
+// gprmax.org is becoming the canonical home; .com stays listed because it
+// will forward for the foreseeable future and a forwarded request can still
+// arrive with a .com Origin. Listed before the move rather than after, so
+// the form never has a window where it is refused.
 const ALLOWED_ORIGINS = [
+	'https://gprmax.org',
+	'https://www.gprmax.org',
 	'https://www.gprmax.com',
 	'https://gprmax.com',
 	'https://gprmax.github.io',
