@@ -33,3 +33,8 @@ users/*
 
 # OS noise
 .DS_Store
+
+# Cloudflare Worker: local secrets and build state, never committed.
+worker/.dev.vars
+worker/node_modules/
+worker/.wrangler/

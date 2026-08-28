@@ -1,0 +1,6 @@
+# Copy to .dev.vars for local `wrangler dev`. Never commit .dev.vars.
+# In production these are set with `wrangler secret put <NAME>` instead,
+# which stores them encrypted on Cloudflare and never on disk.
+
+HMAC_SECRET=generate-with-openssl-rand-base64-32
+GITHUB_TOKEN=github_pat_...

@@ -1,0 +1,19 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "gprmax-usermap",
+	"main": "src/index.js",
+	"compatibility_date": "2026-08-28",
+
+	// Rate-limit ledger and the geocode cache. Nominatim's usage policy asks
+	// that results be cached rather than re-queried, and caching also keeps
+	// us far inside the 1 req/sec ceiling.
+	//
+	// SETUP: `wrangler kv namespace create MAP_STATE` prints the real id;
+	// paste it over the placeholder below before the first deploy. Local
+	// `wrangler dev` simulates KV and ignores this value.
+	"kv_namespaces": [
+		{ "binding": "MAP_STATE", "id": "PLACEHOLDER_REPLACE_AFTER_KV_CREATE" }
+	],
+
+	"observability": { "enabled": true }
+}
