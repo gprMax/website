@@ -19,7 +19,7 @@ leaflet: true
 
 	<p>gprMax is principally written in <a href="https://www.python.org">Python</a> 3 with performance-critical parts in <a href="http://cython.org">Cython</a>. It is driven from the command line rather than through a general-purpose GUI, which keeps it scriptable and means it runs equally well on a laptop or in high-performance computing (HPC) environments. Models can be written as simple text input files, parameterised with Python blocks, or built entirely programmatically with the full <a href="{{ site.docs_version_url }}/input_api.html">Python API</a>; the <a href="{{ site.docs_version_url }}/inc_Marimo.html">Marimo toolbox</a> adds interactive dashboards for building introductory models and inspecting output.</p>
 
-	<p>Simulations can be accelerated on a range of hardware: the CPU solver is parallelised with <a href="http://www.openmp.org">OpenMP</a>; <a href="https://www.khronos.org/api/opencl">OpenCL</a> supports both CPUs and GPUs; and there are GPU solvers for <a href="https://developer.nvidia.com/cuda-zone">NVIDIA CUDA</a> and <a href="https://developer.apple.com/metal/">Apple Metal</a> on macOS with M-series chips. <a href="https://en.wikipedia.org/wiki/Message_Passing_Interface">MPI</a> support enables larger-scale, multi-node simulations on HPC systems.</p>
+	<p>Simulations can be accelerated on a range of hardware: the CPU solver is parallelised with <a href="http://www.openmp.org">OpenMP</a>; <a href="https://www.khronos.org/api/opencl">OpenCL</a> supports both CPUs and GPUs; and there are GPU solvers for <a href="https://developer.nvidia.com/cuda-zone">NVIDIA CUDA</a> and <a href="https://developer.apple.com/metal/">Apple Metal</a> on macOS with M-series chips. <a href="https://en.wikipedia.org/wiki/Message_Passing_Interface">MPI</a> support enables larger-scale, multi-node simulations on HPC systems, either by <a href="{{ site.docs_version_url }}/accelerators.html#domain-decomposition">domain decomposition</a> of a single large model or as a <a href="{{ site.docs_version_url }}/accelerators.html#task-farm">task farm</a> across many models. The CPU, CUDA, and OpenCL solvers all offer <a href="{{ site.docs_version_url }}/accelerators.html#solver-precision">single- or double-precision</a> field storage.</p>
 
 	<h2>Features</h2>
 
@@ -32,10 +32,11 @@ leaflet: true
 	<figure class="right"><img src="{{ '/images/ant_geo_detail2.png' | relative_url }}" alt="Detailed geometry of a GPR antenna" width="352" height="250" /><figcaption>Detailed geometry of a GPR antenna</figcaption></figure>
 
 	<ul>
-		<li>A <a href="{{ site.docs_version_url }}/features.html#excitation-options">wide range of sources</a>: Hertzian and magnetic dipoles, hard and resistive voltage sources, transmission lines, and plane-wave excitation through a total-field/scattered-field interface <span class="tag-new">New</span></li>
+		<li>A <a href="{{ site.docs_version_url }}/features.html#excitation-options">wide range of sources</a>: Hertzian and magnetic dipoles, hard and resistive voltage sources, transmission lines, <a href="{{ site.docs_version_url }}/output.html#magnetic-frill-source-s11-and-impedance-output">magnetic-frill</a> and <a href="{{ site.docs_version_url }}/output.html#rational-network-port-output">rational-network</a> feeds, and plane-wave excitation through a total-field/scattered-field interface <span class="tag-new">New</span></li>
 		<li><a href="{{ site.docs_version_url }}/eigenmode_port.html">Eigenmode sources &amp; ports</a> for guided structures &mdash; waveguide excitation with S-parameter outputs and multi-port support <span class="tag-new">New</span></li>
 		<li><a href="{{ site.docs_version_url }}/features.html#symmetry-boundaries">PEC and PMC symmetry boundaries</a> &mdash; solve half or quarter of a symmetric problem at a fraction of the cost <span class="tag-new">New</span></li>
 		<li>Built-in <a href="{{ site.docs_version_url }}/features.html#library-of-antenna-models">libraries of antenna models</a></li>
+		<li><a href="{{ site.docs_version_url }}/impedance_surfaces.html">Surface-impedance boundaries</a> &mdash; model an opaque conductor without meshing its skin depth, with dispersion supplied by a rational ADE and Foster presets for common metals <span class="tag-new">New</span></li>
 		<li>Advanced <a href="{{ site.docs_version_url }}/features.html#perfectly-matched-layer-pml-absorbing-boundary-conditions">higher-order PML absorbing boundaries</a></li>
 	</ul>
 
@@ -44,9 +45,9 @@ leaflet: true
 	<figure class="right"><img src="{{ '/images/ant_3Dpatt2.png' | relative_url }}" alt="3D radiation pattern of a GPR antenna" width="310" height="325" /><figcaption>3D antenna radiation pattern</figcaption></figure>
 
 	<ul>
-		<li><a href="{{ site.docs_version_url }}/features.html#near-to-far-field-transformations">Near-to-far-field transformations</a> &mdash; Kirchhoff surface-integral, equivalent-current, and frequency-domain formulations, including antennas over layered ground <span class="tag-new">New</span></li>
-		<li><a href="{{ site.docs_version_url }}/output.html#absorbed-power-density-and-specific-absorption-rate">Specific absorption rate (SAR) and absorbed power density</a> outputs for bio-electromagnetic applications <span class="tag-new">New</span></li>
-		<li>S11 and input impedance from voltage, transmission-line, and port sources; field snapshots and geometry views</li>
+		<li><a href="{{ site.docs_version_url }}/features.html#near-to-far-field-transformations">Near-to-far-field transformations</a> &mdash; Kirchhoff surface-integral, equivalent-current, and frequency-domain formulations, including antennas over layered ground; these supply radiation patterns, antenna gain and directivity, and radar cross section (RCS) <span class="tag-new">New</span></li>
+		<li><a href="{{ site.docs_version_url }}/output.html#absorbed-power-density-and-specific-absorption-rate">Specific absorption rate (SAR) and absorbed power density</a> outputs for bioelectromagnetics and dosimetry, with <a href="{{ site.docs_version_url }}/output.html#radiometric-absorption-weighting">radiometric absorption weighting</a> for radiometry <span class="tag-new">New</span></li>
+		<li>S11 and input impedance from voltage, transmission-line, magnetic-frill and rational-network sources, and full <a href="{{ site.docs_version_url }}/output.html#eigenmode-port-and-s-parameter-output">multi-port S-parameters</a> from eigenmode ports; field snapshots and geometry views</li>
 	</ul>
 
 	<h3>Materials &amp; geometry</h3>
@@ -56,7 +57,7 @@ leaflet: true
 		<li>Versioned <a href="{{ site.docs_version_url }}/material_databases.html">material databases</a> &mdash; reusable electromagnetic properties without copying pole lists into every model <span class="tag-new">New</span></li>
 		<li>Modelling of <a href="{{ site.docs_version_url }}/features.html#realistic-soils-heterogeneous-objects-and-rough-surfaces">soils with realistic dielectric and geometric properties</a>, heterogeneous objects, and rough surfaces</li>
 		<li>Tagged geometry import from <a href="{{ site.docs_version_url }}/inc_STLtoVoxel.html">STL</a> and <a href="{{ site.docs_version_url }}/inc_STEPtoVoxel.html">STEP</a> CAD files, plus medical volumes such as the <a href="{{ site.docs_version_url }}/inc_AustinMan.html">AustinMan &amp; AustinWoman human phantoms</a> <span class="tag-new">New</span></li>
-		<li><a href="{{ site.docs_version_url }}/features.html#subgridding">Subgridding</a> &mdash; fine geometry inside a coarser model <span class="tag-new">New</span></li>
+		<li><a href="{{ site.docs_version_url }}/features.html#subgridding">Subgridding</a> &mdash; fine geometry inside a coarser model; currently the double-precision CPU solver only <span class="tag-new">New</span></li>
 	</ul>
 
 	<h3>Workflow &amp; scripting</h3>
@@ -64,7 +65,7 @@ leaflet: true
 	<ul>
 		<li>A full <a href="{{ site.docs_version_url }}/input_api.html">Python API</a> for building parameterised models and simulations programmatically <span class="tag-new">New</span></li>
 		<li><a href="{{ site.docs_version_url }}/features.html#two-dimensional-tm-and-te-modes">2D TE and TM modes</a> as well as full 3D <span class="tag-new">New</span></li>
-		<li>User-contributed toolboxes: <a href="{{ site.docs_version_url }}/inc_DebyeFit.html">DebyeFit</a> (including the CRIM mixing model), <a href="{{ site.docs_version_url }}/inc_FMCW.html">FMCW</a> and <a href="{{ site.docs_version_url }}/inc_SFCW.html">SFCW</a> radar, <a href="{{ site.docs_version_url }}/inc_AntennaPatterns.html">antenna patterns</a>, <a href="{{ site.docs_version_url }}/inc_ImpulseResponse.html">impulse response</a>, and <a href="{{ site.docs_version_url }}/inc_LandmineModels.html">landmine models</a></li>
+		<li>User-contributed toolboxes: <a href="{{ site.docs_version_url }}/inc_DebyeFit.html">DebyeFit</a> (including the CRIM mixing model), <a href="{{ site.docs_version_url }}/inc_FMCW.html">FMCW</a> and <a href="{{ site.docs_version_url }}/inc_SFCW.html">SFCW</a> radar, <a href="{{ site.docs_version_url }}/inc_AntennaPatterns.html">antenna patterns</a>, <a href="{{ site.docs_version_url }}/inc_ImpulseResponse.html">impulse response</a>, <a href="{{ site.docs_version_url }}/inc_LandmineModels.html">landmine models</a>, and <a href="{{ site.docs_version_url }}/inc_Marimo.html">Marimo</a> dashboards <span class="tag-new">New</span></li>
 		<li>Open, robust file formats: HDF5 outputs and VTK geometry and snapshot files</li>
 	</ul>
 

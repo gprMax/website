@@ -1545,3 +1545,43 @@ html[data-theme='light'] .only-dark {
 #main-content .contact-routes li {
     padding: 7px 0;
 }
+
+/* Credits list on the contacts page: a name, where they are, and what they
+   did. A <dl> rather than a <ul> because that is the shape of the data, and
+   it lets the affiliation sit quietly beside the name instead of in
+   parentheses mid-sentence. */
+#main-content .credits-intro {
+    margin-bottom: 4px;
+}
+
+#main-content .credits {
+    margin: 0 0 18px 0;
+    padding: 0;
+}
+
+#main-content .credits dt {
+    margin-top: 12px;
+    font-weight: 600;
+    color: var(--heading-body);
+    line-height: 1.4;
+}
+
+#main-content .credits dt:first-child {
+    margin-top: 8px;
+}
+
+#main-content .credits-where {
+    font-weight: 400;
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+}
+
+#main-content .credits-where::before {
+    content: "\00b7";
+    margin: 0 6px 0 4px;
+}
+
+#main-content .credits dd {
+    margin: 1px 0 0 0;
+    line-height: 1.5;
+}

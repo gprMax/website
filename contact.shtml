@@ -54,22 +54,25 @@ leaflet: true
 
 			<div class="clear-left">&nbsp;</div>
 
-			<p>Two further principal authors shaped the version 4 codebase: <strong>Dr John Hartley</strong>
-				(University of Edinburgh), who initiated it and created the subgridding and dispersive-material
-				averaging, and <strong>Nathan Mannall</strong> (Edinburgh Parallel Computing Centre), who carried
-				out its major architectural refactoring and developed the MPI domain-decomposition solver.</p>
+			<p class="credits-intro">Version 4 was shaped by two further principal authors and a core
+				contributor:</p>
 
-			<p><strong>Qifeng Shen</strong> (University of Edinburgh) designed and developed the 2D FDFD
-				eigensolver, the waveport capabilities and the impedance boundaries, and leads development of
-				gprMax&rsquo;s antenna and RF modelling.</p>
+			<dl class="credits">
+				<dt>Dr John Hartley <span class="credits-where">University of Edinburgh</span></dt>
+				<dd>Initiated the version 4 codebase; subgridding and dispersive-material averaging</dd>
+
+				<dt>Nathan Mannall <span class="credits-where">Edinburgh Parallel Computing Centre</span></dt>
+				<dd>Major architectural refactoring; MPI domain-decomposition solver</dd>
+
+				<dt>Qifeng Shen <span class="credits-where">University of Edinburgh</span></dt>
+				<dd>2D FDFD eigensolver, waveports and impedance boundaries; leads antenna and RF modelling</dd>
+			</dl>
 
 			<p>Many others have contributed code, research, and ideas over the years &mdash; among them
-				Dr Ourania Patsia (University of Edinburgh), Dr Nectaria Diamanti (Aristotle University of
-				Thessaloniki), Sam Stadler (Leibniz Institute for Applied Geophysics), and a decade of Google
-				Summer of Code students. The
-				<a href="https://github.com/gprMax/gprMax/blob/devel/AUTHORS.rst">authors and contributors
-					record</a> describes these contributions in full, alongside the wider community of
-				<a href="https://github.com/gprMax/gprMax/graphs/contributors">contributors on GitHub</a>.</p>
+				Dr Ourania Patsia, Dr Nectaria Diamanti, Sam Stadler, and a decade of Google Summer of Code
+				students. The <a href="https://github.com/gprMax/gprMax/blob/devel/AUTHORS.rst">authors and
+					contributors record</a> describes these contributions in full, alongside the wider community
+				of <a href="https://github.com/gprMax/gprMax/graphs/contributors">contributors on GitHub</a>.</p>
 
 			<details>
 				<summary>
