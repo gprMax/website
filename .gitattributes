@@ -1,0 +1,3 @@
+# The traffic collector rewrites these in full on every run; a stray
+# CRLF would turn each append into a whole-file diff.
+*.csv text eol=lf

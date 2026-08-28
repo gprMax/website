@@ -66,7 +66,10 @@ def update(path, key, rows):
         added.append(day)
 
     with open(path, "w", newline="") as fh:
-        w = csv.writer(fh)
+        # csv.writer defaults to CRLF. The whole file is rewritten every run,
+        # so that terminator turns two new rows into an 890-line diff and
+        # makes the history unreadable. The PHP-era files were LF; stay LF.
+        w = csv.writer(fh, lineterminator="\n")
         w.writerow(["date", "count", "uniques"])
         for day in sorted(existing):
             w.writerow(existing[day])
