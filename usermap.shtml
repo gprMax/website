@@ -11,7 +11,8 @@ markercluster: true
 			<h1 class="map-title">Where gprMax is used</h1>
 			<p class="map-intro">
 				Every pin is one person who told us where they use gprMax. If you are not on the map yet,
-				add yourself &mdash; it takes a few seconds and needs no account.
+				add yourself &mdash; it takes a few seconds and needs no account. New pins are
+				checked before they appear.
 			</p>
 
 			<div id="usermap-wrap">
@@ -80,7 +81,7 @@ markercluster: true
 						<div class="ump-consent">
 							<input type="checkbox" id="consent" />
 							<label for="consent">I'm happy for this location and note to be shown publicly on this
-								map.</label>
+								map once approved.</label>
 						</div>
 
 						<div class="ump-row">

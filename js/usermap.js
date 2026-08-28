@@ -1,7 +1,7 @@
 /* ============================================================
    gprMax community map. Save as js/usermap.js.
 
-   Reads users/pins.geojson and posts new pins to users/submit_pin.php.
+   Reads users/pins.geojson and posts new pins to the gprMax map Worker.
    No build step, no framework, no keys.
    ============================================================ */
 
@@ -9,7 +9,11 @@
 	'use strict';
 
 	var PINS_URL = 'users/pins.geojson';
-	var SUBMIT_URL = 'users/submit_pin.php';
+	/* The Cloudflare Worker that replaced users/submit_pin.php. GitHub Pages
+	   cannot run PHP, so geocoding, the signed-location token and the pin
+	   submission all live at the edge now. Absolute because the Worker is a
+	   different origin; it allows this site by name in its CORS headers. */
+	var SUBMIT_URL = 'https://gprmax-usermap.gprmax.workers.dev/';
 
 	/* Pins wear the site heading token from main.css — brand purple in light
 	   mode, brand pink in dark — read live so the map can never drift from
@@ -319,27 +323,25 @@
 		}
 
 		$('confirm').disabled = true;
-		say('Adding your pin…');
+		say('Sending your pin…');
 
 		post({ action: 'add', token: pending.token, note: $('note').value, consent: 'yes' })
 			.then(function (res) {
 				$('confirm').disabled = false;
 				if (!res.ok) { say(res.error, 'err'); return; }
 
-				addPin(res.lat, res.lon, {
-					location_name: res.location_name,
-					body: res.note,
-					created_at: new Date().toISOString()
-				});
-				$('n-pins').textContent = Number($('n-pins').textContent || 0) + 1;
-				say('Added. Thanks for putting yourself on the map!', 'ok');
+				/* The pin is queued for review, not published. Drawing it now
+				   and bumping the counter would be a pleasant lie: it would
+				   vanish on the next reload and it is on nobody else's map. */
+				say('Thank you \u2014 your pin has been sent for review, and will '
+					+ 'appear on the map once it is approved.', 'ok');
 				clearPreview();
 
 				window.setTimeout(function () {
 					openForm(false);
 					toChoose();
 					form.reset();
-				}, 2600);
+				}, 4200);
 			})
 			.catch(function (err) { $('confirm').disabled = false; say(err.message, 'err'); });
 	});
