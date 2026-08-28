@@ -255,7 +255,7 @@ leaflet: true
 			<p>We carried out this work as part of a project with <a href="https://fiber.google.com/about/">Google
 					Fiber</a> (USA), and had support from <a href="https://www.nvidia.com/en-gb/">NVIDIA</a> (UK).</p>
 			<p>The paper is open-access and we would appreciate that if you use gprMax and publish your work, <a
-					href="http://www.gprmax.com/publications.shtml">you would cite this new paper</a>.</p>
+					href="{{ '/publications.shtml' | relative_url }}">you would cite this new paper</a>.</p>
 			<div class="clear-left"></div>
 
 			<h2>GPR2018 Young Scientist winner uses gprMax<span class="subtitle">23-Jun-2018</span></h2>
@@ -332,7 +332,7 @@ leaflet: true
 				embed <strong>complex transducers and targets</strong>.
 			</p>
 			<p>The paper is open-access and we would appreciate that if you use gprMax and publish your work, <a
-					href="http://www.gprmax.com/publications.shtml">you would cite this new paper</a>.</p>
+					href="{{ '/publications.shtml' | relative_url }}">you would cite this new paper</a>.</p>
 			<p>Have a look/listen to the <a
 					href="http://audioslides.elsevier.com//ViewerSmall.aspx?source=1&doi=10.1016/j.cpc.2016.08.020">audioslides</a>
 				(~5mins) which briefly explain GPR and gprMax and describe the key features of the paper.</p>

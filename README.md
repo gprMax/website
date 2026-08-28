@@ -1,6 +1,6 @@
 # gprMax website
 
-Source for [www.gprmax.com](https://www.gprmax.com), built with Jekyll and
+Source for [gprmax.org](https://gprmax.org), built with Jekyll and
 published to GitHub Pages by `.github/workflows/deploy.yml`.
 
 ## Local preview
