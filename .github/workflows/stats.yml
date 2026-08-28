@@ -20,9 +20,12 @@ jobs:
 
       - name: Fetch and append traffic data
         env:
-          # Fine-grained PAT with "Repository metrics: read".
-          # The traffic endpoints require push access and are NOT available
-          # to the default GITHUB_TOKEN.
+          # Fine-grained PAT, resource owner gprMax, scoped to the
+          # gprMax/gprMax repository, with "Administration" repository
+          # permissions (read) — that is the permission the traffic
+          # endpoints require, per the REST docs for /traffic/clones.
+          # They are NOT available to the default GITHUB_TOKEN, which is
+          # scoped to this repository and cannot read traffic anyway.
           GH_TRAFFIC_TOKEN: ${{ secrets.GH_TRAFFIC_TOKEN }}
           TRAFFIC_REPO: gprMax/gprMax
         run: python3 .github/scripts/collect_traffic.py
