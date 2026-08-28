@@ -32,8 +32,9 @@ leaflet: true
 					Giannopoulos</a>, who created the original version in 1996, and <a
 					href="https://www.northumbria.ac.uk/about-us/our-staff/w/craig-warren/">Dr Craig Warren</a>, who
 				re-developed the software from scratch in 2015 to give gprMax its current form. They are joined by
-				<a href="https://www.linkedin.com/in/dr-iraklis-giannakis">Dr Iraklis Giannakis</a>, a core developer
-				of gprMax.</p>
+				<a href="https://www.linkedin.com/in/dr-iraklis-giannakis">Dr Iraklis Giannakis</a>, whose advanced
+				algorithmic work underpins the dispersive material modelling, the fractal soil models and the
+				landmine toolboxes.</p>
 
 			<figure class="left circular"><img src="{{ '/images/profiles/Giannopoulos.png' | relative_url }}" alt="Giannopoulos.png" width="150"
 					height="150" />
@@ -53,10 +54,21 @@ leaflet: true
 
 			<div class="clear-left">&nbsp;</div>
 
-			<p>Many others have contributed code, research, and ideas over the years, including
-				Dr John Hartley (University of Edinburgh), Dr Rania Patsia (University of Edinburgh), and
-				<a href="http://geophysics.geo.auth.gr/new_web_site_2007/EN/edip/ria_en.html">Dr Nectaria Diamanti</a>
-				(University of Thessaloniki) &mdash; along with the wider community of
+			<p>Two further principal authors shaped the version 4 codebase: <strong>Dr John Hartley</strong>
+				(University of Edinburgh), who initiated it and created the subgridding and dispersive-material
+				averaging, and <strong>Nathan Mannall</strong> (Edinburgh Parallel Computing Centre), who carried
+				out its major architectural refactoring and developed the MPI domain-decomposition solver.</p>
+
+			<p><strong>Qifeng Shen</strong> (University of Edinburgh) designed and developed the 2D FDFD
+				eigensolver, the waveport capabilities and the impedance boundaries, and leads development of
+				gprMax&rsquo;s antenna and RF modelling.</p>
+
+			<p>Many others have contributed code, research, and ideas over the years &mdash; among them
+				Dr Ourania Patsia (University of Edinburgh), Dr Nectaria Diamanti (Aristotle University of
+				Thessaloniki), Sam Stadler (Leibniz Institute for Applied Geophysics), and a decade of Google
+				Summer of Code students. The
+				<a href="https://github.com/gprMax/gprMax/blob/devel/AUTHORS.rst">authors and contributors
+					record</a> describes these contributions in full, alongside the wider community of
 				<a href="https://github.com/gprMax/gprMax/graphs/contributors">contributors on GitHub</a>.</p>
 
 			<details>
