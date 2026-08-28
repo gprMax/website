@@ -13,8 +13,9 @@ bib: true
 
 {% include sidebar.html %}
 	<h2>Cite gprMax</h2>
-	<p>If you use gprMax in published work, please cite the principal reference [1], which describes the
-		software and its main features:</p>
+	<p>If you use gprMax in published work, please cite the principal reference [1]. It describes gprMax
+		as of version 3; version 4 extends considerably beyond it, so please also cite the references for
+		any specific capabilities you have used:</p>
 	<ol>
 		<li><strong>Warren, C., Giannopoulos, A., & Giannakis, I. (2016). gprMax: Open source software to simulate electromagnetic wave propagation for Ground Penetrating Radar, <em>Computer Physics Communications</em>, <em>209</em>, 163-170,</strong> <a href="http://dx.doi.org/10.1016/j.cpc.2016.08.020">10.1016/j.cpc.2016.08.020</a>.</li>
 	</ol>
@@ -22,7 +23,7 @@ bib: true
 		<summary>
 			<h3 style="padding: 5px 20px 5px 0;">References for specific features</h3>
 		</summary>
-		<p>If you have used specific elements of the software you might also like to cite: [2] - GPU accelerated solver, [3] - soil modelling, rough surfaces; [4] - dispersive materials; [5] - advanced features of the RIPML; [6, 7] - GPR antenna models. If you wish to reference the development history of gprMax you can also cite [8].</p>
+		<p>If you have used specific elements of the software you might also like to cite: [2] - GPU accelerated solver; [3] - soil modelling, rough surfaces; [4] - dispersive materials; [5] - advanced features of the RIPML; [6, 7] - GPR antenna models; [9] - subgridding; [10] - step-frequency continuous-wave (SFCW) radar systems. If you wish to reference the development history of gprMax you can also cite [8].</p>
 		<ol start="2">
 			<li>Warren, C., Giannopoulos, A., Gray, A., Giannakis, I., Patterson, A., Wetter, L., & Hamrah, A. (2018). A CUDA-based GPU engine for gprMax: Open source FDTD electromagnetic simulation software, <em>Computer Physics Communications</em>, <em>237</em>, 208-218, <a href="http://doi.org/10.1016/j.cpc.2018.11.007">10.1016/j.cpc.2018.11.007</a>.</li>
 			<li>Giannakis, I., Giannopoulos, A., Warren, C. (2016). A Realistic FDTD Numerical Modeling Framework of Ground Penetrating Radar for Landmine Detection. <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, <em>9</em>(1), 37-51, <a href="http://dx.doi.org/10.1109/JSTARS.2015.2468597">10.1109/JSTARS.2015.2468597</a>.</li>
@@ -31,6 +32,8 @@ bib: true
 			<li>Warren, C., Giannopoulos, A. (2011). Creating finite-difference time-domain models of commercial ground-penetrating radar antennas using Taguchi's optimization method. <em>Geophysics</em>, <em>76</em>(2), G37-G47, <a href="http://dx.doi.org/10.1190/1.3548506">10.1190/1.3548506</a>.</li>
 			<li>Giannakis, I., Giannopoulos, A., Warren, C. (2018). Realistic FDTD GPR antenna models optimised using a novel linear/non-linear Full Waveform Inversion. <em>IEEE Transactions on Geoscience & Remote Sensing</em>, <em>207</em>(3), 1768-1778, <a href="http://dx.doi.org/10.1109/TGRS.2018.2869027">10.1109/TGRS.2018.2869027</a>.</li>
 			<li>Giannopoulos, A. (2005). Modelling ground penetrating radar by GprMax, <em>Construction and Building Materials</em>, <em>19</em>(10), 755-762, <a href="http://dx.doi.org/10.1016/j.conbuildmat.2005.06.007">10.1016/j.conbuildmat.2005.06.007</a>.</li>
+			<li>Hartley, J., Giannopoulos, A., Davidson, N. (2022). Switched Huygens Subgridding for the FDTD Method. <em>IEEE Transactions on Antennas and Propagation</em>, <em>70</em>(8), 6872-6882, <a href="https://doi.org/10.1109/TAP.2022.3161371">10.1109/TAP.2022.3161371</a>.</li>
+			<li>Giannopoulos, A., Warren, C., Giannakis, I. (2023). Efficient finite-difference time-domain simulation of step-frequency continuous-wave ground penetrating radar systems. In <em>NSG2023 29th European Meeting of Environmental and Engineering Geophysics</em>, 1-5, <a href="https://doi.org/10.3997/2214-4609.202320168">10.3997/2214-4609.202320168</a>.</li>
 		</ol>
 	</details>
 	<p style="padding-top: 14px;">Also available: <a href="{{ '/contact.shtml' | relative_url }}">PhD theses of the development
