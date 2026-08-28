@@ -1,0 +1,67 @@
+name: Approve map pin
+
+# Fires when a collaborator adds the `approved` label to a map-pin issue.
+# Anyone can open an issue on a public repository, so the issue itself is
+# not a permission; the label is. Only someone with write access can add
+# one, which is what makes this a moderation queue rather than an open
+# write endpoint.
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write      # commit the appended pin
+  issues: write        # comment and close
+
+concurrency:
+  group: pins          # never let two approvals race on the same file
+  cancel-in-progress: false
+
+jobs:
+  append:
+    if: >-
+      github.event.label.name == 'approved' &&
+      contains(github.event.issue.labels.*.name, 'map-pin')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Append the pin
+        id: append
+        env:
+          # Passed as an environment variable, NOT interpolated into the
+          # run block. An issue body is untrusted text, and
+          # ${{ github.event.issue.body }} inside a shell command is a
+          # remote code execution waiting for someone to paste a backtick.
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python3 .github/scripts/append_pin.py
+
+      - name: Commit
+        env:
+          # Through the environment, never "${{ ... }}" inside the script.
+          # The runner substitutes those before bash sees them, so a pin
+          # named $(touch /tmp/pwned) would run rather than be committed.
+          LOCATION: ${{ steps.append.outputs.location }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: |
+          if [ -z "$(git status --porcelain users/pins.geojson)" ]; then
+            echo "::error::The script reported success but changed nothing."
+            exit 1
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add users/pins.geojson
+          git commit -m "Add map pin: ${LOCATION} (#${ISSUE})"
+          git push
+
+      - name: Close the issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+          TOTAL: ${{ steps.append.outputs.total }}
+        run: |
+          gh issue comment "$ISSUE" \
+            --body "Added. The map now holds ${TOTAL} pins, and will show it at the next deploy."
+          gh issue close "$ISSUE"

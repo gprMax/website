@@ -9,7 +9,7 @@ on:
   # runs. Without this the new rows sat in the repository until some other
   # push happened to redeploy, so the sidebar sparklines lagged the data.
   workflow_run:
-    workflows: ["Collect GitHub traffic stats"]
+    workflows: ["Collect GitHub traffic stats", "Approve map pin"]
     types: [completed]
 
 permissions:
