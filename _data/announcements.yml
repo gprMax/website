@@ -1,9 +1,11 @@
 # Announcements shown in the sidebar panel.
 #
-# The sidebar include filters on `date`: only items from the last 12 months
-# are rendered, newest first. Older entries stay here harmlessly and remain
-# in the news archive — the rule is enforced by the include, not remembered
-# by whoever edits this file.
+# The sidebar include filters on `date`: an item appears on its date and
+# stays for 12 months, newest first. Dating an entry in the future holds it
+# back until then, so a release can be written up in advance and publish
+# itself. Older entries stay here harmlessly and remain in the news
+# archive — the rule is enforced by the include, not remembered by whoever
+# edits this file.
 #
 # `tag: New` renders the accent pill. `href` is the archive anchor.
 

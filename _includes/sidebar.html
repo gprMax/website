@@ -6,7 +6,8 @@
   Leaflet's stylesheet is NOT loaded here — it lives in <head> via the
   layout's `leaflet` flag, so it no longer blocks the parser mid-document.
 {%- endcomment -%}
-{%- assign cutoff = 'now' | date: "%s" | plus: 0 | minus: 31536000 -%}
+{%- assign today = 'now' | date: "%s" | plus: 0 -%}
+{%- assign cutoff = today | minus: 31536000 -%}
 
 <aside id="floating-panel">
 
@@ -33,7 +34,9 @@
 			{%- assign recent = site.data.announcements | sort: "date" | reverse -%}
 			{%- for a in recent -%}
 			{%- assign stamp = a.date | date: "%s" | plus: 0 -%}
-			{%- if stamp > cutoff -%}
+			{#- Both bounds. Only checking the lower one published a release
+			   announcement three days before the release. -#}
+			{%- if stamp > cutoff and stamp <= today -%}
 			<div class="announce-feature">
 				<p class="announce-feature-title">
 					{%- if a.tag %}<span class="hero-tag">{{ a.tag }}</span>{% endif -%}

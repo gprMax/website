@@ -12,6 +12,16 @@ leaflet: true
 
 {% include sidebar.html %}
 
+			{%- comment -%}
+			Held back until the release actually happens. The site is going
+			live before v4 merges to master, and an archive entry announcing
+			a release that has not occurred is simply untrue. Publishes
+			itself on site.v4_release_date; adjust that one value if the date
+			moves.
+			{%- endcomment -%}
+			{%- assign v4_at = site.v4_release_date | date: "%s" | plus: 0 -%}
+			{%- assign now_at = "now" | date: "%s" | plus: 0 -%}
+			{%- if now_at >= v4_at -%}
 			<h2 id="v4-release">gprMax v4.0.0 &ldquo;Caol Ila&rdquo; released<span class="subtitle">31-Aug-2026</span></h2>
 
 			<div class="release-note">
@@ -27,6 +37,8 @@ leaflet: true
 				transformations, and a full Python API &mdash; the complete rundown is on the
 				<a href="{{ '/about.shtml' | relative_url }}">About page</a>. Questions about upgrading? Ask in
 				<a href="https://github.com/gprMax/gprMax/discussions">GitHub Discussions</a>.</p>
+
+			{%- endif -%}
 
 			<h2 id="gpr2026">GPR2026 conference<span class="subtitle">12-Feb-2026</span></h2>
 			<figure class="left" style="margin: -15px 0 -15px -5px;">

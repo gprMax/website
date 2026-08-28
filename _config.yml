@@ -15,6 +15,11 @@ description: >-
   and radar cross section, bioelectromagnetics and dosimetry, and radiometry
 
 # Canonical tags are built from this. Change once at the .org cutover.
+# The v4.0.0 announcement and its news entry publish themselves on this
+# date. The site is going live before the code, so until then neither
+# appears. Keep it in step with the date in _data/announcements.yml.
+v4_release_date: 2026-08-31
+
 url: "https://www.gprmax.com"
 baseurl: ""
 
