@@ -272,8 +272,30 @@ async function nominatim(env, path, params, cacheKey) {
 	return { ok: true, data };
 }
 
+/**
+ * Bring a place name under the length cap without cutting a word in half.
+ *
+ * A Nominatim name reads specific to general -- "Northumbria University,
+ * Sandyford Road, ..., England, United Kingdom" -- so when it is too long
+ * the tail is what to drop. A hard character cut produced "... United
+ * Kingd", which is what a broken page looks like.
+ */
+function capPlaceName(name, maxChars) {
+	if (Array.from(name).length <= maxChars) { return name; }
+
+	const parts = name.split(', ');
+	while (parts.length > 1) {
+		parts.pop();
+		const joined = parts.join(', ');
+		if (Array.from(joined).length <= maxChars) { return joined; }
+	}
+	// One component longer than the whole cap: a hard cut is all that is left.
+	return Array.from(name).slice(0, maxChars).join('');
+}
+
 async function resolved(env, lat, lon, rawName) {
-	const name = cleanText(tidyPlaceName(rawName), MAX_LOCATION_CHARS);
+	// Clean generously, then trim on component boundaries.
+	const name = capPlaceName(cleanText(tidyPlaceName(rawName), 400), MAX_LOCATION_CHARS);
 	return {
 		ok: true,
 		lat: lat,
