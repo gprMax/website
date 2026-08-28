@@ -1,6 +1,0 @@
----
-layout: none
-permalink: /.well-known/pki-validation/mechanism-test.txt
-sitemap: false
----
-mechanism-test-do-not-remove
