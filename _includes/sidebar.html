@@ -31,11 +31,13 @@
 			<summary>
 				<h2>Announcements</h2>
 			</summary>
+			{%- comment -%}
+			  Both bounds are checked below. Testing only the lower one
+			  published the v4 release announcement three days early.
+			{%- endcomment -%}
 			{%- assign recent = site.data.announcements | sort: "date" | reverse -%}
 			{%- for a in recent -%}
 			{%- assign stamp = a.date | date: "%s" | plus: 0 -%}
-			{#- Both bounds. Only checking the lower one published a release
-			   announcement three days before the release. -#}
 			{%- if stamp > cutoff and stamp <= today -%}
 			<div class="announce-feature">
 				<p class="announce-feature-title">
