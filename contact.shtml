@@ -28,11 +28,11 @@ leaflet: true
 
 			<h2>Authors/developers</h2>
 			<p>gprMax is developed and maintained by <a
-					href="https://www.research.ed.ac.uk/en/persons/antonis-giannopoulos">Professor Antonis
-					Giannopoulos</a>, who created the original version in 1996, and <a
-					href="https://www.northumbria.ac.uk/about-us/our-staff/w/craig-warren/">Dr Craig Warren</a>, who
+					href="https://www.research.ed.ac.uk/en/persons/antonis-giannopoulos"><strong>Professor Antonis
+					Giannopoulos</strong></a>, who created the original version in 1996, and <a
+					href="https://www.northumbria.ac.uk/about-us/our-staff/w/craig-warren/"><strong>Dr Craig Warren</strong></a>, who
 				re-developed the software from scratch in 2015 to give gprMax its current form. They are joined by
-				<a href="https://www.linkedin.com/in/dr-iraklis-giannakis">Dr Iraklis Giannakis</a>, whose advanced
+				<a href="https://www.linkedin.com/in/dr-iraklis-giannakis"><strong>Dr Iraklis Giannakis</strong></a>, whose advanced
 				algorithmic work underpins the dispersive material modelling, the fractal soil models and the
 				landmine toolboxes.</p>
 

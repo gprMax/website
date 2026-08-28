@@ -9,8 +9,11 @@ vendor/
 offline/
 extras/
 
-# Retired Apache/PHP era — kept locally for reference during migration
-scripts/
+# Retired Apache/PHP era — kept locally for reference during migration.
+# Anchored with a leading slash: a bare `scripts/` matches a directory of
+# that name at ANY depth, which silently swallowed .github/scripts/ and
+# left the stats workflow running a file that was never committed.
+/scripts/
 users/submit_pin.php
 
 # Superseded by _includes/ — kept locally until the migration is signed off
