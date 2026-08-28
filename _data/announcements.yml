@@ -17,7 +17,9 @@
     - text: Get it
       href: https://github.com/gprMax/gprMax/releases
     - text: Install
-      href: https://docs.gprmax.com/en/latest/include_readme.html#installation
+      # Data files are not rendered through Liquid, so this cannot use
+      # site.docs_version_url — flip it by hand at release too.
+      href: https://docs.gprmax.com/en/devel/inc_README.html#installation
     - text: Rundown
       href: /about.shtml
 

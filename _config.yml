@@ -23,7 +23,13 @@ docs_url: "https://docs.gprmax.com"
 repo_url: "https://github.com/gprMax/gprMax"
 discussions_url: "https://github.com/gprMax/gprMax/discussions"
 releases_url: "https://github.com/gprMax/gprMax/releases"
-install_url: "https://docs.gprmax.com/en/latest/include_readme.html#installation"
+# Base for deep links into a specific docs build. `latest` currently serves
+# the v3 docs, whose page names differ from v4 (include_readme vs inc_README,
+# input vs input_api, user_libs_* vs inc_*), so every v4 deep link 404s there.
+# RELEASE CHECKLIST: flip this to .../en/latest once v4 is merged to master
+# and Read the Docs has rebuilt `latest`.
+docs_version_url: "https://docs.gprmax.com/en/devel"
+install_url: "https://docs.gprmax.com/en/devel/inc_README.html#installation"
 gtm_id: "GTM-WML3C9"
 
 # Byte-identical in six pages before the migration.

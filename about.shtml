@@ -17,7 +17,7 @@ leaflet: true
 
 	<p>It is designed for simulating <a href="https://en.wikipedia.org/wiki/Ground-penetrating_radar">Ground Penetrating Radar (GPR)</a> and can be used to model electromagnetic wave propagation in fields such as <strong>engineering</strong>, <strong>geophysics</strong>, <strong>archaeology</strong>, and <strong>medicine</strong>. There are a <a href="{{ '/publications.shtml' | relative_url }}">wide range of applications</a> including: assessing critical infrastructure such as bridges and roads, locating buried utilities, mapping glaciers, finding anti-personnel landmines, and detecting tumours in the human body.</p>
 
-	<p>gprMax is command-line-driven software, principally written in <a href="https://www.python.org">Python</a> 3 with performance-critical parts written in <a href="http://cython.org">Cython</a>. It does not feature a graphical user interface (GUI), which keeps it flexible and scriptable, and means it runs equally well on a laptop or in high-performance computing (HPC) environments. Models can be written as simple text input files, parameterised with Python blocks, or built entirely programmatically with the full <a href="https://docs.gprmax.com/en/latest/input_api.html">Python API</a>.</p>
+	<p>gprMax is command-line-driven software, principally written in <a href="https://www.python.org">Python</a> 3 with performance-critical parts written in <a href="http://cython.org">Cython</a>. It does not feature a graphical user interface (GUI), which keeps it flexible and scriptable, and means it runs equally well on a laptop or in high-performance computing (HPC) environments. Models can be written as simple text input files, parameterised with Python blocks, or built entirely programmatically with the full <a href="{{ site.docs_version_url }}/input_api.html">Python API</a>.</p>
 
 	<p>Simulations can be accelerated on a range of hardware: the CPU solver is parallelised with <a href="http://www.openmp.org">OpenMP</a>; <a href="https://www.khronos.org/api/opencl">OpenCL</a> supports both CPUs and GPUs; and there are GPU solvers for <a href="https://developer.nvidia.com/cuda-zone">NVIDIA CUDA</a> and <a href="https://developer.apple.com/metal/">Apple Metal</a> on macOS with M-series chips. <a href="https://en.wikipedia.org/wiki/Message_Passing_Interface">MPI</a> support enables larger-scale, multi-node simulations on HPC systems.</p>
 
@@ -32,11 +32,11 @@ leaflet: true
 	<figure class="right"><img src="{{ '/images/ant_geo_detail2.png' | relative_url }}" alt="Detailed geometry of a GPR antenna" width="352" height="250" /><figcaption>Detailed geometry of a GPR antenna</figcaption></figure>
 
 	<ul>
-		<li>A <a href="https://docs.gprmax.com/en/latest/features.html#excitation-options">wide range of sources</a>: Hertzian and magnetic dipoles, hard and resistive voltage sources, transmission lines, and plane-wave excitation through a total-field/scattered-field interface <span class="tag-new">New</span></li>
-		<li><a href="https://docs.gprmax.com/en/latest/eigenmode_port.html">Eigenmode sources &amp; ports</a> for guided structures &mdash; waveguide excitation with S-parameter outputs and multi-port support <span class="tag-new">New</span></li>
-		<li><a href="https://docs.gprmax.com/en/latest/features.html#symmetry-boundaries">PEC and PMC symmetry boundaries</a> &mdash; solve half or quarter of a symmetric problem at a fraction of the cost <span class="tag-new">New</span></li>
-		<li>Built-in <a href="https://docs.gprmax.com/en/latest/features.html#library-of-antenna-models">libraries of antenna models</a></li>
-		<li>Advanced <a href="https://docs.gprmax.com/en/latest/features.html#perfectly-matched-layer-pml-absorbing-boundary-conditions">higher-order PML absorbing boundaries</a></li>
+		<li>A <a href="{{ site.docs_version_url }}/features.html#excitation-options">wide range of sources</a>: Hertzian and magnetic dipoles, hard and resistive voltage sources, transmission lines, and plane-wave excitation through a total-field/scattered-field interface <span class="tag-new">New</span></li>
+		<li><a href="{{ site.docs_version_url }}/eigenmode_port.html">Eigenmode sources &amp; ports</a> for guided structures &mdash; waveguide excitation with S-parameter outputs and multi-port support <span class="tag-new">New</span></li>
+		<li><a href="{{ site.docs_version_url }}/features.html#symmetry-boundaries">PEC and PMC symmetry boundaries</a> &mdash; solve half or quarter of a symmetric problem at a fraction of the cost <span class="tag-new">New</span></li>
+		<li>Built-in <a href="{{ site.docs_version_url }}/features.html#library-of-antenna-models">libraries of antenna models</a></li>
+		<li>Advanced <a href="{{ site.docs_version_url }}/features.html#perfectly-matched-layer-pml-absorbing-boundary-conditions">higher-order PML absorbing boundaries</a></li>
 	</ul>
 
 	<h3>Outputs &amp; analysis</h3>
@@ -44,27 +44,27 @@ leaflet: true
 	<figure class="right"><img src="{{ '/images/ant_3Dpatt2.png' | relative_url }}" alt="3D radiation pattern of a GPR antenna" width="310" height="325" /><figcaption>3D antenna radiation pattern</figcaption></figure>
 
 	<ul>
-		<li><a href="https://docs.gprmax.com/en/latest/features.html#near-to-far-field-transformations">Near-to-far-field transformations</a> &mdash; Kirchhoff surface-integral, equivalent-current, and frequency-domain formulations, including antennas over layered ground <span class="tag-new">New</span></li>
-		<li><a href="https://docs.gprmax.com/en/latest/output.html#absorbed-power-density-and-specific-absorption-rate">Specific absorption rate (SAR) and absorbed power density</a> outputs for bio-electromagnetic applications <span class="tag-new">New</span></li>
+		<li><a href="{{ site.docs_version_url }}/features.html#near-to-far-field-transformations">Near-to-far-field transformations</a> &mdash; Kirchhoff surface-integral, equivalent-current, and frequency-domain formulations, including antennas over layered ground <span class="tag-new">New</span></li>
+		<li><a href="{{ site.docs_version_url }}/output.html#absorbed-power-density-and-specific-absorption-rate">Specific absorption rate (SAR) and absorbed power density</a> outputs for bio-electromagnetic applications <span class="tag-new">New</span></li>
 		<li>S11 and input impedance from voltage, transmission-line, and port sources; field snapshots and geometry views</li>
 	</ul>
 
 	<h3>Materials &amp; geometry</h3>
 
 	<ul>
-		<li><a href="https://docs.gprmax.com/en/latest/features.html#dispersive-materials">Dispersive materials</a> (multi-pole Debye, Lorentz, or Drude) and <a href="https://docs.gprmax.com/en/latest/features.html#anisotropic-materials">anisotropy</a></li>
-		<li>Versioned <a href="https://docs.gprmax.com/en/latest/material_databases.html">material databases</a> &mdash; reusable electromagnetic properties without copying pole lists into every model <span class="tag-new">New</span></li>
-		<li>Modelling of <a href="https://docs.gprmax.com/en/latest/features.html#realistic-soils-heterogeneous-objects-and-rough-surfaces">soils with realistic dielectric and geometric properties</a>, heterogeneous objects, and rough surfaces</li>
-		<li>Tagged geometry import from <a href="https://docs.gprmax.com/en/latest/inc_STLtoVoxel.html">STL</a> and <a href="https://docs.gprmax.com/en/latest/inc_STEPtoVoxel.html">STEP</a> CAD files, plus medical volumes such as the <a href="https://docs.gprmax.com/en/latest/inc_AustinMan.html">AustinMan &amp; AustinWoman human phantoms</a> <span class="tag-new">New</span></li>
-		<li><a href="https://docs.gprmax.com/en/latest/features.html#subgridding">Subgridding</a> &mdash; fine geometry inside a coarser model <span class="tag-new">New</span></li>
+		<li><a href="{{ site.docs_version_url }}/features.html#dispersive-materials">Dispersive materials</a> (multi-pole Debye, Lorentz, or Drude) and <a href="{{ site.docs_version_url }}/features.html#anisotropic-materials">anisotropy</a></li>
+		<li>Versioned <a href="{{ site.docs_version_url }}/material_databases.html">material databases</a> &mdash; reusable electromagnetic properties without copying pole lists into every model <span class="tag-new">New</span></li>
+		<li>Modelling of <a href="{{ site.docs_version_url }}/features.html#realistic-soils-heterogeneous-objects-and-rough-surfaces">soils with realistic dielectric and geometric properties</a>, heterogeneous objects, and rough surfaces</li>
+		<li>Tagged geometry import from <a href="{{ site.docs_version_url }}/inc_STLtoVoxel.html">STL</a> and <a href="{{ site.docs_version_url }}/inc_STEPtoVoxel.html">STEP</a> CAD files, plus medical volumes such as the <a href="{{ site.docs_version_url }}/inc_AustinMan.html">AustinMan &amp; AustinWoman human phantoms</a> <span class="tag-new">New</span></li>
+		<li><a href="{{ site.docs_version_url }}/features.html#subgridding">Subgridding</a> &mdash; fine geometry inside a coarser model <span class="tag-new">New</span></li>
 	</ul>
 
 	<h3>Workflow &amp; scripting</h3>
 
 	<ul>
-		<li>A full <a href="https://docs.gprmax.com/en/latest/input_api.html">Python API</a> for building parameterised models and simulations programmatically <span class="tag-new">New</span></li>
-		<li><a href="https://docs.gprmax.com/en/latest/features.html#two-dimensional-tm-and-te-modes">2D TE and TM modes</a> as well as full 3D <span class="tag-new">New</span></li>
-		<li>User-contributed toolboxes: <a href="https://docs.gprmax.com/en/latest/inc_DebyeFit.html">DebyeFit</a> (including the CRIM mixing model), <a href="https://docs.gprmax.com/en/latest/inc_FMCW.html">FMCW</a> and <a href="https://docs.gprmax.com/en/latest/inc_SFCW.html">SFCW</a> radar, <a href="https://docs.gprmax.com/en/latest/inc_AntennaPatterns.html">antenna patterns</a>, <a href="https://docs.gprmax.com/en/latest/inc_ImpulseResponse.html">impulse response</a>, and <a href="https://docs.gprmax.com/en/latest/inc_LandmineModels.html">landmine models</a></li>
+		<li>A full <a href="{{ site.docs_version_url }}/input_api.html">Python API</a> for building parameterised models and simulations programmatically <span class="tag-new">New</span></li>
+		<li><a href="{{ site.docs_version_url }}/features.html#two-dimensional-tm-and-te-modes">2D TE and TM modes</a> as well as full 3D <span class="tag-new">New</span></li>
+		<li>User-contributed toolboxes: <a href="{{ site.docs_version_url }}/inc_DebyeFit.html">DebyeFit</a> (including the CRIM mixing model), <a href="{{ site.docs_version_url }}/inc_FMCW.html">FMCW</a> and <a href="{{ site.docs_version_url }}/inc_SFCW.html">SFCW</a> radar, <a href="{{ site.docs_version_url }}/inc_AntennaPatterns.html">antenna patterns</a>, <a href="{{ site.docs_version_url }}/inc_ImpulseResponse.html">impulse response</a>, and <a href="{{ site.docs_version_url }}/inc_LandmineModels.html">landmine models</a></li>
 		<li>Open, robust file formats: HDF5 outputs and VTK geometry and snapshot files</li>
 	</ul>
 

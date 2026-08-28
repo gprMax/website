@@ -18,7 +18,7 @@ leaflet: true
 				<p><strong>gprMax v4.0.0</strong> is our biggest release since the software was rewritten in
 					Python &mdash; a decade of development on the v3 line, consolidated and modernised.
 					<a href="https://github.com/gprMax/gprMax/releases">Get it from GitHub</a> or follow the
-					<a href="https://docs.gprmax.com/en/latest/include_readme.html#installation">installation
+					<a href="{{ site.docs_version_url }}/inc_README.html#installation">installation
 					guide</a>.</p>
 			</div>
 
@@ -284,7 +284,7 @@ leaflet: true
 				a Intel&reg; Core&trade; i7-4790K CPU. These types of speed improvement open up a lot of new
 				opportunities and possibilites for FDTD simulations, not just for GPR!</p>
 			<p>You can read about how to use the GPU functionality and find full documentation in our <a
-					href="http://docs.gprmax.com">User Guide</a>. Please report any bugs with the code via the Issues
+					href="{{ site.docs_url }}">User Guide</a>. Please report any bugs with the code via the Issues
 				feature on <a href="https://github.com/gprmax/gprMax">our GitHub page</a>. For help and general advice
 				on using the software visit our <a href="https://github.com/gprMax/gprMax/discussions">GitHub Discussions</a>.</p>
 			<div class="clear-left"></div>
@@ -331,7 +331,7 @@ leaflet: true
 					href="https://www.liag-hannover.de/en/s/s2/staff.html">Markus Loewer</a> from the <a
 					href="https://www.liag-hannover.de/en/home.html">Leibniz Institute for Applied Geophysics</a> in
 				Germany. Markus was the GPR2016 Young Scientist winner, and is using the <a
-					href="http://docs.gprmax.com/en/latest/features.html#dispersive-materials">new dispersive material
+					href="{{ site.docs_version_url }}/features.html#dispersive-materials">new dispersive material
 					modelling capabilities</a> to create multi-pole Debye models to accurately simulate the
 				frequency-dependent dielectric properties of different soils.</p>
 
@@ -345,7 +345,5 @@ leaflet: true
 				screencasts to help new users with installing and updating gprMax. We have also created videos, like the
 				one shown here, that demonstrate how electromagnetic fields propagate in different environments. These
 				are fairly simple 2D models but, nevertheless, are educational and provide some useful insight. We will
-				be adding videos of more complex simulations as well as screencasts of guided example models. You can
-				find a list of all the screencasts &amp; videos in the <a
-					href="http://docs.gprmax.com/en/latest/screencasts.html">User Guide</a>.</p>
+				be adding videos of more complex simulations as well as screencasts of guided example models. </p>
 			<div class="clear-left"></div>
