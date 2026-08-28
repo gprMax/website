@@ -40,8 +40,8 @@ bib: true
 	<p>Publications citing references [1], [2] and [8], excluding author self-citations &mdash; extracted from
 		<a href="http://www.elsevier.com/online-tools/scopus">Scopus</a> on
 		{{ site.data.bib.updated }}. Applications span
-		<strong>engineering</strong>, <strong>geophysics</strong>, <strong>archaeology</strong>, and
-		<strong>medicine</strong>.</p>
+		<strong>engineering</strong>, <strong>geophysics</strong>, <strong>archaeology</strong>,
+		<strong>antennas and microwave</strong>, and <strong>medicine</strong>.</p>
     
     <div class="chart-main">
         <canvas id="pubChart"></canvas>

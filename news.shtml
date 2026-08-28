@@ -1,6 +1,6 @@
 ---
 title: "gprMax: News archive"
-description: "News archive for gprMax, the open source electromagnetic simulation software for modelling Ground Penetrating Radar."
+description: "News archive for gprMax, the open source software for time-domain computational electromagnetics and Ground Penetrating Radar modelling."
 body_id: news
 sidebar: true
 gtm: true

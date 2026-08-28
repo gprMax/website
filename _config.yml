@@ -8,11 +8,11 @@
 title: "gprMax"
 author: "Craig Warren"
 description: >-
-  gprMax is open source software that simulates electromagnetic wave propagation.
-  It solves Maxwell's equations in 3D using the Finite-Difference Time-Domain
-  (FDTD) method. gprMax was designed for modelling Ground Penetrating Radar (GPR)
-  but can also be used to model electromagnetic wave propagation for many other
-  applications
+  gprMax is open source software that solves Maxwell's equations using the
+  Finite-Difference Time-Domain (FDTD) method. A general-purpose research
+  platform for time-domain computational electromagnetics, it is used for
+  Ground Penetrating Radar (GPR), antenna and microwave modelling, scattering
+  and radar cross section, bioelectromagnetics and dosimetry, and radiometry
 
 # Canonical tags are built from this. Change once at the .org cutover.
 url: "https://www.gprmax.com"
@@ -33,7 +33,7 @@ install_url: "https://docs.gprmax.com/en/devel/inc_README.html#installation"
 gtm_id: "GTM-WML3C9"
 
 # Byte-identical in six pages before the migration.
-keywords: "gprmax, gprmax3d, gprmax2d, ground penetrating radar, gpr, fdtd, electromagnetic, finite difference, time domain, solver, modelling, simulation, antennas, landmines, detection, engineering, civil, concrete, open source, NVIDIA, CUDA, parallel, OpenMP, MPI, machine learning, full waveform inversion, neural networks"
+keywords: "gprmax, gprmax3d, gprmax2d, ground penetrating radar, gpr, fdtd, electromagnetic, finite difference, time domain, solver, modelling, simulation, computational electromagnetics, antennas, microwave, S-parameters, radar cross section, RCS, scattering, bioelectromagnetics, dosimetry, SAR, radiometry, landmines, detection, engineering, civil, concrete, open source, NVIDIA, CUDA, OpenCL, Apple Metal, parallel, OpenMP, MPI, machine learning, full waveform inversion, neural networks"
 
 plugins:
   - jekyll-redirect-from
