@@ -11,39 +11,20 @@ leaflet: true
 			<h1>Contacts</h1>
 
 {% include sidebar.html %}
-			<h2>Questions, comments, discussion &amp; chat</h2>
+			<h2>Where to get in touch</h2>
 
-			<figure class="left" style="margin: 10px 0 0 40px; min-width: 90px; text-align: center;"><a href="https://github.com/gprMax/gprMax/discussions"><img
-						class="invert-dark" src="{{ '/images/logo_GitHub.png' | relative_url }}" alt="GitHub logo" width="45" height="45" /></a>
-				<figcaption><a href="https://github.com/gprMax/gprMax/discussions">Discussions</a></figcaption>
-			</figure>
-
-			<figure class="left" style="margin: 10px 0 0 40px;"><a href="https://github.com/gprMax/gprMax/issues"><img
-						class="invert-dark" src="{{ '/images/logo_GitHub.png' | relative_url }}" alt="GitHub logo" width="45" height="45" /></a>
-				<figcaption><a href="https://github.com/gprMax/gprMax/issues">Issues</a></figcaption>
-			</figure>
-
-			<figure class="left" style="margin: 10px 0 0 40px;"><a href="https://gprmax.zulipchat.com/"><img
-						src="{{ '/images/logo_zulip.svg' | relative_url }}" alt="Zulip logo" width="45" height="45" /></a>
-				<figcaption><a href="https://gprmax.zulipchat.com/">Zulip</a></figcaption>
-			</figure>
-			<div class="clear-left">&nbsp;</div>
-
-			<p style="padding-top: 10px;">For questions, ideas, and general discussion on gprMax, GPR, and
-				FDTD modelling, use <a href="https://github.com/gprMax/gprMax/discussions">GitHub
-				Discussions</a> &mdash; it is where the developers and community answer.</p>
-
-			<p>Found a bug? Report it through the
-				<a href="https://github.com/gprMax/gprMax/issues">issue tracker</a>, ideally with the input
-				file and the version you are running.</p>
-
-			<p>For informal chat with the developers and other users, join our
-				<a href="https://gprmax.zulipchat.com/">Zulip</a>. We are grateful to
-				<a href="https://zulip.com/">Zulip</a> &mdash; an organized team chat app designed for
-				efficient communication &mdash; for sponsoring us.</p>
-
-			<p>Our former <a href="https://groups.google.com/g/gprmax">Google Group</a> is closed to new
-				posts, but a decade of answered questions remains readable there.</p>
+			<ul class="contact-routes">
+				<li><strong><a href="https://github.com/gprMax/gprMax/discussions">GitHub Discussions</a></strong>
+					&mdash; questions, ideas, and general discussion on gprMax, GPR, and FDTD modelling. This is
+					where the developers and the community answer.</li>
+				<li><strong><a href="https://github.com/gprMax/gprMax/issues">GitHub Issues</a></strong>
+					&mdash; bug reports. Include your input file and the version you are running.</li>
+				<li><strong><a href="https://gprmax.zulipchat.com/">Zulip</a></strong>
+					&mdash; informal chat with the developers and other users. Our thanks to
+					<a href="https://zulip.com/">Zulip</a> for sponsoring us.</li>
+				<li><strong><a href="https://groups.google.com/g/gprmax">Google Group</a></strong>
+					&mdash; closed to new posts, but a decade of answered questions remains readable there.</li>
+			</ul>
 
 			<h2>Authors/developers</h2>
 			<p>gprMax is developed and maintained by <a

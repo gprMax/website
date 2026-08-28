@@ -1530,3 +1530,18 @@ html[data-theme='light'] .only-dark {
         margin: 6px 0 16px 0;
     }
 }
+
+/* --------------------------------------------------------------------------
+   18. Contact routes
+   -------------------------------------------------------------------------- */
+
+/* Four ways to reach us, as a scannable list rather than four paragraphs.
+   Each item is a destination plus one line on what belongs there, so the
+   items are longer than a normal bullet and want more air between them. */
+#main-content .contact-routes {
+    margin: 10px 0 14px 0;
+}
+
+#main-content .contact-routes li {
+    padding: 7px 0;
+}
