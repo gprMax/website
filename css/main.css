@@ -1013,16 +1013,25 @@ iframe.padlet {
 }
 
 @media (max-width: 820px) {
+    /* The hamburger is pinned to the right edge, so a centred logo will
+       always grow into it -- at 360px a 300px logo left 30px a side for a
+       44px control. Logo left, control right, strapline on its own line:
+       the two sit beside each other instead of fighting for the middle. */
     #header {
-        justify-content: center;
+        position: relative;
+        justify-content: flex-start;
+        align-items: center;
         text-align: center;
+        padding-right: 52px;
     }
 
     #header img {
         max-height: 84px;
+        max-width: 100%;
     }
 
     p.strap {
+        flex: 1 0 100%;
         margin: 0 auto;
         text-align: center;
         font-size: 1.05rem;

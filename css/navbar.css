@@ -141,12 +141,28 @@ body#forum nav li#forum-nav a:link, body#forum nav li#forum-nav a:visited, body#
         right: 0;
         bottom: 0;
         width: 100%;
+
+        /* The desktop rule makes nav a flex item (flex: 1 0 100%). A fixed
+           flex child resolves its offsets against its static position
+           rather than the viewport, so `top: 0` was ignored and the panel
+           opened 310px down the page, leaving the header showing above it.
+           Resetting the flex properties is the fix; the explicit height is
+           belt and braces, and dvh keeps it right when mobile browser
+           chrome slides away. */
+        flex: none;
+        align-self: auto;
+        height: 100dvh;
+
         padding: 5.5rem 2rem 2rem 2rem;
         background-color: var(--surface);
         transition: transform 0.3s ease;
         transform: translateX(100%);
         overflow-y: auto;
-        z-index: 100;
+        overscroll-behavior: contain;   /* scrolling the menu must not move the page */
+
+        /* Above the Leaflet panes, which sit at 400-500 and were painting
+           over the last menu items. */
+        z-index: 1000;
     }
 
     nav ul {
@@ -191,24 +207,35 @@ body#forum nav li#forum-nav a:link, body#forum nav li#forum-nav a:visited, body#
         padding-left: 0.75rem;
     }
 
-    /* Hamburger */
+    /* Hamburger. Sized to a 44px touch target -- the bars are 20px, the
+       box around them is what a thumb actually has to hit. Vertically
+       centred against the logo rather than pinned to an arbitrary offset,
+       which is what left it clipping the logo's final letter. */
     .show-menu {
-        width: 32px;
-        height: 20px;
+        width: 44px;
+        height: 44px;
         position: absolute;
-        top: 1.9rem;
-        right: 1.25rem;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
         display: flex;
         cursor: pointer;
         align-items: center;
         justify-content: center;
-        z-index: 101;
+        z-index: 1001;
+    }
+
+    /* The bars, as a group, inside that larger hit area. */
+    .show-menu span,
+    .show-menu::before,
+    .show-menu::after {
+        width: 28px;
+        left: 8px;
     }
 
     .show-menu span,
     .show-menu::before,
     .show-menu::after {
-        width: 100%;
         height: 3px;
         border-radius: 2px;
         background: var(--heading);
@@ -217,23 +244,26 @@ body#forum nav li#forum-nav a:link, body#forum nav li#forum-nav a:visited, body#
     .show-menu::before,
     .show-menu::after {
         content: "";
-        left: 0;
+        left: 8px;          /* match the flex-centred middle bar in a 44px box */
         position: absolute;
         transition: all 0.3s ease;
     }
 
     .show-menu::before {
-        top: 0;
+        top: 12px;
     }
 
     .show-menu::after {
-        top: 17px;
+        top: 29px;
     }
 
     /* Open state: label pins to the viewport so the close control is always
        reachable, the bars form an X, and the nav slides in. */
     .menu-toggler:checked + .show-menu {
         position: fixed;
+        top: 1.4rem;
+        right: 1rem;
+        transform: none;
     }
 
     .menu-toggler:checked + .show-menu span {
@@ -241,12 +271,12 @@ body#forum nav li#forum-nav a:link, body#forum nav li#forum-nav a:visited, body#
     }
 
     .menu-toggler:checked + .show-menu::before {
-        top: 8.5px;
+        top: 20.5px;
         transform: rotate(-45deg);
     }
 
     .menu-toggler:checked + .show-menu::after {
-        top: 8.5px;
+        top: 20.5px;
         transform: rotate(45deg);
     }
 
@@ -257,5 +287,13 @@ body#forum nav li#forum-nav a:link, body#forum nav li#forum-nav a:visited, body#
     .menu-toggler:focus-visible + .show-menu {
         outline: 2px solid var(--link);
         outline-offset: 4px;
+    }
+}
+
+/* The page must not scroll behind an open menu. Pure CSS via :has() --
+   this menu has no JavaScript and does not need any. */
+@media only screen and (max-width: 1100px) {
+    body:has(.menu-toggler:checked) {
+        overflow: hidden;
     }
 }
