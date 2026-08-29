@@ -1035,11 +1035,32 @@ iframe.padlet {
        44px control. Logo left, control right, strapline on its own line:
        the two sit beside each other instead of fighting for the middle. */
     #header {
-        position: relative;
         justify-content: flex-start;
         align-items: center;
         text-align: center;
-        padding-right: 52px;
+        /* Tighter than the desktop 24px: with the wider gap the logo and
+           the control could not share a row and the control wrapped
+           underneath, which is what put it 76px below the logo. */
+        gap: 8px 12px;
+    }
+
+    /* The control belongs beside the logo, so it rides in the same flex
+       row rather than being absolutely positioned. Centring it on #header
+       centred it on the logo AND the strapline together, which put it 26px
+       below the logo's middle -- close enough to look like a mistake.
+       Ordering keeps the strapline on its own row underneath. */
+    #header > a {
+        order: 0;
+        /* The cap belongs on the link, not the image: an image's max-width
+           resolves against this wrapper, which is itself sized by the
+           image, so capping the image constrained nothing and the control
+           still wrapped to a second row at 320 and 360px. */
+        max-width: calc(100% - 60px);
+    }
+
+    #header .show-menu {
+        order: 1;
+        margin-left: auto;
     }
 
     #header img {
@@ -1051,6 +1072,7 @@ iframe.padlet {
        set by the logo's depth. Once it wraps to its own row its descenders
        ran straight into the rule below, with no gap at all. */
     p.strap {
+        order: 2;
         flex: 1 0 100%;
         margin: 0 auto 10px auto;
         text-align: center;

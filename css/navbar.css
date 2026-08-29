@@ -106,6 +106,19 @@ nav li a:active {
     padding: 0 0 6px 0;
 }
 
+/* In the stacked menu it is a row like the others, not a trailing item on
+   a tab bar: left aligned to match, and clear of the divider above it
+   rather than sitting on the line. */
+@media only screen and (max-width: 1100px) {
+    li.nav-theme {
+        margin-left: 0;
+        /* 0.25rem matches the horizontal padding on the nav links above, so
+           the control's edge lines up with their text. */
+        padding: 1.25rem 0 0 0.25rem;
+        text-align: left;
+    }
+}
+
 /* Active tab: keyed off the body id. Keep all eight pairs — #forum-nav is
    still referenced here even though the page is retired (see UPGRADE.md). */
 body#news li#news-nav,
@@ -214,10 +227,8 @@ body#forum nav li#forum-nav a:link, body#forum nav li#forum-nav a:visited, body#
     .show-menu {
         width: 44px;
         height: 44px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 0;
+        position: relative;   /* the bars position against this box */
+        flex: 0 0 auto;
         display: flex;
         cursor: pointer;
         align-items: center;
@@ -259,11 +270,12 @@ body#forum nav li#forum-nav a:link, body#forum nav li#forum-nav a:visited, body#
 
     /* Open state: label pins to the viewport so the close control is always
        reachable, the bars form an X, and the nav slides in. */
+    /* Open, it pins to the viewport so the close control stays reachable
+       however far the menu is scrolled. */
     .menu-toggler:checked + .show-menu {
         position: fixed;
-        top: 1.4rem;
-        right: 1rem;
-        transform: none;
+        top: 1.1rem;
+        right: 0.75rem;
     }
 
     .menu-toggler:checked + .show-menu span {
