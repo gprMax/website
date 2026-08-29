@@ -1010,6 +1010,23 @@ iframe.padlet {
         width: 100%;
         margin: 20px 0;
     }
+
+    /* Once the sidebar stops floating it lands between the h1 and the
+       content the h1 introduces, so the heading was stranded above three
+       unrelated panels. Ordering is visual only -- the DOM keeps the h1
+       first, which is what screen readers and the outline follow.
+
+       The flex column costs some margin collapsing between children,
+       measured at about 45px over a whole page, which is a fair trade for
+       a heading that sits with its own content. */
+    #main-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #floating-panel {
+        order: -1;
+    }
 }
 
 @media (max-width: 820px) {
