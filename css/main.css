@@ -1030,9 +1030,12 @@ iframe.padlet {
         max-width: 100%;
     }
 
+    /* On a wide screen the strapline sits beside the logo and the rule is
+       set by the logo's depth. Once it wraps to its own row its descenders
+       ran straight into the rule below, with no gap at all. */
     p.strap {
         flex: 1 0 100%;
-        margin: 0 auto;
+        margin: 0 auto 10px auto;
         text-align: center;
         font-size: 1.05rem;
     }

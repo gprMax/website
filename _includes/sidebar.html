@@ -92,3 +92,20 @@
 	<script src="{{ '/js/gh-stats.js' | relative_url }}"></script>
 
 </aside>
+
+<script>
+	/* The panels are open by default because on a wide screen they sit
+	   beside the content and cost nothing. Stacked on a phone they push the
+	   page's actual content down by roughly 900px, so there they start
+	   collapsed and the reader chooses.
+
+	   Inline and immediately after the markup on purpose: as a deferred
+	   file this would run after first paint and the panels would visibly
+	   snap shut. No-JS keeps them open, which is the honest fallback --
+	   the content is present either way. */
+	(function () {
+		if (window.innerWidth > 1100) { return; }
+		var open = document.querySelectorAll('#floating-panel details[open]');
+		for (var i = 0; i < open.length; i++) { open[i].open = false; }
+	})();
+</script>
