@@ -615,11 +615,25 @@ p.strap::first-line {
 #floating-panel details > summary {
     display: flex;
     align-items: baseline;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     column-gap: 0.55rem;
 }
 
+/* The heading keeps its full width; the hint gives way. */
+#floating-panel details > summary h2 {
+    flex: 0 0 auto;
+}
+
+/* Never wraps to a second line, whatever the viewport or the reader's
+   text size: it shrinks, and truncates if it has to. A gloss is worth
+   having only while it costs no vertical space -- the heading it explains
+   is right beside it, so a clipped hint loses little. */
 .panel-hint {
+    flex: 0 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-size: 0.78rem;
     line-height: 1.3;
     color: var(--text-secondary);
@@ -1040,6 +1054,14 @@ iframe.padlet {
         float: none;
         width: 100%;
         margin: 14px 0;
+    }
+
+    /* On a phone the hint is competing with the heading for a narrow row,
+       so it drops to the showcase byline's size -- already the smallest
+       text on the site, and legible there. Desktop keeps 0.78rem, where
+       there is room for it. */
+    .panel-hint {
+        font-size: 0.72rem;
     }
 
     /* A collapsed panel is showing nothing but its own heading, so the
