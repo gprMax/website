@@ -114,7 +114,7 @@ nav li a:active {
         margin-left: 0;
         /* 0.25rem matches the horizontal padding on the nav links above, so
            the control's edge lines up with their text. */
-        padding: 1.25rem 0 0 0.25rem;
+        padding: 1.25rem 0 0 0.75rem;
         text-align: left;
     }
 }
@@ -186,17 +186,21 @@ body#forum nav li#forum-nav a:link, body#forum nav li#forum-nav a:visited, body#
         display: block;
     }
 
+    /* Every row carries the accent border, transparent unless it is the
+       current page. Colouring an existing border keeps every box the same
+       width, so the label does not jump sideways on the active row. */
     nav li {
         background: none;
         border: none;
         border-radius: 0;
         border-bottom: 1px solid var(--border);
+        border-left: 4px solid transparent;
     }
 
     nav li a {
         font-size: 1.2rem;
         text-align: left;
-        padding: 0.9rem 0.25rem;
+        padding: 0.9rem 0.75rem;
         opacity: 1;
     }
 
@@ -210,19 +214,10 @@ body#forum nav li#forum-nav a:link, body#forum nav li#forum-nav a:visited, body#
     body#forum li#forum-nav {
         background: none;
         border-top: none;
-        border-left: 4px solid var(--accent);
+        border-left-color: var(--accent);
         border-bottom: 1px solid var(--border);
     }
 
-    body#news li#news-nav a,
-    body#about li#about-nav a,
-    body#download li#download-nav a,
-    body#publications li#publications-nav a,
-    body#docs li#docs-nav a,
-    body#contact li#contact-nav a,
-    body#forum li#forum-nav a {
-        padding-left: 0.75rem;
-    }
 
     /* Hamburger. Sized to a 44px touch target -- the bars are 20px, the
        box around them is what a thumb actually has to hit. Vertically
@@ -247,10 +242,15 @@ body#forum nav li#forum-nav a:link, body#forum nav li#forum-nav a:visited, body#
         display: none;
     }
 
+    /* Flush with the right of the 44px target, not centred in it. Centred,
+       the bars ended 28px from the screen edge while the logo started at
+       12px, so the bar looked off-centre even though the boxes matched.
+       The touch area keeps its full size, extending inward. */
     .show-menu::before,
     .show-menu::after {
         width: 20px;
-        left: 12px;
+        left: auto;
+        right: 0;
     }
 
     .show-menu::before,

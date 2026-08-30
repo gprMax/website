@@ -609,6 +609,37 @@ p.strap::first-line {
     display: none;
 }
 
+/* A one-line gloss beside each panel heading. It fills space that was
+   empty anyway, and earns its keep most when the panels are collapsed and
+   the heading is all there is to go on. */
+#floating-panel details > summary {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    column-gap: 0.55rem;
+}
+
+.panel-hint {
+    font-size: 0.78rem;
+    line-height: 1.3;
+    color: var(--text-secondary);
+}
+
+/* The heading carries the divider when the panel is open; as a flex item
+   it would only be as wide as its own text, so the rule moves to the
+   summary and the two sit on one line above it. */
+#floating-panel details[open] > summary {
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+}
+
+#floating-panel details[open] > summary h2 {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
 #floating-panel details > summary:focus-visible,
 #main-content details > summary:focus-visible {
     outline: 2px solid var(--link);
