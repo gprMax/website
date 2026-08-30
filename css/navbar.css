@@ -236,18 +236,22 @@ body#forum nav li#forum-nav a:link, body#forum nav li#forum-nav a:visited, body#
         z-index: 1001;
     }
 
-    /* The bars, as a group, inside that larger hit area. */
-    .show-menu span,
-    .show-menu::before,
-    .show-menu::after {
-        width: 28px;
-        left: 8px;
+    /* Two bars, not three -- a more compact mark for a compact bar. The
+       middle bar was a real <span>; the label's other span is
+       screen-reader text and must survive. */
+    .show-menu > span:first-child {
+        display: none;
     }
 
-    .show-menu span,
     .show-menu::before,
     .show-menu::after {
-        height: 3px;
+        width: 20px;
+        left: 12px;
+    }
+
+    .show-menu::before,
+    .show-menu::after {
+        height: 2px;
         border-radius: 2px;
         background: var(--heading);
     }
@@ -261,11 +265,11 @@ body#forum nav li#forum-nav a:link, body#forum nav li#forum-nav a:visited, body#
     }
 
     .show-menu::before {
-        top: 12px;
+        top: 18px;
     }
 
     .show-menu::after {
-        top: 29px;
+        top: 25px;
     }
 
     /* Open state: label pins to the viewport so the close control is always
@@ -278,17 +282,13 @@ body#forum nav li#forum-nav a:link, body#forum nav li#forum-nav a:visited, body#
         right: 0.75rem;
     }
 
-    .menu-toggler:checked + .show-menu span {
-        background: transparent;
-    }
-
     .menu-toggler:checked + .show-menu::before {
-        top: 20.5px;
+        top: 21px;
         transform: rotate(-45deg);
     }
 
     .menu-toggler:checked + .show-menu::after {
-        top: 20.5px;
+        top: 21px;
         transform: rotate(45deg);
     }
 

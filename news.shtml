@@ -319,10 +319,6 @@ leaflet: true
 
 			<h2>Highlight - Paper published in Computer Physics Communications<span class="subtitle">27-Sep-2016</span>
 			</h2>
-			<figure class="left" style="margin-bottom: 0; margin-right: 25px"><iframe class="video" width="258"
-					height="231"
-					src="http://audioslides.elsevier.com//ViewerSmall.aspx?source=1&doi=10.1016/j.cpc.2016.08.020"></iframe>
-			</figure>
 			<p>We are pleased to announce that our <a href="http://dx.doi.org/10.1016/j.cpc.2016.08.020">paper
 					describing the new version of gprMax</a> has been published in the journal of <a
 					href="http://www.journals.elsevier.com/computer-physics-communications/">Computer Physics
@@ -333,9 +329,6 @@ leaflet: true
 			</p>
 			<p>The paper is open-access and we would appreciate that if you use gprMax and publish your work, <a
 					href="{{ '/publications.shtml' | relative_url }}">you would cite this new paper</a>.</p>
-			<p>Have a look/listen to the <a
-					href="http://audioslides.elsevier.com//ViewerSmall.aspx?source=1&doi=10.1016/j.cpc.2016.08.020">audioslides</a>
-				(~5mins) which briefly explain GPR and gprMax and describe the key features of the paper.</p>
 			<div class="clear-left"></div>
 
 			<h2>Featured project on spectral soil properties<span class="subtitle">02-Aug-2016</span></h2>

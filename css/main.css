@@ -1008,7 +1008,21 @@ iframe.padlet {
     #floating-panel {
         float: none;
         width: 100%;
-        margin: 20px 0;
+        margin: 14px 0;
+    }
+
+    /* A collapsed panel is showing nothing but its own heading, so the
+       padding and margin of a full panel just make three fat bars. Scoped
+       with :has() so an opened one keeps its room. */
+    #floating-panel .stats-container:has(details:not([open])) {
+        margin-bottom: 8px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    #floating-panel .stats-container:has(details:not([open])) summary h2 {
+        font-size: 1rem;
+        padding: 7px 0;
     }
 
     /* Once the sidebar stops floating it lands between the h1 and the
@@ -1030,10 +1044,70 @@ iframe.padlet {
 }
 
 @media (max-width: 820px) {
-    /* The hamburger is pinned to the right edge, so a centred logo will
-       always grow into it -- at 360px a 300px logo left 30px a side for a
-       44px control. Logo left, control right, strapline on its own line:
-       the two sit beside each other instead of fighting for the middle. */
+    /* A compact bar that stays with you, rather than 149px of masthead --
+       18% of a phone screen -- that scrolls away and takes the navigation
+       with it. The strapline is the casualty: there is no room for it
+       beside a 34px logo, and it reads as page content rather than
+       chrome, so on a phone it goes. The h1 and the homepage lede carry
+       that job.
+
+       Negative margins pull the bar out to the screen edges so the blur
+       runs edge to edge; the padding puts the contents back on the
+       container's gutter. */
+    #header {
+        position: sticky;
+        top: 0;
+        z-index: 900;
+        /* width:auto matters: the base rule sets width:100%, and with that
+           the negative margins shift the box left rather than widening it,
+           which pushed the whole header 16px off-centre and left a strip
+           down the right-hand side. */
+        width: auto;
+        margin: 0 -16px;
+        padding: 7px 16px;
+        border-bottom: 2px solid var(--heading);
+    }
+
+    /* The blur lives on a pseudo-element, not on #header itself.
+       backdrop-filter establishes a containing block for fixed
+       descendants, exactly as transform does -- on #header it captured
+       the menu overlay, which then measured against the header instead of
+       the viewport, stopped covering the screen and added 390px of
+       horizontal scroll. A pseudo-element has no descendants to capture. */
+    #header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: color-mix(in srgb, var(--page) 90%, transparent);
+        -webkit-backdrop-filter: blur(18px) saturate(160%);
+        backdrop-filter: blur(18px) saturate(160%);
+    }
+
+    /* Without blur support a translucent bar would let text show through. */
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+        #header::before {
+            background: var(--page);
+        }
+    }
+
+    p.strap {
+        display: none;
+    }
+
+    /* The rule now belongs to the bar, which stays put; on #main-content it
+       would scroll away and leave the bar floating. */
+    #main-content {
+        border-top: none;
+        padding-top: 14px;
+    }
+
+    /* Anything linked to by fragment -- the news anchors, the showcase
+       cards -- would otherwise land underneath the bar. */
+    :target {
+        scroll-margin-top: 64px;
+    }
+
     #header {
         justify-content: flex-start;
         align-items: center;
@@ -1064,7 +1138,7 @@ iframe.padlet {
     }
 
     #header img {
-        max-height: 84px;
+        max-height: 34px;
         max-width: 100%;
     }
 
@@ -1105,6 +1179,13 @@ iframe.padlet {
 @media (max-width: 480px) {
     #container {
         padding: 0 12px;
+    }
+
+    /* Match the narrower gutter, or the bar overhangs the viewport. */
+    #header {
+        margin: 0 -12px;
+        padding-left: 12px;
+        padding-right: 12px;
     }
 
     .stat-value {
