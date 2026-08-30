@@ -1230,6 +1230,35 @@ iframe.padlet {
         margin: 12px 0 20px 0;
     }
 
+    /* Unfloated, the three portraits became three stacked blocks -- and
+       once #main-content became a flex column for the sidebar reorder,
+       they were flex items too, so inline-block could not bring them back
+       onto a line. Hence the wrapper: it is the flex row, they are its
+       items. Side by side they cost a third of the height and read as a
+       group rather than a list. */
+    .people {
+        display: flex;
+        gap: 3.5%;
+        align-items: flex-start;
+    }
+
+    .people figure.circular {
+        flex: 1 1 0;
+        width: auto;
+        height: auto;
+        margin: 10px 0 14px 0;
+    }
+
+    .people figure.circular img {
+        width: 100%;
+        height: auto;
+    }
+
+    .people figure.circular figcaption {
+        font-size: 0.72rem;
+        line-height: 1.3;
+    }
+
     .stats-row {
         flex-wrap: wrap;
     }

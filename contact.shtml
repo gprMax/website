@@ -36,6 +36,7 @@ leaflet: true
 				algorithmic work underpins the dispersive material modelling, the fractal soil models and the
 				landmine toolboxes.</p>
 
+			<div class="people">
 			<figure class="left circular"><img src="{{ '/images/profiles/Giannopoulos.png' | relative_url }}" alt="Giannopoulos.png" width="150"
 					height="150" />
 				<figcaption><a href="https://www.research.ed.ac.uk/en/persons/antonis-giannopoulos">Prof Antonis
@@ -51,6 +52,7 @@ leaflet: true
 				<figcaption><a href="https://www.linkedin.com/in/dr-iraklis-giannakis">Dr Iraklis
 						Giannakis<br />Macau University of Science and Technology, China</a></figcaption>
 			</figure>
+			</div>
 
 			<div class="clear-left">&nbsp;</div>
 

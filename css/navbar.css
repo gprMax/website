@@ -263,7 +263,6 @@ body#forum nav li#forum-nav a:link, body#forum nav li#forum-nav a:visited, body#
     .show-menu::before,
     .show-menu::after {
         content: "";
-        left: 8px;          /* match the flex-centred middle bar in a 44px box */
         position: absolute;
         transition: all 0.3s ease;
     }
