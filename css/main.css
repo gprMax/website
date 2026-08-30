@@ -1057,7 +1057,9 @@ iframe.padlet {
     #header {
         position: sticky;
         top: 0;
-        z-index: 900;
+        /* Above the menu panel (1000), so the bar stays visible while the
+           panel drops out from under it and the control morphs in place. */
+        z-index: 1100;
         /* width:auto matters: the base rule sets width:100%, and with that
            the negative margins shift the box left rather than widening it,
            which pushed the whole header 16px off-centre and left a strip
@@ -1078,7 +1080,9 @@ iframe.padlet {
         content: "";
         position: absolute;
         inset: 0;
-        z-index: -1;
+        /* Above the panel but below the logo and the control, so the bar
+           keeps its own background while the menu is open. */
+        z-index: 1150;
         background: color-mix(in srgb, var(--page) 90%, transparent);
         -webkit-backdrop-filter: blur(18px) saturate(160%);
         backdrop-filter: blur(18px) saturate(160%);
@@ -1125,6 +1129,12 @@ iframe.padlet {
        Ordering keeps the strapline on its own row underneath. */
     #header > a {
         order: 0;
+        /* nav is a child of #header, so raising the header's own z-index
+           does nothing for the logo: the panel is inside that same
+           stacking context and paints over it. The logo has to be lifted
+           above the panel itself, as the menu control already is. */
+        position: relative;
+        z-index: 1200;
         /* The cap belongs on the link, not the image: an image's max-width
            resolves against this wrapper, which is itself sized by the
            image, so capping the image constrained nothing and the control
