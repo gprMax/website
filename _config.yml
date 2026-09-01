@@ -17,9 +17,14 @@ description: >-
 # Canonical tags, the sitemap and every absolute_url are built from this.
 # gprmax.com now forwards here rather than the other way round.
 # The v4.0.0 announcement and its news entry publish themselves on this
-# date. The site is going live before the code, so until then neither
-# appears. Keep it in step with the date in _data/announcements.yml.
-v4_release_date: 2026-08-31
+# date, and the release slipped past the first one -- for a day the site
+# announced a release that did not exist, with "Get it" pointing at a
+# releases page showing v3.1.7.
+#
+# SET THIS TO THE ACTUAL RELEASE DATE, and only once the tag is live.
+# A date in the past publishes immediately. Keep it in step with the date
+# in _data/announcements.yml, which drives the sidebar entry.
+v4_release_date: 2027-01-01
 
 url: "https://gprmax.org"
 baseurl: ""

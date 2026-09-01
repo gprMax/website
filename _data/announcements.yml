@@ -10,7 +10,7 @@
 # `tag: New` renders the accent pill. `href` is the archive anchor.
 
 - title: 'gprMax v4.0.0 &ldquo;Caol Ila&rdquo; released'
-  date: 2026-08-31
+  date: 2027-01-01   # placeholder — set to the real release date
   tag: New
   href: /news.shtml#v4-release
   summary: >-
