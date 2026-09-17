@@ -167,6 +167,46 @@ html[data-theme='dark'] .invert-dark {
     filter: invert(1);
 }
 
+/* Keyboard users land here first; visible only while focused. */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    z-index: 2000;
+    padding: 8px 14px;
+    background: var(--accent);
+    color: var(--accent-text);
+    font-weight: 700;
+    border-radius: 0 0 var(--radius) var(--radius);
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid var(--link);
+    outline-offset: 2px;
+}
+
+#main-content:focus {
+    outline: none;
+}
+
+/* Content figures are mostly plots on white, which glare on the dark page.
+   Logos and paired artwork are excluded: they have their own dark assets. */
+@media (prefers-color-scheme: dark) {
+    html:not([data-theme='light']) #main-content figure img,
+    html:not([data-theme='light']) .showcase-thumb,
+    html:not([data-theme='light']) .showcase-modal-banner {
+        filter: brightness(0.88);
+    }
+}
+
+html[data-theme='dark'] #main-content figure img,
+html[data-theme='dark'] .showcase-thumb,
+html[data-theme='dark'] .showcase-modal-banner {
+    filter: brightness(0.88);
+}
+
 /* --------------------------------------------------------------------------
    4. LAYOUT
    The old rules used a 1220px min-width, which forced horizontal scrolling on
@@ -208,7 +248,8 @@ html[data-theme='dark'] .invert-dark {
     min-height: 400px;
     padding: 16px 0 20px 0;
     background-color: var(--page);
-    border-top: 2px solid var(--heading);
+    /* The rule under the navigation is drawn by nav ul (navbar.css); on a
+       phone it is the sticky header's bottom border. */
 }
 
 p.strap {
@@ -651,6 +692,16 @@ p {
     padding: 0 0 14px 0;
 }
 
+/* Measure. The main column is 840px beside the sidebar and 1180px once
+   the sidebar stacks -- 95 to 130 characters a line, well past what reads
+   comfortably. Cap running text at ~78 characters; the sidebar, footer
+   and showcase set their own widths and opt out with max-width: none. */
+#main-content p,
+#main-content li,
+#main-content dd {
+    max-width: 78ch;
+}
+
 h1 {
     font-family: var(--font-display);
     font-weight: 600;
@@ -991,6 +1042,16 @@ iframe.video {
     #floating-panel {
         order: -1;
     }
+
+    /* Floats do nothing on flex items, so from here down every figure
+       would otherwise sit as an indented block with the text below it.
+       Unfloat them explicitly and centre them; the 820px block used to
+       do this, which left a band where the figures were simply broken. */
+    figure.left,
+    figure.right {
+        float: none;
+        margin: 12px auto 20px auto;
+    }
 }
 
 @media (max-width: 820px) {
@@ -1049,10 +1110,7 @@ iframe.video {
         display: none;
     }
 
-    /* The rule now belongs to the bar, which stays put; on #main-content it
-       would scroll away and leave the bar floating. */
     #main-content {
-        border-top: none;
         padding-top: 14px;
     }
 
@@ -1119,12 +1177,6 @@ iframe.video {
 
     h2 {
         font-size: 1.2rem;
-    }
-
-    figure.left,
-    figure.right {
-        float: none;
-        margin: 12px 0 20px 0;
     }
 
     /* Unfloated, the three portraits became three stacked blocks -- and

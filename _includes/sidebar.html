@@ -12,7 +12,7 @@
 <aside id="floating-panel">
 
 	<div class="stats-container">
-		<details open>
+		<details open class="keep-open">
 			<summary>
 				<h2>Get gprMax</h2><span class="panel-hint">Download, install and docs</span>
 			</summary>
@@ -99,7 +99,10 @@
 	/* The panels are open by default because on a wide screen they sit
 	   beside the content and cost nothing. Stacked on a phone they push the
 	   page's actual content down by roughly 900px, so there they start
-	   collapsed and the reader chooses.
+	   collapsed and the reader chooses. The exception is "Get gprMax": it
+	   is three lines tall and carries the Download and Install links, which
+	   should not be a click away on the one screen size where the strapline
+	   is also gone.
 
 	   Inline and immediately after the markup on purpose: as a deferred
 	   file this would run after first paint and the panels would visibly
@@ -107,7 +110,7 @@
 	   the content is present either way. */
 	(function () {
 		if (window.innerWidth > 1100) { return; }
-		var open = document.querySelectorAll('#floating-panel details[open]');
+		var open = document.querySelectorAll('#floating-panel details[open]:not(.keep-open)');
 		for (var i = 0; i < open.length; i++) { open[i].open = false; }
 	})();
 </script>
