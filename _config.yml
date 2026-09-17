@@ -8,11 +8,12 @@
 title: "gprMax"
 author: "Craig Warren"
 description: >-
-  gprMax is open source software that solves Maxwell's equations using the
-  Finite-Difference Time-Domain (FDTD) method. A general-purpose research
-  platform for time-domain computational electromagnetics, it is used for
-  Ground Penetrating Radar (GPR), antenna and microwave modelling, scattering
-  and radar cross section, bioelectromagnetics and dosimetry, and radiometry
+  gprMax is open-source software that solves Maxwell's equations using the
+  finite-difference time-domain (FDTD) method. It began in ground-penetrating
+  radar research and is now a general-purpose research platform for
+  time-domain computational electromagnetics, used for GPR, antenna and
+  microwave modelling, scattering and radar cross section, bioelectromagnetics
+  and dosimetry, and radiometry.
 
 # Canonical tags, the sitemap and every absolute_url are built from this.
 # gprmax.com now forwards here rather than the other way round.
