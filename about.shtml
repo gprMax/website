@@ -57,7 +57,7 @@ leaflet: true
 		<li>Versioned <a href="{{ site.docs_version_url }}/material_databases.html">material databases</a> &mdash; reusable electromagnetic properties without copying pole lists into every model <span class="tag-new">New</span></li>
 		<li>Modelling of <a href="{{ site.docs_version_url }}/features.html#realistic-soils-heterogeneous-objects-and-rough-surfaces">soils with realistic dielectric and geometric properties</a>, heterogeneous objects, and rough surfaces</li>
 		<li>Tagged geometry import from <a href="{{ site.docs_version_url }}/inc_STLtoVoxel.html">STL</a> and <a href="{{ site.docs_version_url }}/inc_STEPtoVoxel.html">STEP</a> CAD files, plus medical volumes such as the <a href="{{ site.docs_version_url }}/inc_AustinMan.html">AustinMan &amp; AustinWoman human phantoms</a> <span class="tag-new">New</span></li>
-		<li><a href="{{ site.docs_version_url }}/features.html#subgridding">Subgridding</a> &mdash; fine geometry inside a coarser model; currently the double-precision CPU solver only <span class="tag-new">New</span></li>
+		<li><a href="{{ site.docs_version_url }}/features.html#subgridding">Subgridding</a> &mdash; fine geometry inside a coarser model, on the CPU and CUDA solvers <span class="tag-new">New</span></li>
 	</ul>
 
 	<h3>Workflow &amp; scripting</h3>

@@ -12,33 +12,30 @@ leaflet: true
 
 {% include sidebar.html %}
 
-			{%- comment -%}
-			Held back until the release actually happens. The site is going
-			live before v4 merges to master, and an archive entry announcing
-			a release that has not occurred is simply untrue. Publishes
-			itself on site.v4_release_date; adjust that one value if the date
-			moves.
-			{%- endcomment -%}
-			{%- assign v4_at = site.v4_release_date | date: "%s" | plus: 0 -%}
-			{%- assign now_at = "now" | date: "%s" | plus: 0 -%}
-			{%- if now_at >= v4_at -%}
-			<h2 id="v4-release">gprMax v4.0.0 &ldquo;Caol Ila&rdquo; released<span class="subtitle">31-Aug-2026</span></h2>
+			<h2 id="v4-release">gprMax v4.0.0 &ldquo;Caol Ila&rdquo; released<span class="subtitle">15-Sep-2026</span></h2>
 
 			<div class="release-note">
 				<p><strong>gprMax v4.0.0</strong> is our biggest release since the software was rewritten in
 					Python &mdash; a decade of development on the v3 line, consolidated and modernised.
-					<a href="https://github.com/gprMax/gprMax/releases">Get it from GitHub</a> or follow the
-					<a href="{{ site.docs_version_url }}/inc_README.html#installation">installation
-					guide</a>.</p>
+					Install it with <code>pip install gprMax</code> from
+					<a href="https://pypi.org/project/gprMax/">PyPI</a>, <a href="{{ site.releases_url }}">get it from GitHub</a>,
+					or follow the <a href="{{ site.install_url }}">installation guide</a>.</p>
 			</div>
 
 			<p>Version 4 adds OpenCL and Apple Metal solvers alongside CUDA and OpenMP, MPI for
 				multi-node simulations, eigenmode ports with S-parameter outputs, near-to-far-field
 				transformations, and a full Python API &mdash; the complete rundown is on the
-				<a href="{{ '/about.shtml' | relative_url }}">About page</a>. Questions about upgrading? Ask in
-				<a href="https://github.com/gprMax/gprMax/discussions">GitHub Discussions</a>.</p>
+				<a href="{{ '/about.shtml' | relative_url }}">About page</a>. Precompiled wheels cover Python 3.11,
+				3.12 and 3.13 on Linux, Windows, and Intel and Apple Silicon macOS.</p>
 
-			{%- endif -%}
+			<p>If you have existing v3 models, read the
+				<a href="{{ site.docs_version_url }}/migration_v3_v4.html">v3-to-v4 migration guide</a> before
+				updating: output files are now <code>.h5</code>, toolbox imports have moved under
+				<code>gprMax.toolboxes</code>, and some numerical behaviour has changed, so v4 is not a
+				bit-for-bit replacement for v3. The v3 code remains available on the
+				<a href="{{ site.repo_url }}/tree/legacy/v3">legacy/v3</a> branch and its release tags are unchanged.
+				Questions about upgrading? Ask in
+				<a href="{{ site.discussions_url }}">GitHub Discussions</a>.</p>
 
 			<h2 id="gpr2026">GPR2026 conference<span class="subtitle">12-Feb-2026</span></h2>
 			<figure class="left" style="margin: -15px 0 -15px -5px;">

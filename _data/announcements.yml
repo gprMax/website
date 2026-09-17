@@ -10,7 +10,7 @@
 # `tag: New` renders the accent pill. `href` is the archive anchor.
 
 - title: 'gprMax v4.0.0 &ldquo;Caol Ila&rdquo; released'
-  date: 2027-01-01   # placeholder — set to the real release date
+  date: 2026-09-15
   tag: New
   href: /news.shtml#v4-release
   summary: >-
@@ -20,8 +20,8 @@
       href: https://github.com/gprMax/gprMax/releases
     - text: Install
       # Data files are not rendered through Liquid, so this cannot use
-      # site.docs_version_url — flip it by hand at release too.
-      href: https://docs.gprmax.com/en/devel/inc_README.html#installation
+      # site.install_url — keep the two in step by hand.
+      href: https://docs.gprmax.com/en/latest/inc_README.html#installation
     - text: Rundown
       href: /about.shtml
 
