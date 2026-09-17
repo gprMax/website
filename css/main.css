@@ -293,9 +293,13 @@ p.strap::first-line {
    5. SIDEBAR PANELS  (_includes/sidebar.html)
    -------------------------------------------------------------------------- */
 .stats-container {
-    padding: 4px 12px 14px 12px;
+    /* 12px all round below the heading, so the last element sits as far
+       from the bottom edge as the content does from the sides. */
+    padding: 4px 12px 12px 12px;
     border: 1px solid var(--border);
-    border-radius: var(--radius);
+    /* Same corner as the showcase cards: these are containers of the same
+       rank, and the pill buttons inside want a softer frame than 8px. */
+    border-radius: var(--radius-lg);
     margin: 0 0 20px 0;
     background-color: var(--surface);
 }
@@ -317,7 +321,7 @@ p.strap::first-line {
     grid-template-columns: 1fr 118px;
     gap: 0 14px;
     align-items: center;
-    padding: 8px 0 10px 0;
+    padding: 8px 0;
 }
 
 .spark-tile + .spark-tile {
@@ -375,7 +379,7 @@ p.strap::first-line {
     gap: 8px 14px;
     max-width: none;
     margin: 0;
-    padding: 0 0 6px 0;
+    padding: 0;
 }
 
 .btn-sm {
@@ -470,7 +474,7 @@ p.strap::first-line {
     font-size: 0.8rem;
     font-weight: 700;
     margin: 0;
-    padding: 2px 0 4px 0;
+    padding: 4px 0 0 0;
 }
 
 .spark-tile .sparkline {
