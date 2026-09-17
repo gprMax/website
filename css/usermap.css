@@ -67,7 +67,7 @@ html[data-theme='dark'] body {
 	width: 100%;
 	height: 640px;
 	border: 1px solid var(--ump-hair);
-	border-radius: 4px;
+	border-radius: var(--radius);
 	overflow: hidden;
 }
 
@@ -92,7 +92,7 @@ html[data-theme='dark'] body {
 	z-index: 500;
 	background: var(--ump-paper);
 	border: 1px solid var(--ump-hair);
-	border-radius: 6px;
+	border-radius: var(--radius);
 	box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
 	font-family: var(--font-sans);
 	color: var(--ump-purple);
@@ -147,14 +147,14 @@ html[data-theme='dark'] body {
 .ump-seg {
 	display: inline-flex;
 	border: 1px solid var(--ump-hair);
-	border-radius: 5px;
+	border-radius: var(--radius-pill);
 	overflow: hidden;
 }
 
 .ump-seg button {
 	font: inherit;
 	font-size: 12px;
-	padding: 6px 11px;
+	padding: 6px 13px;
 	background: var(--ump-paper);
 	color: var(--ump-grey);
 	border: 0;
@@ -174,9 +174,9 @@ html[data-theme='dark'] body {
 	font: inherit;
 	font-size: 12.5px;
 	font-weight: 700;
-	padding: 7px 14px;
+	padding: 7px 16px;
 	border: 1px solid transparent;
-	border-radius: 5px;
+	border-radius: var(--radius-pill);
 	background: var(--ump-purple);
 	color: var(--ump-paper);
 	cursor: pointer;
@@ -252,7 +252,7 @@ html[data-theme='dark'] body {
 	font-size: 13px;
 	padding: 8px 10px;
 	border: 1px solid var(--ump-hair);
-	border-radius: 5px;
+	border-radius: var(--radius-sm);
 	color: var(--ump-purple);
 	background: var(--ump-paper);
 }
@@ -302,7 +302,7 @@ html[data-theme='dark'] body {
 .ump-resolved {
 	background: var(--ump-purple-soft);
 	border: 1px solid var(--ump-purple-edge);
-	border-radius: 5px;
+	border-radius: var(--radius-sm);
 	padding: 10px 12px;
 	margin-bottom: 12px;
 	font-size: 12.5px;
@@ -361,7 +361,7 @@ html[data-theme='dark'] body {
 /* ------------------------------------------------------------ popups --- */
 
 #usermap-wrap .leaflet-popup-content-wrapper {
-	border-radius: 6px;
+	border-radius: var(--radius);
 	border: 1px solid var(--ump-hair);
 	color: var(--ump-purple);
 }

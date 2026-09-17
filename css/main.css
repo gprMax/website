@@ -42,7 +42,17 @@
     --accent: #b3247f;
     --accent-text: #ffffff;
 
+    /* Corner scale. Four steps, used everywhere a corner is rounded:
+         sm    code, inputs, focus rings
+         (base) panels, figures, the map, popups
+         lg    cards and the modal
+         pill  buttons, tags, the nav's current page, the theme toggle
+       Buttons and tags share the pill so the sidebar's Download button,
+       the NEW tag beside it and the theme toggle read as one family. */
+    --radius-sm: 4px;
     --radius: 8px;
+    --radius-lg: 12px;
+    --radius-pill: 999px;
     --shell: 1220px;
 }
 
@@ -374,8 +384,8 @@ p.strap::first-line {
     color: var(--accent-text) !important;
     font-weight: 700;
     font-size: 0.78rem;
-    padding: 6px 13px;
-    border-radius: 7px;
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
     text-decoration: none !important;
 }
 
@@ -493,7 +503,7 @@ p.strap::first-line {
        width-limited and no grey bands appear (see js/usage-map.js) */
     aspect-ratio: 2.05 / 1;
     overflow: hidden;
-    border-radius: 6px;
+    border-radius: var(--radius);
     background: var(--surface);
     border: 1px solid var(--border);
     margin: 8px 0 10px 0;
@@ -558,8 +568,8 @@ p.strap::first-line {
     color: var(--accent-text);
     font-size: 0.66rem;
     font-weight: 600;
-    padding: 3px 8px;
-    border-radius: 5px;
+    padding: 3px 9px;
+    border-radius: var(--radius-pill);
     transition: filter 0.15s;
 }
 
@@ -657,7 +667,7 @@ p.strap::first-line {
 #main-content details > summary:focus-visible {
     outline: 2px solid var(--link);
     outline-offset: 2px;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
 }
 
 #floating-panel details > summary h2::before,
@@ -783,7 +793,7 @@ pre {
 code {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     padding: 1px 5px;
 }
 
@@ -839,7 +849,7 @@ a:focus-visible,
 nav li a:focus-visible {
     outline: 2px solid var(--link);
     outline-offset: 2px;
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
 }
 
 /* --------------------------------------------------------------------------
@@ -869,7 +879,7 @@ h3 + figure {
 }
 
 figure img {
-    border-radius: 5px;
+    border-radius: var(--radius);
 }
 
 figcaption {
@@ -941,7 +951,7 @@ body#publications #main-content ol li {
     color: var(--text-secondary);
     background: none;
     border: 1px solid var(--border);
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     padding: 4px 11px;
     cursor: pointer;
 }
@@ -1291,7 +1301,7 @@ iframe.video {
     letter-spacing: 0.03em;
     text-transform: uppercase;
     padding: 3px 9px;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     margin-right: 8px;
     vertical-align: 1px;
 }
@@ -1306,7 +1316,7 @@ iframe.video {
     letter-spacing: 0.03em;
     text-transform: uppercase;
     padding: 2px 8px;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     margin-left: 6px;
     vertical-align: 1px;
 }
@@ -1346,7 +1356,7 @@ iframe.video {
 
 .showcase-item {
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
     background: var(--page);
 }
@@ -1408,7 +1418,7 @@ iframe.video {
     text-transform: uppercase;
     letter-spacing: 0.04em;
     padding: 2px 8px;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     /* --surface sits only a shade off --page in dark mode, so the pill
        disappears; a tint of the heading colour reads in both themes.
        The literal is the light-mode fallback for browsers without
@@ -1585,7 +1595,7 @@ html[data-theme='light'] .only-dark {
     max-height: min(86vh, 900px);
     padding: 0;
     border: 1px solid var(--border-strong);
-    border-radius: 14px;
+    border-radius: var(--radius-lg);
     background: var(--page);
     color: var(--text);
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);

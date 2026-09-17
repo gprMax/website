@@ -9,7 +9,7 @@
     background-color: var(--page);
     color: var(--text);
     border: 1px solid var(--border-strong);
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     padding: 4px 8px;
 }
 
