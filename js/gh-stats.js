@@ -1,4 +1,4 @@
-// GitHub traffic stats for the shared sidebar panel (ssi/sidebar.html).
+// GitHub traffic stats for the shared sidebar panel (_includes/sidebar.html).
 // Two compact tiles: a 365-day headline number plus a sparkline of weekly
 // totals over the last 26 weeks, drawn from the same daily CSVs GitHub's
 // traffic API feeds (/data/clone_data.csv, /data/visitor_data.csv).

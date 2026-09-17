@@ -86,10 +86,12 @@
 		</details>
 	</div>
 
-	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-		integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-	<script src="{{ '/js/usage-map.js' | relative_url }}"></script>
-	<script src="{{ '/js/gh-stats.js' | relative_url }}"></script>
+	{%- comment -%}
+	Deferred, so they run after Leaflet (loaded in the layout head, also
+	deferred) and never block parsing of the page beside the panel.
+	{%- endcomment %}
+	<script defer src="{{ '/js/usage-map.js' | relative_url }}"></script>
+	<script defer src="{{ '/js/gh-stats.js' | relative_url }}"></script>
 
 </aside>
 

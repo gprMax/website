@@ -19,38 +19,51 @@
 	<link rel="canonical" href="{{ page.url | replace: '/index.html', '/' | absolute_url }}" />
 	<meta name="description" content="{{ page.description | default: site.description }}" />
 	<meta name="keywords" content="{{ site.keywords }}" />
+
+	{%- comment -%}
+	Stylesheets first, then scripts. Every script is deferred: they run in
+	document order once the page is parsed, so a script may rely on any
+	that precedes it here (usage-map.js and usermap.js need Leaflet).
+	Leaflet and MarkerCluster are self-hosted under lib/ -- pins are
+	circleMarkers and divIcons, so none of Leaflet's marker images are
+	needed.
+	{%- endcomment %}
 	{%- if page.leaflet %}
-	<!-- Leaflet CSS belongs in <head>: loaded from the sidebar include it sat
-	     in <body>, blocking the parser mid-document and flashing an unstyled map. -->
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+	<link rel="stylesheet" href="{{ '/lib/leaflet/leaflet.css' | relative_url }}" />
 	{%- endif %}
-	{%- if page.mathjax == 2 %}
-	<script type="text/javascript"
-		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
-	{%- elsif page.mathjax == 3 %}
-	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+	{%- if page.markercluster %}
+	<link rel="stylesheet" href="{{ '/lib/leaflet.markercluster/MarkerCluster.css' | relative_url }}" />
+	<link rel="stylesheet" href="{{ '/css/usermap.css' | relative_url }}" />
 	{%- endif %}
 	{%- if page.bib %}
+	<link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css"
+		integrity="sha384-zUxWDVAcow8yNu+q4VFsyZA3qWsKKGdWPW0SVjaR12LQze4SY8Nr75US6VDhbWkf" crossorigin="anonymous" />
 	<link rel="stylesheet" href="{{ '/css/bib-publication-list.css' | relative_url }}" />
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css">
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-	<script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	<script type="text/javascript" src="{{ '/js/gprMaxBib.js' | relative_url }}"></script>
 	{%- endif %}
-		<script defer src="{{ '/js/theme.js' | relative_url }}"></script>
-{%- if page.markercluster %}
-	<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
-		integrity="sha256-YU3qCpj/P06tdPBJGPax0bm6Q1wltfwjsho5TR4+TYc=" crossorigin="" />
-	<link rel="stylesheet" href="{{ '/css/usermap.css' | relative_url }}" />
+
+	<script defer src="{{ '/js/theme.js' | relative_url }}"></script>
+	{%- if page.leaflet %}
+	<script defer src="{{ '/lib/leaflet/leaflet.js' | relative_url }}"></script>
+	{%- endif %}
+	{%- if page.markercluster %}
+	<script defer src="{{ '/lib/leaflet.markercluster/leaflet.markercluster.js' | relative_url }}"></script>
+	<script defer src="{{ '/js/usermap.js' | relative_url }}"></script>
+	{%- endif %}
+	{%- if page.bib %}
+	<script defer src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"
+		integrity="sha384-nJy9D0UBD2LV93ED7IXSsdWfa9PumZvn70zRSR/oFw5Zq0x6gWwWdpLeGsbVATVg" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"
+		integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous"></script>
+	<script defer src="{{ '/js/gprMaxBib.js' | relative_url }}"></script>
 	{%- endif %}
 </head>
 
 <body id="{{ page.body_id }}">
 	{%- if page.gtm %}
 	<!-- Google Tag Manager -->
-	<noscript><iframe src="//www.googletagmanager.com/ns.html?id={{ site.gtm_id }}" height="0" width="0"
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.gtm_id }}" height="0" width="0"
 			style="display:none;visibility:hidden"></iframe></noscript>
 	<script>(function (w, d, s, l, i) {
 			w[l] = w[l] || []; w[l].push({
@@ -58,7 +71,7 @@
 					new Date().getTime(), event: 'gtm.js'
 			}); var f = d.getElementsByTagName(s)[0],
 				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-					'//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
 		})(window, document, 'script', 'dataLayer', '{{ site.gtm_id }}');</script>
 	<!-- End Google Tag Manager -->
 	{%- endif %}
@@ -78,13 +91,6 @@
 		</div>
 
 	</div>
-{%- if page.markercluster %}
-	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-		integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-	<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"
-		integrity="sha256-Hk4dIpcqOSb0hZjgyvFOP+cEmDXUKKNE/tT542ZbNQg=" crossorigin=""></script>
-	<script src="{{ '/js/usermap.js' | relative_url }}"></script>
-	{%- endif %}
 </body>
 
 </html>

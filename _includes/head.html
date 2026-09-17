@@ -1,6 +1,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="author" content="{{ site.author }}" />
+<!-- The body face, preloaded so it is fetched alongside the stylesheet
+     rather than after it has been parsed; with font-display: swap that
+     is the difference between a font swap and none. -->
+<link rel="preload" href="{{ '/css/fonts/IBMPlexSans-latin-var.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}" />
 <link rel="stylesheet" href="{{ '/css/navbar.css' | relative_url }}" />
 <!-- Favicon set: files live at the site root — some clients request
@@ -10,4 +14,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | relative_url }}" />
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/apple-touch-icon.png' | relative_url }}" />
 <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}" />
-<meta name="theme-color" content="#55037f" />
+<!-- The --page tokens from main.css, so the browser chrome matches the
+     page in either mode. -->
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#55037f" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111827" />

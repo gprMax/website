@@ -96,10 +96,10 @@ $(document).ready(function() {
                 // contrast against the page surface (#ffffff / #111827).
                 // Colours are keyed by type so identity is stable: a type
                 // absent from a year's data never repaints the others.
-                const darkMode = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+                const isDark = () => (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
                     && document.documentElement.dataset.theme !== 'light')
                     || document.documentElement.dataset.theme === 'dark';
-                const typeColors = darkMode ? {
+                const typeColorsFor = (dark) => dark ? {
                     'Article': '#9085e9',
                     'Book': '#d95926',
                     'Book chapter': '#199e70',
@@ -120,6 +120,7 @@ $(document).ready(function() {
                     'Review': '#e34948',
                     'Misc': '#6B7A8F'
                 };
+                let typeColors = typeColorsFor(isDark());
 
                 // Read the page so chart chrome follows the theme.
                 const bodyStyle = getComputedStyle(document.body);
@@ -138,6 +139,10 @@ $(document).ready(function() {
                         borderWidth: 1
                     };
                 });
+
+                // Every chart on the page, so the theme switch can repaint
+                // them in place (see the listener at the end of this block).
+                const charts = [];
                 
                 // Chart.js draws to canvas with its own font defaults, not the
                 // page's CSS — read the site stack off <body> so the chart
@@ -148,17 +153,21 @@ $(document).ready(function() {
                 Chart.defaults.font.family = bodyStyle.fontFamily;
                 // Labels, title and grid follow the theme tokens rather than
                 // Chart.js's fixed greys (which are dim on the dark surface).
-                Chart.defaults.color = bodyStyle.getPropertyValue('--text-secondary').trim() || Chart.defaults.color;
-                Chart.defaults.borderColor = bodyStyle.getPropertyValue('--border').trim() || Chart.defaults.borderColor;
+                const applyChartDefaults = () => {
+                    const style = getComputedStyle(document.body);
+                    Chart.defaults.color = style.getPropertyValue('--text-secondary').trim() || Chart.defaults.color;
+                    Chart.defaults.borderColor = style.getPropertyValue('--border').trim() || Chart.defaults.borderColor;
+                };
+                applyChartDefaults();
                 Promise.all([
                     document.fonts.load('400 12px "IBM Plex Sans"'),
                     document.fonts.load('700 12px "IBM Plex Sans"')
                 ]).catch(function () { }).then(function () {
-                    new Chart(document.getElementById('pubChart'), {
+                    charts.push(new Chart(document.getElementById('pubChart'), {
                         type: 'bar',
                         data: { labels: sortedYears, datasets: datasets },
                         options: { responsive: true, maintainAspectRatio: true, plugins: { title: { display: true, text: 'Publications per Year by Type' }, legend: { position: 'bottom' } }, scales: { x: { stacked: true }, y: { stacked: true, beginAtZero: true, title: { display: true, text: 'Number of Publications' } } } }
-                    });
+                    }));
 
                     // ---- Subject and journal breakdowns ----
                     // Subjects are approximate: keyword rules over title +
@@ -209,7 +218,7 @@ $(document).ready(function() {
                     const hBar = (id, title, pairs) => {
                         const el = document.getElementById(id);
                         if (!el) { return; }
-                        new Chart(el, {
+                        charts.push(new Chart(el, {
                             type: 'bar',
                             data: {
                                 // Chart.js renders an array label as stacked lines, so long
@@ -227,7 +236,7 @@ $(document).ready(function() {
                                     y: { ticks: { autoSkip: false } }
                                 }
                             }
-                        });
+                        }));
                         const rows = pairs.reduce((n, p) => n + Math.max(1, wrapLabel(p[0], 24, 3).length), 0);
                         el.parentElement.style.height = (rows * 20 + 90) + 'px';
                     };
@@ -237,6 +246,26 @@ $(document).ready(function() {
                     hBar('subjectChart', 'Publications by subject', subjPairs);
                     hBar('journalChart', 'Most frequent journals',
                         Object.entries(jrnCounts).sort((a, b) => b[1] - a[1]).slice(0, 10));
+
+                    // The palette and chrome were chosen at load; repaint
+                    // when js/theme.js announces a switch.
+                    document.addEventListener('gprmax:themechange', () => {
+                        const style = getComputedStyle(document.body);
+                        typeColors = typeColorsFor(isDark());
+                        applyChartDefaults();
+                        const link = style.getPropertyValue('--link').trim() || '#1656b8';
+                        charts.forEach(chart => {
+                            chart.data.datasets.forEach(ds => {
+                                if (ds.label) {   // stacked series, keyed by type
+                                    ds.backgroundColor = typeColors[ds.label] || typeColors['Misc'];
+                                    ds.borderColor = style.backgroundColor;
+                                } else {          // single-series bars
+                                    ds.backgroundColor = link;
+                                }
+                            });
+                            chart.update();
+                        });
+                    });
                 });
                 
                 const dataSet = entries.map(entry => {

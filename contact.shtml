@@ -1,10 +1,7 @@
 ---
-title: "gprMax: Electromagnetic simulation software"
+title: "gprMax: Contacts"
+description: "Where to ask questions and report bugs, who develops gprMax, and the consultancy and training we offer."
 body_id: contact
-sidebar: true
-gtm: false
-mathjax: 2
-leaflet: true
 ---
 
 
@@ -37,17 +34,17 @@ leaflet: true
 				landmine toolboxes.</p>
 
 			<div class="people">
-			<figure class="left circular"><img src="{{ '/images/profiles/Giannopoulos.png' | relative_url }}" alt="Giannopoulos.png" width="150"
+			<figure class="left circular"><img src="{{ '/images/profiles/Giannopoulos.png' | relative_url }}" alt="" width="150"
 					height="150" />
 				<figcaption><a href="https://www.research.ed.ac.uk/en/persons/antonis-giannopoulos">Prof Antonis
 						Giannopoulos<br />University of Edinburgh, UK</a></figcaption>
 			</figure>
-			<figure class="left circular"><img src="{{ '/images/profiles/Warren.png' | relative_url }}" alt="Warren.png" width="150"
+			<figure class="left circular"><img src="{{ '/images/profiles/Warren.png' | relative_url }}" alt="" width="150"
 					height="150" />
 				<figcaption><a href="https://www.northumbria.ac.uk/about-us/our-staff/w/craig-warren/">Dr Craig
 						Warren<br />Northumbria University, UK</a></figcaption>
 			</figure>
-			<figure class="left circular"><img src="{{ '/images/profiles/Giannakis.png' | relative_url }}" alt="Giannakis.png" width="150"
+			<figure class="left circular"><img src="{{ '/images/profiles/Giannakis.png' | relative_url }}" alt="" width="150"
 					height="150" />
 				<figcaption><a href="https://www.linkedin.com/in/dr-iraklis-giannakis">Dr Iraklis
 						Giannakis<br />Macau University of Science and Technology, China</a></figcaption>
@@ -78,7 +75,7 @@ leaflet: true
 
 			<details>
 				<summary>
-					<h3 style="padding: 5px 20px 5px 0;">PhD theses of the team</h3>
+					<h3>PhD theses of the team</h3>
 				</summary>
 				<ul>
 					<li>Patsia, O. (2022). <a href="https://hdl.handle.net/1842/40467">Deep learning processing and
@@ -118,31 +115,5 @@ leaflet: true
 					href="https://www.research.ed.ac.uk/en/persons/antonis-giannopoulos">Professor Antonis
 					Giannopoulos</a> or <a href="https://www.northumbria.ac.uk/about-us/our-staff/w/craig-warren/">Dr
 					Craig Warren</a> to discuss your requirements.</p>
-
-			<!-- <h2>GPR manufacturers</h2>
-	<p>These are the main GPR companies from all over the world that manufacture GPR systems for a wide range of geophysical and engineering applications.</p>
-	<a href="http://www.3d-radar.com"><figure class="left" style="margin: 30px 50px 0 30px; border-radius: 0;"><img src="{{ '/images/manufacturers/3d-Radar_logo.png' | relative_url }}" alt="3d-Radar" width="263" height="60" /></figure></a>
-
-	<a href="http://www.geophysical.com"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/GSSI_logo.png' | relative_url }}" alt="GSSI" width="191" height="70" /></figure></a>
-
-	<a href="http://www.geotechru.com"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/Geotech_logo.png' | relative_url }}" alt="Geotech" width="260" height="50" /></figure></a>
-
-	<a href="https://www.idscorporation.com/georadar"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/IDS_logo.png' | relative_url }}" alt="IDS" width="138" height="75" /></figure></a>
-
-	<a href="http://www.impulseradar.se"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/impulse_logo.png' | relative_url }}" alt="Impulse" width="170" height="75" /></figure></a>
-
-	<a href="http://www.malags.com"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/MALA_logo.png' | relative_url }}" alt="MALA" width="95" height="125" /></figure></a>
-
-	<a href="http://www.radsys.lv"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/RadSys_logo.png' | relative_url }}" alt="RadSys" width="228" height="75" /></figure></a>
-
-	<a href="http://www.radarteam.se"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/Radarteam_logo.png' | relative_url }}" alt="Radarteam" width="314" height="75" /></figure></a>
-
-	<a href="http://www.sensoft.ca"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/Sensors_logo.png' | relative_url }}" alt="Sensors" width="226" height="70" /></figure></a>
-
-	<a href="http://viy.ua"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/Transient_logo.png' | relative_url }}" alt="Transient" width="227" height="75" /></figure></a>
-
-	<a href="http://www.usradar.com"><figure class="left" style="margin: 30px 50px 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/USRadar_logo.png' | relative_url }}" alt="USRadar" width="200" height="200" /></figure></a>
-
-	<a href="http://www.utsielectronics.co.uk"><figure class="left" style="margin: 30px 0 0 0; border-radius: 0;"><img src="{{ '/images/manufacturers/Utsi_logo.jpg' | relative_url }}" alt="Utsi" width="120" height="120" /></figure></a> -->
 
 			<div class="clear-left">&nbsp;</div>

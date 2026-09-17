@@ -40,15 +40,10 @@ plugins:
   - jekyll-sitemap
 
 exclude:
-  - offline/
-  - scripts/
   - Gemfile
   - Gemfile.lock
   - vendor/
   - README.md
-  - .htaccess
-  - users/.htaccess
-  - users/submit_pin.php
   # The full pins archive: names, Padlet permalinks, emails in note text.
   # Gitignored, so it cannot reach the Pages runner — this is the second
   # lock, for anyone building locally. users/pins.geojson, the minimised
@@ -62,14 +57,17 @@ exclude:
   - scopus_test.bib
   - scopus_previous.bib
 
-# .shtml is not in Jekyll's default keep_files/HTML set; make sure it is
-# treated as a page type that gets Liquid-processed (front matter does this)
-# and served with the right type by the host.
+# Page flags, read by _layouts/default.html. A page overrides one in its
+# front matter (usermap.shtml turns on `markercluster`; the redirect stub
+# sets `layout: null`).
+#   gtm            Google Tag Manager snippet
+#   leaflet        Leaflet CSS/JS -- needed wherever the sidebar's map is
+#   markercluster  MarkerCluster + css/usermap.css + js/usermap.js
+#   bib            DataTables, Chart.js and js/gprMaxBib.js
 defaults:
   - scope:
       path: ""
     values:
       layout: "default"
-      sidebar: true
-      gtm: false
-      mathjax: false
+      gtm: true
+      leaflet: true

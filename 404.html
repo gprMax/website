@@ -1,0 +1,27 @@
+---
+title: "gprMax: Page not found"
+description: "That page does not exist on gprmax.org."
+body_id: none
+permalink: /404.html
+sitemap: false
+# No sidebar: its scripts fetch data/ and users/ by relative path, and a
+# 404 can be served from any depth.
+leaflet: false
+---
+
+
+			<h1>Page not found</h1>
+
+			<p class="page-lede">There is nothing at this address. The site was reorganised in 2026, so an
+				old link may point somewhere that has moved.</p>
+
+			<ul class="contact-routes">
+				<li><a href="{{ '/' | relative_url }}">Home</a> &mdash; what people are doing with gprMax</li>
+				<li><a href="{{ '/about.shtml' | relative_url }}">About</a> &mdash; the software and its features</li>
+				<li><a href="{{ '/news.shtml' | relative_url }}">News archive</a> &mdash; releases, workshops and events</li>
+				<li><a href="{{ '/publications.shtml' | relative_url }}">Publications</a> &mdash; how to cite gprMax and who is using it</li>
+				<li><a href="{{ site.docs_url }}">Documentation</a> &mdash; installation and the user guide</li>
+			</ul>
+
+			<p>If you followed a link from our own site or the documentation, please
+				<a href="https://github.com/gprMax/website/issues">let us know</a> so we can fix it.</p>
