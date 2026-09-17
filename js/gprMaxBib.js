@@ -166,7 +166,7 @@ $(document).ready(function() {
                     charts.push(new Chart(document.getElementById('pubChart'), {
                         type: 'bar',
                         data: { labels: sortedYears, datasets: datasets },
-                        options: { responsive: true, maintainAspectRatio: true, plugins: { title: { display: true, text: 'Publications per Year by Type' }, legend: { position: 'bottom' } }, scales: { x: { stacked: true }, y: { stacked: true, beginAtZero: true, title: { display: true, text: 'Number of Publications' } } } }
+                        options: { responsive: true, maintainAspectRatio: true, plugins: { title: { display: true, text: 'Publications per year by type' }, legend: { position: 'bottom' } }, scales: { x: { stacked: true }, y: { stacked: true, beginAtZero: true, title: { display: true, text: 'Number of publications' } } } }
                     }));
 
                     // ---- Subject and journal breakdowns ----

@@ -7,8 +7,8 @@
    tabs, with the current page's tab keyed off the body id (body#news lights
    li#news-nav, and so on — same mechanism as before).
 
-   Below 1100px the tab row is replaced by the CSS-only slide-in menu ported
-   from GPR2026: a hidden checkbox (#menu-toggler) toggled by the hamburger
+   Below 820px -- the same point at which main.css collapses the header to
+   its compact sticky bar -- the tab row is replaced by the CSS-only menu: a hidden checkbox (#menu-toggler) toggled by the hamburger
    label (.show-menu), with the nav sliding in via transform: translateX().
    ========================================================================== */
 
@@ -106,10 +106,20 @@ nav li a:active {
     padding: 0 0 6px 0;
 }
 
+/* Between the sidebar breakpoint and the phone one, seven tabs plus the
+   toggle no longer fit at full size, so the row tightens rather than
+   wrapping the toggle onto its own line. */
+@media only screen and (max-width: 1000px) {
+    nav li a {
+        font-size: 0.95rem;
+        padding: 9px 12px 7px 12px;
+    }
+}
+
 /* In the stacked menu it is a row like the others, not a trailing item on
    a tab bar: left aligned to match, and clear of the divider above it
    rather than sitting on the line. */
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 820px) {
     li.nav-theme {
         margin-left: 0;
         /* 0.25rem matches the horizontal padding on the nav links above, so
@@ -139,9 +149,9 @@ body#contact li#contact-nav a {
 }
 
 /* --------------------------------------------------------------------------
-   MOBILE SLIDE-IN MENU  (<= 1100px, matching main.css's first breakpoint)
+   MOBILE MENU  (<= 820px, matching main.css's compact-header breakpoint)
    -------------------------------------------------------------------------- */
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 820px) {
 
     nav {
         position: fixed;
@@ -319,7 +329,7 @@ body#contact li#contact-nav a {
 
 /* The page must not scroll behind an open menu. Pure CSS via :has() --
    this menu has no JavaScript and does not need any. */
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 820px) {
     body:has(.menu-toggler:checked) {
         overflow: hidden;
     }
