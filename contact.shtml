@@ -47,7 +47,7 @@ body_id: contact
 			<figure class="left circular"><img src="{{ '/images/profiles/Giannakis.png' | relative_url }}" alt="" width="150"
 					height="150" />
 				<figcaption><a href="https://www.linkedin.com/in/dr-iraklis-giannakis">Dr Iraklis
-						Giannakis<br />Macau University of Science and Technology, China</a></figcaption>
+						Giannakis<br />State Key Laboratory of Lunar and Planetary Sciences, Macau University of Science and Technology, China</a></figcaption>
 			</figure>
 			</div>
 
