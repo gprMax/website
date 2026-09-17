@@ -248,7 +248,8 @@ html[data-theme='dark'] .showcase-modal-banner {
     min-height: 400px;
     padding: 16px 0 20px 0;
     background-color: var(--page);
-    border-top: 2px solid var(--heading);
+    /* The rule under the navigation is drawn by nav ul (navbar.css); on a
+       phone it is the sticky header's bottom border. */
 }
 
 p.strap {
@@ -1109,10 +1110,7 @@ iframe.video {
         display: none;
     }
 
-    /* The rule now belongs to the bar, which stays put; on #main-content it
-       would scroll away and leave the bar floating. */
     #main-content {
-        border-top: none;
         padding-top: 14px;
     }
 

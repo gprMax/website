@@ -46,11 +46,14 @@ nav {
 nav ul {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-end;
-    gap: 0 4px;
+    align-items: center;
+    gap: 0 2px;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0 0 6px 0;
+    /* The rule the row sits on. It lives here rather than on #main-content
+       so the active link's marker can replace a stretch of it. */
+    border-bottom: 2px solid var(--heading);
 }
 
 nav li a {
@@ -60,17 +63,15 @@ nav li a {
     font-weight: 600;
     color: var(--text-secondary);
     text-align: center;
-    padding: 12px 14px 10px 14px;
+    padding: 7px 14px;
     text-decoration: none;
-    /* The underline is drawn as an inset shadow rather than a border so
-       the row height never changes and nothing shifts when it appears. */
-    box-shadow: inset 0 -3px 0 transparent;
-    transition: color 0.15s, box-shadow 0.15s;
+    border-radius: 999px;
+    transition: color 0.15s, background-color 0.15s;
 }
 
-/* The first label lines up with the left edge of the content below. */
-nav li:first-child a {
-    padding-left: 0;
+/* The first pill's label lines up with the left edge of the content. */
+nav ul {
+    margin-left: -14px;
 }
 
 nav li a:link,
@@ -82,7 +83,7 @@ nav li a:visited {
 nav li a:hover {
     color: var(--heading);
     text-decoration: none;
-    box-shadow: inset 0 -3px 0 var(--border-strong);
+    background: var(--surface);
 }
 
 nav li a:focus-visible {
@@ -107,11 +108,19 @@ nav li a[target='_blank']::after {
     vertical-align: 0.15em;
 }
 
+/* The three external links sit as a group after the site pages, behind a
+   short divider. */
+nav li.nav-ext-first {
+    margin-left: 10px;
+    padding-left: 12px;
+    border-left: 1px solid var(--border);
+}
+
 /* Theme switch: last item on the row, pushed to the right. */
 .nav-theme {
     margin-left: auto;
     align-self: center;
-    padding: 0 0 6px 0;
+    padding: 0;
 }
 
 /* Between the sidebar breakpoint and the phone one, seven tabs plus the
@@ -145,7 +154,9 @@ body#about li#about-nav a,
 body#publications li#publications-nav a,
 body#contact li#contact-nav a {
     color: var(--heading);
-    box-shadow: inset 0 -3px 0 var(--accent);
+    /* Same tint as the showcase category pills. */
+    background: #f0eaf7;
+    background: color-mix(in srgb, var(--heading) 14%, var(--page));
 }
 
 /* --------------------------------------------------------------------------
@@ -189,6 +200,9 @@ body#contact li#contact-nav a {
 
     nav ul {
         display: block;
+        border-bottom: none;
+        margin-left: 0;
+        padding-bottom: 0;
     }
 
     /* Every row carries the accent border, transparent unless it is the
@@ -202,6 +216,12 @@ body#contact li#contact-nav a {
         border-left: 4px solid transparent;
     }
 
+    nav li.nav-ext-first {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: 4px solid transparent;
+    }
+
     nav li a,
     nav li:first-child a {
         font-size: 1.2rem;
@@ -209,7 +229,8 @@ body#contact li#contact-nav a {
         color: var(--heading);
         text-align: left;
         padding: 0.9rem 0.75rem;
-        box-shadow: none;
+        border-radius: 0;
+        background: none;
     }
 
     /* Active page in the menu list: the left accent bar, not the underline */
@@ -224,7 +245,7 @@ body#contact li#contact-nav a {
     body#about li#about-nav a,
     body#publications li#publications-nav a,
     body#contact li#contact-nav a {
-        box-shadow: none;
+        background: none;
     }
 
 

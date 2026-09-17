@@ -7,11 +7,11 @@
 <ul>
 	<li id="news-nav"><a href="{{ '/' | relative_url }}">Home</a></li>
 	<li id="about-nav"><a href="{{ '/about.shtml' | relative_url }}">About</a></li>
-	<li id="download-nav"><a href="{{ site.releases_url }}" target="_blank" rel="noopener">Download</a></li>
-	<li id="docs-nav"><a href="{{ site.docs_url }}" target="_blank" rel="noopener">Docs</a></li>
 	<li id="publications-nav"><a href="{{ '/publications.shtml' | relative_url }}">Publications</a></li>
-	<li id="forum-nav"><a href="{{ site.discussions_url }}" target="_blank" rel="noopener">Discussions</a></li>
 	<li id="contact-nav"><a href="{{ '/contact.shtml' | relative_url }}">Contacts</a></li>
+	<li id="download-nav" class="nav-ext nav-ext-first"><a href="{{ site.releases_url }}" target="_blank" rel="noopener">Download</a></li>
+	<li id="docs-nav" class="nav-ext"><a href="{{ site.docs_url }}" target="_blank" rel="noopener">Docs</a></li>
+	<li id="forum-nav" class="nav-ext"><a href="{{ site.discussions_url }}" target="_blank" rel="noopener">Discussions</a></li>
 	<li class="nav-theme">
 		<button type="button" id="theme-toggle" class="theme-toggle" hidden>
 			<span class="theme-toggle-icon" aria-hidden="true"></span><span class="theme-toggle-label"></span>
