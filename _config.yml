@@ -25,6 +25,7 @@ docs_url: "https://docs.gprmax.com"
 repo_url: "https://github.com/gprMax/gprMax"
 discussions_url: "https://github.com/gprMax/gprMax/discussions"
 releases_url: "https://github.com/gprMax/gprMax/releases"
+youtube_url: "https://www.youtube.com/@Gprmax"
 # Base for deep links into a specific docs build. `latest` has served the v4
 # docs since v4.0.0 was released (15-Sep-2026); the v3 docs, whose page names
 # differ (include_readme vs inc_README, input vs input_api, user_libs_* vs

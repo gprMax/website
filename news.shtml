@@ -352,7 +352,7 @@ body_id: news
 				<figcaption>PEC cylinder in heterogeneous (left) &amp; homogeneous (right) half-spaces (2D)</figcaption>
 			</figure>
 			<p>We have added some screencasts and videos to <a
-					href="https://www.youtube.com/channel/UCT8Id_3FUIZ4Vnk8y8BxNuQ">our YouTube channel</a>. There are
+					href="{{ site.youtube_url }}">our YouTube channel</a>. There are
 				screencasts to help new users with installing and updating gprMax. We have also created videos, like the
 				one shown here, that demonstrate how electromagnetic fields propagate in different environments. These
 				are fairly simple 2D models but, nevertheless, are educational and provide some useful insight. We will

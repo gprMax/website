@@ -19,6 +19,8 @@ body_id: contact
 				<li><strong><a href="https://gprmax.zulipchat.com/">Zulip</a></strong>
 					&mdash; informal chat with the developers and other users. Our thanks to
 					<a href="https://zulip.com/">Zulip</a> for sponsoring us.</li>
+				<li><strong><a href="{{ site.youtube_url }}">YouTube</a></strong>
+					&mdash; workshop recordings, screencasts and simulation videos.</li>
 				<li><strong><a href="https://groups.google.com/g/gprmax">Google Group</a></strong>
 					&mdash; closed to new posts, but a decade of answered questions remains readable there.</li>
 			</ul>
