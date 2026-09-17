@@ -1,10 +1,7 @@
 ---
-title: "gprMax: Electromagnetic simulation software"
+title: "gprMax: Publications"
+description: "How to cite gprMax, the references for its specific features, and more than 1,600 publications from the research community that uses it."
 body_id: publications
-sidebar: true
-gtm: false
-mathjax: 3
-leaflet: true
 bib: true
 ---
 
@@ -21,7 +18,7 @@ bib: true
 	</ol>
 	<details>
 		<summary>
-			<h3 style="padding: 5px 20px 5px 0;">References for specific features</h3>
+			<h3>References for specific features</h3>
 		</summary>
 		<p>If you have used specific elements of the software you might also like to cite: [2] - GPU accelerated solver; [3] - soil modelling, rough surfaces; [4] - dispersive materials; [5] - advanced features of the RIPML; [6, 7] - GPR antenna models; [9] - subgridding; [10] - step-frequency continuous-wave (SFCW) radar systems. If you wish to reference the development history of gprMax you can also cite [8].</p>
 		<ol start="2">
@@ -36,28 +33,28 @@ bib: true
 			<li>Giannopoulos, A., Warren, C., Giannakis, I. (2023). Efficient finite-difference time-domain simulation of step-frequency continuous-wave ground penetrating radar systems. In <em>NSG2023 29th European Meeting of Environmental and Engineering Geophysics</em>, 1-5, <a href="https://doi.org/10.3997/2214-4609.202320168">10.3997/2214-4609.202320168</a>.</li>
 		</ol>
 	</details>
-	<p style="padding-top: 14px;">Also available: <a href="{{ '/contact.shtml' | relative_url }}">PhD theses of the development
+	<p class="after-details">Also available: <a href="{{ '/contact.shtml' | relative_url }}">PhD theses of the development
 		team</a>.</p>
 
 	<h2>Research using gprMax</h2>
 	<p>Publications citing references [1], [2] and [8], excluding author self-citations &mdash; extracted from
-		<a href="http://www.elsevier.com/online-tools/scopus">Scopus</a> on
+		<a href="https://www.elsevier.com/products/scopus">Scopus</a> on
 		{{ site.data.bib.updated }}. Applications span
 		<strong>engineering</strong>, <strong>geophysics</strong>, <strong>archaeology</strong>,
 		<strong>antennas and microwave</strong>, and <strong>medicine</strong>.</p>
-    
-    <div class="chart-main">
-        <canvas id="pubChart"></canvas>
-    </div>
 
-    <div class="chart-row">
-        <div class="chart-half">
-            <canvas id="subjectChart"></canvas>
-            <p class="chart-note">Subjects are approximate, inferred from paper titles and journals.</p>
-        </div>
-        <div class="chart-half">
-            <canvas id="journalChart"></canvas>
-        </div>
-    </div>
+	<div class="chart-main">
+	    <canvas id="pubChart"></canvas>
+	</div>
 
-    <table id="pubTable" class="display" style="width:100%"></table>
+	<div class="chart-row">
+	    <div class="chart-half">
+	        <canvas id="subjectChart"></canvas>
+	        <p class="chart-note">Subjects are approximate, inferred from paper titles and journals.</p>
+	    </div>
+	    <div class="chart-half">
+	        <canvas id="journalChart"></canvas>
+	    </div>
+	</div>
+
+	<table id="pubTable" class="display" style="width:100%"></table>

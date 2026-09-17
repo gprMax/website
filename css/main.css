@@ -1,7 +1,8 @@
 /* ==========================================================================
-   gprMax — MAIN STYLE SHEET  (2026 refresh)
-   Drop-in replacement for css/main.css. No HTML changes required except
-   adding the viewport meta tag — see UPGRADE.md.
+   gprMax — MAIN STYLE SHEET
+   Layout, typography, sidebar panels, showcase and theme tokens.
+   navbar.css carries the navigation; usermap.css and
+   bib-publication-list.css are page-specific and loaded on demand.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -104,8 +105,8 @@ html[data-theme='dark'] body {
    -------------------------------------------------------------------------- */
 @font-face {
     font-family: 'IBM Plex Sans';
-    src: url(../css/fonts/IBMPlexSans-latin-var.woff2) format('woff2') tech('variations'),
-        url(../css/fonts/IBMPlexSans-latin-var.woff2) format('woff2-variations');
+    src: url(fonts/IBMPlexSans-latin-var.woff2) format('woff2') tech('variations'),
+        url(fonts/IBMPlexSans-latin-var.woff2) format('woff2-variations');
     font-weight: 100 700;
     font-stretch: 75% 100%;
     font-style: normal;
@@ -114,8 +115,8 @@ html[data-theme='dark'] body {
 
 @font-face {
     font-family: 'IBM Plex Mono';
-    src: url(../css/fonts/IBMPlexMono-latin-var.woff2) format('woff2') tech('variations'),
-        url(../css/fonts/IBMPlexMono-latin-var.woff2) format('woff2-variations');
+    src: url(fonts/IBMPlexMono-latin-var.woff2) format('woff2') tech('variations'),
+        url(fonts/IBMPlexMono-latin-var.woff2) format('woff2-variations');
     font-weight: 100 700;
     font-style: normal;
     font-display: swap;
@@ -166,19 +167,6 @@ html[data-theme='dark'] .invert-dark {
     filter: invert(1);
 }
 
-/* Colour marks with dark text (the university lockups in the footer):
-   flip lightness but keep hue roughly in place, so e.g. the Edinburgh
-   crest stays red on the dark page. */
-@media (prefers-color-scheme: dark) {
-    html:not([data-theme='light']) .lumaflip-dark {
-        filter: invert(1) hue-rotate(180deg);
-    }
-}
-
-html[data-theme='dark'] .lumaflip-dark {
-    filter: invert(1) hue-rotate(180deg);
-}
-
 /* --------------------------------------------------------------------------
    4. LAYOUT
    The old rules used a 1220px min-width, which forced horizontal scrolling on
@@ -211,7 +199,6 @@ html[data-theme='dark'] .lumaflip-dark {
 }
 
 #header img {
-    margin-left: 0;
     width: auto;
     max-height: 118px;
 }
@@ -225,9 +212,6 @@ html[data-theme='dark'] .lumaflip-dark {
 }
 
 p.strap {
-    position: static;
-    float: none;
-    width: auto;
     max-width: 420px;
     margin-left: auto;
     align-self: center;
@@ -255,7 +239,7 @@ p.strap::first-line {
 }
 
 /* --------------------------------------------------------------------------
-   5. STATS PANEL
+   5. SIDEBAR PANELS  (_includes/sidebar.html)
    -------------------------------------------------------------------------- */
 .stats-container {
     padding: 4px 12px 14px 12px;
@@ -274,40 +258,9 @@ p.strap::first-line {
     color: var(--heading);
 }
 
-.stats-row {
-    display: flex;
-    justify-content: space-around;
-    gap: 10px;
-}
-
-.stat-box {
-    flex: 1;
-    text-align: center;
-    padding: 10px 5px;
-}
-
-.stat-value {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 1.7rem;
-    color: var(--link);
-    margin: 0;
-    padding: 0;
-    line-height: 1.1;
-}
-
-.stat-label {
-    font-family: var(--font-sans);
-    font-size: 0.78rem;
-    color: var(--text-secondary);
-    margin: 0;
-    padding: 0;
-    min-height: 3em;
-}
-
-/* Compact stat tiles with sparklines (ssi/sidebar.html): headline number
-   and label on the left, 26-week trend on the right. The svg inherits
-   currentColor from the tile, so the trend wears the link token. */
+/* Compact stat tiles with sparklines: headline number and label on the
+   left, 26-week trend on the right. The svg inherits currentColor from
+   the tile, so the trend wears the link token. */
 .spark-tile {
     display: grid;
     grid-template-columns: 1fr 118px;
@@ -320,15 +273,23 @@ p.strap::first-line {
     border-top: 1px solid var(--border);
 }
 
-.spark-tile .stat-value {
+.stat-value {
     grid-column: 1;
+    font-family: var(--font-display);
+    font-weight: 700;
     font-size: 1.45rem;
-    text-align: left;
+    line-height: 1.1;
+    color: var(--link);
+    margin: 0;
+    padding: 0;
 }
 
-.spark-tile .stat-label {
+.stat-label {
     grid-column: 1;
-    min-height: 0;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin: 0;
+    padding: 0;
 }
 
 /* One-line per-day / per-month figures under each tile */
@@ -424,36 +385,6 @@ p.strap::first-line {
     max-width: none;
     margin: 0;
     padding: 0;
-}
-
-/* Announcements panel: one line per item, title left, month right */
-.announce-list {
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 4px 0 6px 0 !important;
-    max-width: none !important;
-}
-
-.announce-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 10px;
-    font-size: 0.82rem;
-    padding: 4px 0 !important;
-}
-
-.announce-list li a {
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.announce-list .announce-date {
-    flex: none;
-    font-size: 0.72rem;
-    color: var(--text-secondary);
 }
 
 .announce-all {
@@ -595,8 +526,7 @@ p.strap::first-line {
     }
 }
 
-/* Collapsible panels — the sidebar (ssi/sidebar.html) and in-content
-   <details> blocks. Ported from GPR2026's sidebar pattern; the marker is
+/* Collapsible panels — the sidebar and in-content <details> blocks. Ported from GPR2026's sidebar pattern; the marker is
    a +/− ring on the heading. */
 #floating-panel details > summary,
 #main-content details > summary {
@@ -696,10 +626,17 @@ p.strap::first-line {
     margin-bottom: 0;
 }
 
-#floating-panel #latest-release {
-    margin: 0;
-    padding: 4px 0 6px 0;
-    font-size: 0.9rem;
+/* In-content <details> (feature references, PhD theses): the heading is
+   the whole clickable row, so give it room on the right for the marker
+   and clear of the page edge. */
+#main-content details > summary h3 {
+    padding: 5px 20px 5px 0;
+}
+
+/* A paragraph that follows a closed <details> sits hard on its heading
+   without this. */
+.after-details {
+    padding-top: 14px;
 }
 
 /* --------------------------------------------------------------------------
@@ -826,23 +763,6 @@ nav li a:focus-visible {
     border-radius: 3px;
 }
 
-/* Call-to-action button, e.g. Download / Install.
-   Usage: <a class="btn" href="...">Install gprMax</a> */
-.btn {
-    display: inline-block;
-    background: var(--accent);
-    color: var(--accent-text) !important;
-    font-weight: 700;
-    font-size: 0.95rem;
-    padding: 10px 20px;
-    border-radius: var(--radius);
-    text-decoration: none !important;
-}
-
-.btn:hover {
-    filter: brightness(1.08);
-}
-
 /* --------------------------------------------------------------------------
    8. IMAGES & FIGURES
    -------------------------------------------------------------------------- */
@@ -860,6 +780,13 @@ figure.left {
 figure.right {
     float: right;
     margin-left: 24px;
+}
+
+/* A figure that opens a section sits level with the heading's baseline
+   gap rather than adding its own on top (news archive, About). */
+h2 + figure,
+h3 + figure {
+    margin-top: 0;
 }
 
 figure img {
@@ -915,32 +842,10 @@ body#publications #main-content ol li {
     padding: 2px 0;
 }
 
-table.executables {
-    margin: 20px 0;
-    padding: 0;
-    border-spacing: 0;
-    width: 100%;
-}
-
-table.executables th {
-    text-align: center;
-    padding: 10px 18px;
-    background: var(--surface);
-    color: var(--heading-body);
-}
-
-table.executables td {
-    text-align: center;
-    padding: 6px 18px;
-    border-bottom: 1px solid var(--border);
-}
-
 /* --------------------------------------------------------------------------
    10. FOOTER
    -------------------------------------------------------------------------- */
 #footer {
-    position: relative;
-    bottom: 0;
     clear: both;
     margin-top: 24px;
     padding: 14px 0 10px 0;
@@ -1032,14 +937,6 @@ table.executables td {
 iframe.video {
     border: 0;
     max-width: 100%;
-}
-
-iframe.padlet {
-    width: 100%;
-    max-width: 780px;
-    height: 550px;
-    margin: 0;
-    padding: 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -1258,14 +1155,6 @@ iframe.padlet {
         font-size: 0.72rem;
         line-height: 1.3;
     }
-
-    .stats-row {
-        flex-wrap: wrap;
-    }
-
-    .stat-box {
-        flex: 1 1 40%;
-    }
 }
 
 @media (max-width: 480px) {
@@ -1278,10 +1167,6 @@ iframe.padlet {
         margin: 0 -12px;
         padding-left: 12px;
         padding-right: 12px;
-    }
-
-    .stat-value {
-        font-size: 1.4rem;
     }
 }
 
@@ -1313,9 +1198,9 @@ iframe.padlet {
    -------------------------------------------------------------------------- */
 
 /* --------------------------------------------------------------------------
-   13. PINNED NEWS ITEM & TAGS
-   The pinned release card on the homepage, the pill tags it and the About
-   feature list use, and the release-note callout.
+   13. TAGS & RELEASE NOTE
+   The pill tags used by the sidebar announcement and the About feature
+   list, and the release-note callout on the news archive.
    -------------------------------------------------------------------------- */
 .hero-tag {
     display: inline-block;
@@ -1363,7 +1248,7 @@ iframe.padlet {
 }
 
 /* --------------------------------------------------------------------------
-   15. SHOWCASE GRID
+   14. SHOWCASE GRID
    The homepage roster of applications. Each item is a <details>: the
    <summary> is the card face, the body is the full write-up. No JavaScript -
    an open card spans the whole row via grid-column, which is why the grid is
@@ -1371,38 +1256,6 @@ iframe.padlet {
    -------------------------------------------------------------------------- */
 .showcase-grid-wrap {
     margin: 0 0 32px 0;
-}
-
-/* #main-content prefixes outweigh the generic #main-content ul/li rules,
-   which would otherwise re-impose bullets and block layout */
-#main-content .showcase-filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin: 0 0 14px 0;
-    padding: 0;
-    list-style: none;
-    max-width: none;
-}
-
-#main-content .showcase-filters li {
-    padding: 0;
-}
-
-.showcase-filters a {
-    display: inline-block;
-    font-size: 0.78rem;
-    padding: 4px 12px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    color: var(--text-secondary);
-}
-
-.showcase-filters a:hover,
-.showcase-filters a[aria-current='true'] {
-    border-color: var(--heading);
-    color: var(--heading);
-    text-decoration: none;
 }
 
 .showcase-roster {
@@ -1523,7 +1376,6 @@ iframe.padlet {
     padding-top: 5px;
 }
 
-
 .showcase-item[open] .showcase-card-title {
     color: var(--heading);
 }
@@ -1603,7 +1455,7 @@ iframe.padlet {
 }
 
 /* --------------------------------------------------------------------------
-   16. PAIRED LIGHT/DARK ARTWORK
+   15. PAIRED LIGHT/DARK ARTWORK
    A <picture> with media="(prefers-color-scheme:dark)" cannot see the manual
    theme switch, so paired images are swapped here instead, using the same
    guards as the colour tokens.
@@ -1643,7 +1495,7 @@ html[data-theme='light'] .only-dark {
 }
 
 /* --------------------------------------------------------------------------
-   17. SHOWCASE MODAL
+   16. SHOWCASE MODAL
    Opening a card moves its write-up into a shared <dialog> (js/showcase.js).
    Without JavaScript the <details> still expands inline, so these rules only
    describe the dialog; the inline styles above remain the fallback.
@@ -1756,7 +1608,7 @@ html[data-theme='light'] .only-dark {
 }
 
 /* --------------------------------------------------------------------------
-   18. Contact routes
+   17. CONTACT ROUTES & CREDITS
    -------------------------------------------------------------------------- */
 
 /* Four ways to reach us, as a scannable list rather than four paragraphs.

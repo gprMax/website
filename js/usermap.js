@@ -1,5 +1,5 @@
 /* ============================================================
-   gprMax community map. Save as js/usermap.js.
+   gprMax community map (usermap.shtml).
 
    Reads users/pins.geojson and posts new pins to the gprMax map Worker.
    No build step, no framework, no keys.
@@ -20,11 +20,15 @@
 	   the palette. Full strength for the dot, low alpha for the halo, so
 	   where pins overlap the halos stack toward the same colour and dense
 	   regions read stronger. Nothing on the basemap is this colour. */
-	var PURPLE = (getComputedStyle(document.body).getPropertyValue('--heading') || '#55037F').trim() || '#55037F';
-	var PURPLE_RGB = (function (hex) {
+	function headingColour() {
+		return (getComputedStyle(document.body).getPropertyValue('--heading') || '#55037F').trim() || '#55037F';
+	}
+	function hexToRgb(hex) {
 		var m = /^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(hex.trim());
 		return m ? parseInt(m[1], 16) + ', ' + parseInt(m[2], 16) + ', ' + parseInt(m[3], 16) : '85, 3, 127';
-	})(PURPLE);
+	}
+	var PURPLE = headingColour();
+	var PURPLE_RGB = hexToRgb(PURPLE);
 	var DARK_MODE = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
 		&& document.documentElement.dataset.theme !== 'light')
 		|| document.documentElement.dataset.theme === 'dark';
@@ -54,11 +58,14 @@
 	map.on('click', function () { map.scrollWheelZoom.enable(); });
 	wrap.addEventListener('mouseleave', function () { map.scrollWheelZoom.disable(); });
 
-	/* CARTO Positron / Dark Matter: near-monochrome, so neither carries any
-	   colour that competes with the pins, and each sits quietly inside its
+	/* Esri Gray Canvas: near-monochrome, so it carries no colour that
+	   competes with the pins, and each variant sits quietly inside its
 	   page — light tiles on the light page, dark tiles on the dark one. */
-	L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_'
-		+ (DARK_MODE ? 'Dark' : 'Light') + '_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+	function tileUrl(dark) {
+		return 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_'
+			+ (dark ? 'Dark' : 'Light') + '_Gray_Base/MapServer/tile/{z}/{y}/{x}';
+	}
+	var tiles = L.tileLayer(tileUrl(DARK_MODE), {
 		attribution: 'Tiles &copy; <a href="https://www.esri.com">Esri</a> &mdash; Esri, DeLorme, NAVTEQ',
 		maxZoom: 16,
 		noWrap: true
@@ -86,6 +93,21 @@
 				iconSize: [size, size]
 			});
 		}
+	});
+
+	/* The basemap and pin colour are chosen here, not in CSS, so the theme
+	   switch (js/theme.js) has to tell us; the same event the sidebar's
+	   mini map listens for. Cluster icons are rebuilt by the plugin. */
+	document.addEventListener('gprmax:themechange', function (e) {
+		tiles.setUrl(tileUrl(e.detail.dark));
+		PURPLE = headingColour();
+		PURPLE_RGB = hexToRgb(PURPLE);
+		[haloLayer, coreLayer, grouped].forEach(function (group) {
+			group.eachLayer(function (l) {
+				if (l.setStyle) { l.setStyle({ fillColor: PURPLE }); }
+			});
+		});
+		if (map.hasLayer(grouped)) { grouped.refreshClusters(); }
 	});
 
 	function escapeHtml(s) {

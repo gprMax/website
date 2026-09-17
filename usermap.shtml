@@ -1,9 +1,7 @@
 ---
 title: "gprMax: Community map"
+description: "Where in the world gprMax is used. Add your own pin to the community map."
 body_id: news
-sidebar: false
-gtm: false
-leaflet: true
 markercluster: true
 ---
 

@@ -1,7 +1,7 @@
 /* ==========================================================================
-   gprMax — NAVIGATION BAR STYLE SHEET  (2026 refresh)
-   Drop-in replacement for css/navbar.css. All colours come from the token
-   block in main.css; there are no literal colours in this file.
+   gprMax — NAVIGATION BAR STYLE SHEET
+   All colours come from the token block in main.css; there are no literal
+   colours in this file.
 
    Desktop keeps the established tab look: display-face labels on rounded-top
    tabs, with the current page's tab keyed off the body id (body#news lights
@@ -119,27 +119,22 @@ nav li a:active {
     }
 }
 
-/* Active tab: keyed off the body id. Keep all eight pairs — #forum-nav is
-   still referenced here even though the page is retired (see UPGRADE.md). */
+/* Active tab: keyed off the body id. Only the four pages served here have
+   one -- Download, Docs and Discussions are external links and are never
+   the current page. */
 body#news li#news-nav,
 body#about li#about-nav,
-body#download li#download-nav,
 body#publications li#publications-nav,
-body#docs li#docs-nav,
-body#contact li#contact-nav,
-body#forum li#forum-nav {
+body#contact li#contact-nav {
     background: var(--page);
     border-color: var(--border-strong);
     border-top: 3px solid var(--accent);
 }
 
-body#news nav li#news-nav a:link, body#news nav li#news-nav a:visited, body#news nav li#news-nav a:active,
-body#about nav li#about-nav a:link, body#about nav li#about-nav a:visited, body#about nav li#about-nav a:active,
-body#download nav li#download-nav a:link, body#download nav li#download-nav a:visited, body#download nav li#download-nav a:active,
-body#publications nav li#publications-nav a:link, body#publications nav li#publications-nav a:visited, body#publications nav li#publications-nav a:active,
-body#docs nav li#docs-nav a:link, body#docs nav li#docs-nav a:visited, body#docs nav li#docs-nav a:active,
-body#contact nav li#contact-nav a:link, body#contact nav li#contact-nav a:visited, body#contact nav li#contact-nav a:active,
-body#forum nav li#forum-nav a:link, body#forum nav li#forum-nav a:visited, body#forum nav li#forum-nav a:active {
+body#news li#news-nav a,
+body#about li#about-nav a,
+body#publications li#publications-nav a,
+body#contact li#contact-nav a {
     opacity: 1;
 }
 
@@ -207,11 +202,8 @@ body#forum nav li#forum-nav a:link, body#forum nav li#forum-nav a:visited, body#
     /* Active page in the menu list */
     body#news li#news-nav,
     body#about li#about-nav,
-    body#download li#download-nav,
     body#publications li#publications-nav,
-    body#docs li#docs-nav,
-    body#contact li#contact-nav,
-    body#forum li#forum-nav {
+    body#contact li#contact-nav {
         background: none;
         border-top: none;
         border-left-color: var(--accent);
@@ -275,10 +267,9 @@ body#forum nav li#forum-nav a:link, body#forum nav li#forum-nav a:visited, body#
         top: 25px;
     }
 
-    /* Open state: label pins to the viewport so the close control is always
-       reachable, the bars form an X, and the nav slides in. */
-    /* The bar is sticky and sits above the panel, so the control stays
-       where it is and simply becomes a close button. Nothing to pin. */
+    /* Open state: the bar is sticky and sits above the panel, so the
+       control stays where it is and simply becomes a close button; the
+       bars form an X and the nav drops in. */
 
     .menu-toggler:checked + .show-menu::before {
         top: 21px;
@@ -316,21 +307,9 @@ body#forum nav li#forum-nav a:link, body#forum nav li#forum-nav a:visited, body#
     .menu-toggler:checked ~ nav li:nth-child(7) { transition-delay: 0.34s; }
     .menu-toggler:checked ~ nav li:nth-child(8) { transition-delay: 0.38s; }
 
-    /* Motion is decoration here. Honour the system setting: the panel and
-       the items still change state, they just stop travelling. */
-    @media (prefers-reduced-motion: reduce) {
-        nav,
-        nav li,
-        .show-menu::before,
-        .show-menu::after {
-            transition-duration: 0.01ms;
-            transition-delay: 0ms;
-        }
-
-        nav li {
-            transform: none;
-        }
-    }
+    /* Reduced motion is handled once, in main.css: its global
+       transition: none !important covers the panel, the items and the
+       hamburger bars, so they change state without travelling. */
 
     .menu-toggler:focus-visible + .show-menu {
         outline: 2px solid var(--link);

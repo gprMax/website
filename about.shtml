@@ -1,9 +1,7 @@
 ---
-title: "gprMax: Electromagnetic simulation software"
+title: "gprMax: About the software"
+description: "What gprMax is, how it is built, and the full feature set of version 4: FDTD electromagnetic simulation on CPUs and GPUs, for GPR, antennas, scattering, bioelectromagnetics and more."
 body_id: about
-sidebar: true
-gtm: false
-leaflet: true
 ---
 
 

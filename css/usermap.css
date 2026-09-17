@@ -1,11 +1,10 @@
 /* ============================================================
-   gprMax community map — page styles.
-   Save as css/usermap.css.
+   gprMax community map — page styles (usermap.shtml).
 
    Everything here is namespaced under #usermap-wrap or the .ump-
    prefix so it cannot collide with main.css or navbar.css.
    Colours and fonts are taken from main.css: the pins and the
-   headings share the site purple, rgba(85, 3, 127, 1).
+   headings share the site heading token.
    ============================================================ */
 
 /* Scoped to :where(body), not :root — the site tokens these derive from
@@ -410,8 +409,6 @@ html[data-theme='dark'] body {
 }
 
 /* --------------------------------------------------------- narrow --- */
-/* main.css sets #container to min-width 1220px, so the site does not go
-   below that on desktop; this only helps if that ever changes. */
 
 @media (max-width: 700px) {
 	#usermap-wrap { height: 520px; }

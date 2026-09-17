@@ -1,6 +1,6 @@
 /* ============================================================
    Mini community map for the shared "Usage" sidebar panel
-   (ssi/sidebar.html). Non-interactive: the whole strip is a
+   (_includes/sidebar.html). Non-interactive: the whole strip is a
    link through to usermap.shtml, where the full map lives.
    Reads the same users/pins.geojson the full map uses.
    ============================================================ */
@@ -86,9 +86,8 @@
 
 	// The basemap and pin colour are chosen in JS, so the CSS-only theme
 	// switch cannot restyle them; swap them when the theme changes.
-	function themeUrl(dark) { return tileUrl(dark); }
 	document.addEventListener('gprmax:themechange', function (e) {
-		if (tiles) { tiles.setUrl(themeUrl(e.detail.dark)); }
+		tiles.setUrl(tileUrl(e.detail.dark));
 		var colour = (getComputedStyle(document.body).getPropertyValue('--heading') || '').trim();
 		if (colour) {
 			map.eachLayer(function (l) {
