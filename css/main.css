@@ -397,6 +397,34 @@ p.strap::first-line {
     padding: 0 0 16px 0;
 }
 
+/* Year index under the news archive's h1: one small link per year that
+   has an entry, jumping to the newest item of that year. flow-root keeps
+   it beside the floated sidebar rather than under it. */
+.year-index {
+    display: flow-root;
+    font-size: 0.8rem;
+    line-height: 2;
+    color: var(--text-secondary);
+    margin: 0 0 6px 0;
+}
+
+.year-index-label {
+    margin-right: 6px;
+}
+
+.year-index a:link,
+.year-index a:visited {
+    display: inline-block;
+    margin-right: 14px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.year-index a:hover {
+    color: var(--heading);
+}
+
 /* Featured announcements at the top of the panel */
 .announce-feature {
     padding: 7px 0 9px 0;

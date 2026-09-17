@@ -9,6 +9,18 @@ body_id: news
 
 {% include sidebar.html %}
 
+			<nav class="year-index" aria-label="Jump to year">
+				<span class="year-index-label">Jump to</span>
+				<a href="#v4-release">2026</a>
+				<a href="#iwagpr2025">2025</a>
+				<a href="#google-summer-of-code-2024">2024</a>
+				<a href="#google-summer-of-code-2023">2023</a>
+				<a href="#iwagpr2021-prizes">2022</a>
+				<a href="#rimfax-paper">2020</a>
+				<a href="#cpc-gpu-paper">2018</a>
+				<a href="#v3-1-release">2017</a>
+				<a href="#cpc-paper">2016</a>
+			</nav>
 			<h2 id="v4-release">gprMax v4.0.0 &ldquo;Caol Ila&rdquo; released<span class="subtitle">15-Sep-2026</span></h2>
 
 			<div class="release-note">
@@ -84,7 +96,7 @@ body_id: news
 				describes gprMax and some of its key features and applications.</p>
 			<div class="clear-left"></div>
 
-			<h2>Google Summer of Code 2024<span class="subtitle">27-Feb-2024</span></h2>
+			<h2 id="google-summer-of-code-2024">Google Summer of Code 2024<span class="subtitle">27-Feb-2024</span></h2>
 			<figure class="left"><img loading="lazy" src="{{ '/images/GSoC-Vertical.png' | relative_url }}" alt="GSoC logo" width="200"
 					height="200" /></figure>
 			<p>We are delighted that gprMax has been selected to partipate in the <a
@@ -98,7 +110,7 @@ body_id: news
 					YouTube channel.</a></p>
 			<div class="clear-left"></div>
 
-			<h2>GPR2024 conference<span class="subtitle">24-Jan-2024</span></h2>
+			<h2 id="gpr2024-conference">GPR2024 conference<span class="subtitle">24-Jan-2024</span></h2>
 			<p>The <a href="https://gpr2024.jlu.edu.cn/webinfo/viewenglish?id=346">20th International Conference on
 					Ground Penetrating Radar (GPR2024)</a> took place between 23-27 June 2024, hosted by Jilin
 				University, Changchun, China. The conference showcased the latest GPR research and technology as
@@ -108,7 +120,7 @@ body_id: news
 				gprMax.</p>
 			<div class="clear-left"></div>
 
-			<h2>Google Summer of Code 2023<span class="subtitle">08-Mar-2023</span></h2>
+			<h2 id="google-summer-of-code-2023">Google Summer of Code 2023<span class="subtitle">08-Mar-2023</span></h2>
 			<figure class="left"><img loading="lazy" src="{{ '/images/GSoC-Vertical.png' | relative_url }}" alt="GSoC logo" width="200"
 					height="200" /></figure>
 			<p>We are delighted that gprMax has been selected to partipate in the <a
@@ -123,7 +135,7 @@ body_id: news
 					YouTube channel.</a></p>
 			<div class="clear-left"></div>
 
-			<h2>gprMax prize winners at IWAGPR2021<span class="subtitle">21-Feb-2022</span></h2>
+			<h2 id="iwagpr2021-prizes">gprMax prize winners at IWAGPR2021<span class="subtitle">21-Feb-2022</span></h2>
 			<figure class="left"><img loading="lazy" src="{{ '/images/IWAGPR2021.jpg' | relative_url }}" alt="IWAGPR2021 team"
 					width="400" height="300" />
 				<figcaption>Rania Patsia (<em>far right</em>) &amp; Sylwia Majchrowska (<em>2nd from left</em>) won
@@ -143,7 +155,7 @@ body_id: news
 			</ul>
 			<div class="clear-left"></div>
 
-			<h2>Paper Highlight - gprMax used for modelling RIMFAX GPR on NASA Mars Rover<span
+			<h2 id="rimfax-paper">Paper Highlight - gprMax used for modelling RIMFAX GPR on NASA Mars Rover<span
 					class="subtitle">13-Dec-2020</span></h2>
 			<figure class="left"><img loading="lazy" src="{{ '/images/mars-perseverance.jpg' | relative_url }}"
 					alt="Mars2020 Perseverance Rover" width="550" height="309" />
@@ -164,7 +176,7 @@ body_id: news
 					href="https://doi.org/10.1007/s11214-020-00740-4">https://doi.org/10.1007/s11214-020-00740-4</a></p>
 			<div class="clear-left"></div>
 
-			<h2>Videos released from online workshop<span class="subtitle">10-Aug-2020</span></h2>
+			<h2 id="workshop2020-videos">Videos released from online workshop<span class="subtitle">10-Aug-2020</span></h2>
 			<figure class="left"><img loading="lazy" src="{{ '/images/workshop_videos.png' | relative_url }}"
 					alt="workshop_videos.png" width="294" height="168" /></figure>
 			<p>We have released video recordings of sessions from our recent online workshop on 'GPR modelling using
@@ -228,7 +240,7 @@ body_id: news
 			</details>
 			<div class="clear-left"></div>
 
-			<h2>Paper Highlight - Our paper on GPU version published in Computer Physics Communications<span
+			<h2 id="cpc-gpu-paper">Paper Highlight - Our paper on GPU version published in Computer Physics Communications<span
 					class="subtitle">23-Nov-2018</span></h2>
 			<figure class="left"><img loading="lazy" src="{{ '/images/cpu_gpu_perf.png' | relative_url }}" alt="CPU and GPU performance"
 					width="400" height="397" />
@@ -252,7 +264,7 @@ body_id: news
 					href="{{ '/publications.shtml' | relative_url }}">you would cite this new paper</a>.</p>
 			<div class="clear-left"></div>
 
-			<h2>GPR2018 Young Scientist winner uses gprMax<span class="subtitle">23-Jun-2018</span></h2>
+			<h2 id="gpr2018-young-scientist">GPR2018 Young Scientist winner uses gprMax<span class="subtitle">23-Jun-2018</span></h2>
 			<figure class="left"><img loading="lazy" src="{{ '/images/sam.jpg' | relative_url }}"
 					alt="GPR2018 Young Scientist winner" width="300" height="225" />
 				<figcaption>Sam wins GPR2018 prize</figcaption>
@@ -270,7 +282,7 @@ body_id: news
 				conference proceedings are published by the IEEE. Well done Sam!</p>
 			<div class="clear-left"></div>
 
-			<h2>Version 3.1 - with GPU acceleration - released!<span class="subtitle">19-Jun-2017</span></h2>
+			<h2 id="v3-1-release">Version 3.1 - with GPU acceleration - released!<span class="subtitle">19-Jun-2017</span></h2>
 			<p>We are excited to announce the release of version 3.1. Code-named <em>Big
 					Smoke</em>, it continues our whisky-based naming, and is also a reference to the cities of <a
 					href="https://goo.gl/maps/5qMnreHRPYp">Edinburgh (Scotland)</a> and <a
@@ -295,7 +307,7 @@ body_id: news
 				on using the software visit our <a href="https://github.com/gprMax/gprMax/discussions">GitHub Discussions</a>.</p>
 			<div class="clear-left"></div>
 
-			<h2>GPR Imaging Challenge<span class="subtitle">24-May-2017</span></h2>
+			<h2 id="gpr-imaging-challenge">GPR Imaging Challenge<span class="subtitle">24-May-2017</span></h2>
 			<figure class="right"><img loading="lazy" src="{{ '/images/imaging_challenge_surface_roughness.png' | relative_url }}"
 					alt="Imaging Challenge Model Outline" width="434" height="200" />
 				<figcaption>Imaging challenge model outline</figcaption>
@@ -311,7 +323,7 @@ body_id: news
 				we hope some results can be presented. The dataset and a full set of instructions can be found at our <a
 					href="https://github.com/gprMax/iwagpr2017-model">GitHub repository</a>.</p>
 
-			<h2>Highlight - Paper published in Computer Physics Communications<span class="subtitle">27-Sep-2016</span>
+			<h2 id="cpc-paper">Highlight - Paper published in Computer Physics Communications<span class="subtitle">27-Sep-2016</span>
 			</h2>
 			<p>We are pleased to announce that our <a href="http://dx.doi.org/10.1016/j.cpc.2016.08.020">paper
 					describing the new version of gprMax</a> has been published in the journal of <a
@@ -325,7 +337,7 @@ body_id: news
 					href="{{ '/publications.shtml' | relative_url }}">you would cite this new paper</a>.</p>
 			<div class="clear-left"></div>
 
-			<h2>Featured project on spectral soil properties<span class="subtitle">02-Aug-2016</span></h2>
+			<h2 id="spectral-soil-properties">Featured project on spectral soil properties<span class="subtitle">02-Aug-2016</span></h2>
 			<p>The latest in our series of <a href="{{ '/' | relative_url }}">showcased projects</a> is by <a
 					href="https://www.liag-hannover.de/en/s/s2/staff.html">Markus Loewer</a> from the <a
 					href="https://www.liag-hannover.de/en/home.html">Leibniz Institute for Applied Geophysics</a> in
@@ -334,7 +346,7 @@ body_id: news
 					modelling capabilities</a> to create multi-pole Debye models to accurately simulate the
 				frequency-dependent dielectric properties of different soils.</p>
 
-			<h2>Screencasts &amp; videos<span class="subtitle">13-Jul-2016</span></h2>
+			<h2 id="screencasts-videos">Screencasts &amp; videos<span class="subtitle">13-Jul-2016</span></h2>
 			<figure class="left"><iframe class="video" width="333" height="250"
 					src="https://www.youtube.com/embed/g744O_wb14I" allowfullscreen></iframe>
 				<figcaption>PEC cylinder in heterogeneous (left) &amp; homogeneous (right) half-spaces (2D)</figcaption>
