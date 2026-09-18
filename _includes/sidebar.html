@@ -94,24 +94,25 @@
 	<script defer src="{{ '/js/usage-map.js' | relative_url }}"></script>
 	<script defer src="{{ '/js/gh-stats.js' | relative_url }}"></script>
 
+	<script>
+		/* The panels are open by default because on a wide screen they sit
+		   beside the content and cost nothing. Stacked on a phone they push the
+		   page's actual content down by roughly 900px, so there they start
+		   collapsed and the reader chooses. The exception is "Get gprMax": it
+		   is three lines tall and carries the Download and Install links, which
+		   should not be a click away on the one screen size where the strapline
+		   is also gone.
+
+		   Inline and immediately after the panels on purpose: as a deferred
+		   file this would run after first paint and the panels would visibly
+		   snap shut. No-JS keeps them open, which is the honest fallback --
+		   the content is present either way. It lives inside the aside so the
+		   aside remains the h1's direct sibling, which the
+		   h1 + #floating-panel + h2 spacing rule in main.css depends on. */
+		(function () {
+			if (window.innerWidth > 1100) { return; }
+			var open = document.querySelectorAll('#floating-panel details[open]:not(.keep-open)');
+			for (var i = 0; i < open.length; i++) { open[i].open = false; }
+		})();
+	</script>
 </aside>
-
-<script>
-	/* The panels are open by default because on a wide screen they sit
-	   beside the content and cost nothing. Stacked on a phone they push the
-	   page's actual content down by roughly 900px, so there they start
-	   collapsed and the reader chooses. The exception is "Get gprMax": it
-	   is three lines tall and carries the Download and Install links, which
-	   should not be a click away on the one screen size where the strapline
-	   is also gone.
-
-	   Inline and immediately after the markup on purpose: as a deferred
-	   file this would run after first paint and the panels would visibly
-	   snap shut. No-JS keeps them open, which is the honest fallback --
-	   the content is present either way. */
-	(function () {
-		if (window.innerWidth > 1100) { return; }
-		var open = document.querySelectorAll('#floating-panel details[open]:not(.keep-open)');
-		for (var i = 0; i < open.length; i++) { open[i].open = false; }
-	})();
-</script>
