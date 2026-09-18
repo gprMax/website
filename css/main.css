@@ -675,28 +675,30 @@ p.strap::first-line {
 #floating-panel details > summary h2::before,
 #floating-panel details > summary h3::before,
 #main-content details > summary h3::before {
-    content: "\002B";
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    content: "";
+    display: inline-block;
     width: 0.85rem;
     height: 0.85rem;
     margin-right: 0.4rem;
     border: 1px solid var(--text-secondary);
     border-radius: 50%;
     color: var(--text-secondary);
-    font-size: 0.7rem;
-    line-height: 1;
     vertical-align: middle;
     position: relative;
     top: -0.1rem;
+    /* The + is drawn, not typed: a glyph sits where the font's line box
+       puts it, which was a pixel below the ring's centre. Two bars in
+       currentColor, each centred in the box, cannot drift. */
+    background:
+        linear-gradient(currentColor, currentColor) center / 50% 1.5px no-repeat,
+        linear-gradient(currentColor, currentColor) center / 1.5px 50% no-repeat;
 }
 
 #floating-panel details[open] > summary h2::before,
 #floating-panel details[open] > summary h3::before,
 #main-content details[open] > summary h3::before {
-    content: "\2212";
-    font-size: 0.75rem;
+    /* open: the vertical bar goes, leaving the minus */
+    background: linear-gradient(currentColor, currentColor) center / 50% 1.5px no-repeat;
 }
 
 /* When a panel is closed, its heading is the panel's last visible element —
