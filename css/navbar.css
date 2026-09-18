@@ -69,12 +69,10 @@ nav li a {
     transition: color 0.15s, background-color 0.15s;
 }
 
-/* The first pill's label lines up with the left edge of the content: the
-   pill's own padding hangs into the gutter. On the item, not the row --
-   the row draws the rule, which must start at the content edge. */
-nav li:first-child {
-    margin-left: -14px;
-}
+/* The first pill's left edge sits on the content edge, level with the
+   rule below and the headings under it; the label is inset by the pill's
+   own padding. Hanging the pill into the gutter instead would put its
+   hover and active background outside the rule. */
 
 nav li a:link,
 nav li a:visited {
@@ -204,10 +202,6 @@ body#contact li#contact-nav a {
         display: block;
         border-bottom: none;
         padding-bottom: 0;
-    }
-
-    nav li:first-child {
-        margin-left: 0;
     }
 
     /* Every row carries the accent border, transparent unless it is the
