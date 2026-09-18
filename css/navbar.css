@@ -69,8 +69,10 @@ nav li a {
     transition: color 0.15s, background-color 0.15s;
 }
 
-/* The first pill's label lines up with the left edge of the content. */
-nav ul {
+/* The first pill's label lines up with the left edge of the content: the
+   pill's own padding hangs into the gutter. On the item, not the row --
+   the row draws the rule, which must start at the content edge. */
+nav li:first-child {
     margin-left: -14px;
 }
 
@@ -201,8 +203,11 @@ body#contact li#contact-nav a {
     nav ul {
         display: block;
         border-bottom: none;
-        margin-left: 0;
         padding-bottom: 0;
+    }
+
+    nav li:first-child {
+        margin-left: 0;
     }
 
     /* Every row carries the accent border, transparent unless it is the
