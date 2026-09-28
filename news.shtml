@@ -258,7 +258,7 @@ body_id: news
 				server CPU (Intel Xeon E5-2640).</p>
 			<p>We expect these performance benefits to rapidly advance GPR research in areas such as full-waveform
 				inversion and machine learning</p>
-			<p>We carried out this work as part of a project with <a href="https://fiber.google.com/about/">Google
+			<p>We carried out this work as part of a project with <a href="https://gfiber.com/">Google
 					Fiber</a> (USA), and had support from <a href="https://www.nvidia.com/en-gb/">NVIDIA</a> (UK).</p>
 			<p>The paper is open-access and we would appreciate that if you use gprMax and publish your work, <a
 					href="{{ '/publications.shtml' | relative_url }}">you would cite this new paper</a>.</p>
