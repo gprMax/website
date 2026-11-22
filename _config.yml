@@ -52,6 +52,9 @@ exclude:
   # file, IS published; that is what the map fetches.
   - users/pins.source.geojson
   - worker/
+  # Maintenance scripts (pins minimiser, Scopus bib updater) live in the
+  # repository but are not part of the site.
+  - tools/
   # scopus.bib IS published — js/gprMaxBib.js fetches it at runtime.
   # Only the dated snapshots and test fixtures are excluded.
   - scopus-1.bib
